@@ -1000,7 +1000,7 @@ footer { background: #141414; padding: 72px 80px 40px; }
 .setup-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.04); position: relative; z-index: 2; }
 .setup-card { background: var(--charcoal); padding: 44px 36px; border: 0.5px solid rgba(255,255,255,0.05); position: relative; transition: all 0.3s; }
 .setup-card:hover { background: rgba(255,255,255,0.02); border-color: rgba(201,169,110,0.25); }
-.setup-card.featured { background: rgba(201,169,110,0.06); border-color: rgba(201,169,110,0.3); }
+.setup-card.featured { background: rgba(201,169,110,0.1); border-color: var(--gold); border-width: 1.5px; }
 .setup-card-tier { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: block; }
 .setup-card-name { font-family: var(--serif); font-size: 26px; font-weight: 300; color: var(--warm-white); margin-bottom: 4px; line-height: 1.1; }
 .setup-card-sub { font-size: 12px; color: rgba(255,255,255,0.3); margin-bottom: 20px; letter-spacing: 0.04em; }
@@ -2046,10 +2046,13 @@ footer { background: #141414; padding: 72px 80px 40px; }
       <p class="section-body" style="color:rgba(255,255,255,0.5);">Every package includes professional editing, a private online gallery, and 48–72hr delivery. 50% retainer holds your date. Choose your session below or explore specialty services.</p>
       <!-- Sub-nav for specialty sessions -->
       <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;">
-        <button onclick="showPkgSection('main')" class="pkg-subnav active" id="pnav-main">All Packages</button>
+        <button onclick="showPkgSection('main')" class="pkg-subnav active" id="pnav-main">All</button>
+        <button onclick="showPkgSection('proposals')" class="pkg-subnav" id="pnav-proposals">Proposals</button>
+        <button onclick="showPkgSection('weddings')" class="pkg-subnav" id="pnav-weddings">Weddings</button>
         <button onclick="showPkgSection('events')" class="pkg-subnav" id="pnav-events">Events</button>
         <button onclick="showPkgSection('corporate')" class="pkg-subnav" id="pnav-corporate">Corporate</button>
         <button onclick="showPkgSection('family')" class="pkg-subnav" id="pnav-family">Family & Portraits</button>
+        <button onclick="showPkgSection('setup')" class="pkg-subnav" id="pnav-setup">Proposal Setup</button>
       </div>
     </div>
   </div>
@@ -2066,6 +2069,7 @@ footer { background: #141414; padding: 72px 80px 40px; }
         </div>
 
         <!-- PROPOSAL / PORTRAIT PACKAGES -->
+        <div id="pkg-sub-proposals">
         <!-- Category header -->
         <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:14px;border-bottom:0.5px solid var(--border);">
           <span class="eyebrow" style="font-size:10px;letter-spacing:0.24em;">📸 Proposals & Portraits</span>
@@ -2130,6 +2134,9 @@ footer { background: #141414; padding: 72px 80px 40px; }
         </div>
 
         <!-- WEDDING PACKAGES -->
+        </div><!-- /pkg-sub-proposals -->
+
+        <div id="pkg-sub-weddings">
         <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:14px;border-bottom:0.5px solid var(--border);margin-top:60px;">
           <span class="eyebrow" style="font-size:10px;letter-spacing:0.24em;">💍 Weddings</span>
           <span style="font-size:12px;color:var(--gray-light);">Half-day, full-day, and destination wedding coverage</span>
@@ -2196,6 +2203,9 @@ footer { background: #141414; padding: 72px 80px 40px; }
         </div>
 
         <!-- SETUP PACKAGES (existing) -->
+        </div><!-- /pkg-sub-weddings -->
+
+        <div id="pkg-sub-setup">
         <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:14px;border-bottom:0.5px solid var(--border);margin-top:60px;">
           <span class="eyebrow" style="font-size:10px;letter-spacing:0.24em;">✦ Full Setup & Coordination</span>
           <span style="font-size:12px;color:var(--gray-light);">Photography + video + full romantic setup. 4-week advance booking required.</span>
@@ -2255,6 +2265,8 @@ footer { background: #141414; padding: 72px 80px 40px; }
           <button onclick="document.getElementById('addon-panel').style.display='none'" style="position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:20px;cursor:pointer;">✕</button>
           <div id="addon-panel-content"></div>
         </div>
+
+        </div><!-- /pkg-sub-setup -->
 
         <!-- FAQ -->
         <div style="max-width:780px;margin:0 auto;padding-top:40px;border-top:0.5px solid var(--border);">
@@ -5980,20 +5992,54 @@ function openContactWithPackage(pkgName, price) {
 // ══════════════════════════════════════
 
 function showPkgSection(name) {
-  // Hide all sections
+  // Sub-sections that live inside pkg-section-main
+  const mainSubSections = ['proposals', 'weddings', 'setup'];
+  const isSubSection = mainSubSections.includes(name);
+
+  // Hide all top-level sections
   ['main','events','corporate','family'].forEach(s => {
     const el = document.getElementById('pkg-section-' + s);
     if (el) el.style.display = 'none';
   });
+
   // Remove active from all subnav buttons
   document.querySelectorAll('.pkg-subnav').forEach(b => b.classList.remove('active'));
-  // Show selected
-  const target = document.getElementById('pkg-section-' + name);
-  if (target) target.style.display = 'block';
-  const btn = document.getElementById('pnav-' + name);
-  if (btn) btn.classList.add('active');
-  // Scroll to content
-  target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  if (isSubSection) {
+    // Show main section, then hide all sub-sections, then show the right one
+    const main = document.getElementById('pkg-section-main');
+    if (main) main.style.display = 'block';
+
+    // Hide all sub-dividers
+    ['proposals','weddings','setup'].forEach(s => {
+      const el = document.getElementById('pkg-sub-' + s);
+      if (el) el.style.display = 'none';
+    });
+    // Show selected sub-section
+    const sub = document.getElementById('pkg-sub-' + name);
+    if (sub) sub.style.display = 'block';
+
+    const btn = document.getElementById('pnav-' + name);
+    if (btn) btn.classList.add('active');
+    sub?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    // Show the full main section with all sub-sections visible
+    if (name === 'main') {
+      const main = document.getElementById('pkg-section-main');
+      if (main) main.style.display = 'block';
+      ['proposals','weddings','setup'].forEach(s => {
+        const el = document.getElementById('pkg-sub-' + s);
+        if (el) el.style.display = 'block';
+      });
+    } else {
+      const target = document.getElementById('pkg-section-' + name);
+      if (target) target.style.display = 'block';
+    }
+    const btn = document.getElementById('pnav-' + name);
+    if (btn) btn.classList.add('active');
+    const el = document.getElementById('pkg-section-' + (name === 'main' ? 'main' : name));
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 // Add-on definitions per package type
@@ -6122,51 +6168,112 @@ const ADD_ONS = {
   },
 };
 
+// Global addon state — persists across re-renders
+window._addonState = window._addonState || {};
+
 function showAddOns(pkgId) {
   const pkg = ADD_ONS[pkgId];
   const panel = document.getElementById('addon-panel');
   const panelContent = document.getElementById('addon-panel-content');
-  if (!pkg || !panel || !panelContent) {
-    goPage('contact-page'); return;
-  }
+  if (!pkg || !panel || !panelContent) { goPage('contact-page'); return; }
 
-  let selectedTotal = 0;
   const basePrice = parseInt((pkg.name.match(/\$([\d,]+)/) || ['0','0'])[1].replace(',','')) || 0;
 
-  function renderPanel() {
-    const selected = pkg.addons.filter(a => document.getElementById('ao-chk-'+a.id)?.checked);
-    selectedTotal = selected.reduce((s, a) => s + a.price, 0);
-    panelContent.innerHTML = `
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
-        <div>
-          <div style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Customize Your Package</div>
-          <div style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm-white);">${pkg.name}</div>
-        </div>
-        <div style="text-align:right;">
-          <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Package Total</div>
-          <div style="font-family:var(--serif);font-size:32px;color:var(--gold);">$${(basePrice + selectedTotal).toLocaleString()}</div>
-        </div>
+  // Initialize state for this package if not already
+  if (!window._addonState[pkgId]) window._addonState[pkgId] = {};
+
+  // Read current checkbox state (after user interaction) and persist it
+  pkg.addons.forEach(a => {
+    const chk = document.getElementById('ao-chk-' + a.id);
+    if (chk) window._addonState[pkgId][a.id] = chk.checked;
+  });
+
+  const selected = pkg.addons.filter(a => window._addonState[pkgId][a.id]);
+  const selectedTotal = selected.reduce((s, a) => s + a.price, 0);
+  const total = basePrice + selectedTotal;
+
+  // Store current pkg in panel dataset so Book Now can access it globally
+  panel.dataset.pkgId = pkgId;
+  panel.dataset.basePrice = basePrice;
+
+  panelContent.innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+      <div>
+        <div style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Customize Your Package</div>
+        <div style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm-white);">${pkg.name}</div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:24px;">
-        ${pkg.addons.map(a => `
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);cursor:pointer;transition:all 0.2s;" id="ao-label-${a.id}" onclick="setTimeout(()=>showAddOns('${pkgId}'),10)">
-            <input type="checkbox" id="ao-chk-${a.id}" style="margin-top:3px;accent-color:var(--gold);flex-shrink:0;">
-            <div>
-              <div style="font-size:13px;color:var(--warm-white);margin-bottom:2px;">${a.label}</div>
-              <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:4px;">${a.desc}</div>
-              <div style="font-size:12px;color:var(--gold);">+$${a.price}</div>
-            </div>
-          </label>`).join('')}
+      <div style="text-align:right;">
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Package Total</div>
+        <div style="font-family:var(--serif);font-size:32px;color:var(--gold);" id="ao-total-display">$${total.toLocaleString()}</div>
       </div>
-      <div style="display:flex;align-items:center;gap:14px;padding-top:20px;border-top:0.5px solid rgba(255,255,255,0.08);">
-        <button onclick="bookWithSelections(pkgId, pkg, basePrice, selectedTotal)" class="btn-cin-primary"><span>Book Now — $${(basePrice + selectedTotal).toLocaleString()} →</span></button>
-        <span style="font-size:11px;color:rgba(255,255,255,0.3);">50% retainer to hold your date · Balance due on session day</span>
-      </div>`;
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:24px;">
+      ${pkg.addons.map(a => `
+        <label style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:${window._addonState[pkgId][a.id] ? 'rgba(201,169,110,0.12)' : 'rgba(255,255,255,0.04)'};border:0.5px solid ${window._addonState[pkgId][a.id] ? 'var(--gold)' : 'rgba(255,255,255,0.08)'};cursor:pointer;transition:all 0.2s;" for="ao-chk-${a.id}">
+          <input type="checkbox" id="ao-chk-${a.id}" data-pkg="${pkgId}" data-price="${a.price}" onchange="addonToggle('${pkgId}','${a.id}',this.checked,${a.price},${basePrice})" style="width:18px;height:18px;margin-top:2px;accent-color:var(--gold);flex-shrink:0;cursor:pointer;" ${window._addonState[pkgId][a.id] ? 'checked' : ''}>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--warm-white);margin-bottom:3px;">${a.label}</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-bottom:6px;">${a.desc}</div>
+            <div style="font-size:13px;font-weight:500;color:var(--gold);">+$${a.price}</div>
+          </div>
+        </label>`).join('')}
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;padding-top:20px;border-top:0.5px solid rgba(255,255,255,0.12);flex-wrap:wrap;">
+      <button onclick="addonBookNow()" style="font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;background:var(--gold);color:var(--charcoal);border:none;padding:16px 36px;cursor:pointer;font-weight:500;" id="ao-book-btn">BOOK NOW — $${total.toLocaleString()} →</button>
+      <span style="font-size:11px;color:rgba(255,255,255,0.35);">50% retainer to hold your date · Balance due on session day</span>
+    </div>`;
+
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function addonToggle(pkgId, addonId, checked, price, basePrice) {
+  // Update state
+  if (!window._addonState[pkgId]) window._addonState[pkgId] = {};
+  window._addonState[pkgId][addonId] = checked;
+
+  // Update visual state of this label
+  const chk = document.getElementById('ao-chk-' + addonId);
+  if (chk) {
+    const label = chk.closest('label');
+    if (label) {
+      label.style.background = checked ? 'rgba(201,169,110,0.12)' : 'rgba(255,255,255,0.04)';
+      label.style.borderColor = checked ? 'var(--gold)' : 'rgba(255,255,255,0.08)';
+    }
   }
 
-  renderPanel();
-  panel.style.display = 'block';
-  panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Recalculate total without re-rendering (preserves all checkbox states)
+  const pkg = ADD_ONS[pkgId];
+  if (!pkg) return;
+  const selectedTotal = pkg.addons
+    .filter(a => window._addonState[pkgId][a.id])
+    .reduce((s, a) => s + a.price, 0);
+  const total = basePrice + selectedTotal;
+
+  // Update just the price displays
+  const totalEl = document.getElementById('ao-total-display');
+  if (totalEl) totalEl.textContent = '$' + total.toLocaleString();
+  const bookBtn = document.getElementById('ao-book-btn');
+  if (bookBtn) bookBtn.textContent = 'BOOK NOW — $' + total.toLocaleString() + ' →';
+
+  // Store total in panel
+  const panel = document.getElementById('addon-panel');
+  if (panel) panel.dataset.total = total;
+}
+
+function addonBookNow() {
+  const panel = document.getElementById('addon-panel');
+  if (!panel) return;
+  const pkgId = panel.dataset.pkgId;
+  const basePrice = parseInt(panel.dataset.basePrice) || 0;
+  const pkg = ADD_ONS[pkgId];
+  if (!pkg) return;
+
+  const state = window._addonState[pkgId] || {};
+  const selectedAddons = pkg.addons.filter(a => state[a.id]);
+  const selectedTotal = selectedAddons.reduce((s, a) => s + a.price, 0);
+
+  bookWithSelections(pkgId, pkg, basePrice, selectedTotal);
 }
 
 
