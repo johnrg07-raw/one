@@ -4798,7 +4798,7 @@ renderAdminClients = renderAdminClientsWithDocs;
 //  PIXIESET COVER IMAGE FETCH
 //  Uses Cloudflare Worker proxy to extract og:image
 // ══════════════════════════════════════
-const WORKER_URL = 'https://your-worker.your-subdomain.workers.dev'; // ← Replace with your Worker URL. Also add /chat endpoint to Worker (see canon_moment_worker.js)
+const WORKER_URL = 'https://canon-moment-worker.johnrg07.workers.dev'; // ← Replace with your Worker URL. Also add /chat endpoint to Worker (see canon_moment_worker.js)
 
 async function fetchPixiesetCover(pixiesetUrl) {
   if (!pixiesetUrl) return null;
