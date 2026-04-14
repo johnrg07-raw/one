@@ -336,7 +336,8 @@ nav.scrolled .nav-cta { background: var(--charcoal); color: var(--warm-white); }
 .nav-music-label { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); }
 @keyframes musicBar { 0%,100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.nav-hamburger span { width: 22px; height: 1px; background: var(--charcoal); transition: all 0.3s; display: block; }
+.nav-hamburger span { width: 22px; height: 1.5px; background: var(--warm-white); transition: all 0.3s; display: block; border-radius: 1px; }
+nav.scrolled .nav-hamburger span { background: var(--charcoal); }
 .mobile-menu { position: fixed; inset: 0; background: var(--warm-white); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; transform: translateX(100%); transition: transform 0.5s var(--ease); }
 .mobile-menu.open { transform: translateX(0); }
 .mobile-menu a { font-family: var(--serif); font-size: 32px; font-weight: 300; font-style: italic; color: var(--charcoal); text-decoration: none; cursor: pointer; transition: color 0.3s; }
@@ -1611,11 +1612,12 @@ footer { background: #141414; padding: 72px 80px 40px; }
         <span class="pkg-tier">Most Popular</span>
         <div class="pkg-name">The <em>Story</em></div>
         <div class="pkg-price">$650</div>
-        <div class="pkg-price-note">Proposals & engagements · 50% retainer</div>
+        <div class="pkg-price-note">Photo + Cinematic Video · 1 hour</div>
         <div class="pkg-divider"></div>
         <ul class="pkg-features">
-          <li>2 hours of coverage</li>
-          <li>100+ fully edited photos</li>
+          <li>1 hour of coverage</li>
+          <li>50+ fully edited photos</li>
+          <li>Cinematic highlight reel included</li>
           <li>Planning consultation included</li>
           <li>Private gallery with custom music</li>
           <li>Full-resolution downloads</li>
@@ -1776,215 +1778,205 @@ footer { background: #141414; padding: 72px 80px 40px; }
 <!-- ══ PAGE: SERVICES ══ -->
 <div class="page" id="page-services-page">
 
-  <!-- Services Hero -->
+  <!-- Hero -->
   <div style="padding:160px 80px 80px;background:var(--charcoal);position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,169,110,0.08) 0%,transparent 70%);"></div>
-    <div style="position:relative;z-index:2;max-width:700px;">
-      <span class="eyebrow" style="color:var(--gold);">What We Offer</span>
+    <div style="position:relative;z-index:2;max-width:680px;">
+      <span class="eyebrow" style="color:var(--gold);">What We Do</span>
       <h1 class="section-title" style="font-size:clamp(42px,5vw,72px);color:var(--warm-white);">Every chapter of<br><em>your love story.</em></h1>
-      <p class="section-body" style="color:rgba(255,255,255,0.55);max-width:560px;">From the secret question to the big day and everything in between. We specialize in discreet, emotional, breathtaking photography that captures what words can't describe.</p>
-      <div style="display:flex;align-items:center;gap:28px;margin-top:36px;flex-wrap:wrap;">
-        <a class="btn-primary" onclick="goPage('contact-page')" style="display:inline-block;">Book a Session</a>
-        <a class="btn-ghost" onclick="goPage('packages-page')" style="display:inline-block;color:rgba(255,255,255,0.6);border-bottom-color:rgba(255,255,255,0.3);">View Pricing →</a>
+      <p class="section-body" style="color:rgba(255,255,255,0.55);max-width:560px;">From surprise proposals to destination weddings, intimate family sessions to corporate brand photography — we capture every moment with the same invisible, emotional approach.</p>
+    </div>
+  </div>
+
+  <!-- Trust Bar / Achievements -->
+  <div style="background:var(--warm-white);border-bottom:0.5px solid var(--border);padding:28px 80px;">
+    <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;">
+        <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--charcoal);">50+</div>
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray-light);margin-top:3px;">Proposals Captured</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--charcoal);">5.0 ★</div>
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray-light);margin-top:3px;">Google Rating · 60+ Reviews</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--charcoal);">30+</div>
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray-light);margin-top:3px;">Cities Nationwide</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--charcoal);">48hr</div>
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray-light);margin-top:3px;">Avg Gallery Delivery</div>
+      </div>
+      <div style="width:1px;height:40px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--serif);font-size:32px;font-weight:300;color:var(--charcoal);">Celebrity</div>
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray-light);margin-top:3px;">Clients & Influencers</div>
       </div>
     </div>
   </div>
 
-  <!-- Service 01 — Proposal Photography -->
+  <!-- Service 01: Proposal Photography -->
   <section style="padding:100px 80px;background:var(--warm-white);border-bottom:0.5px solid var(--border);">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;">
-      <div>
-        <div style="background:var(--cream);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;position:relative;overflow:hidden;">
-          <div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(201,169,110,0.15);line-height:1;position:absolute;">01</div>
-          <div style="font-family:var(--serif);font-size:16px;color:var(--gray-light);font-style:italic;position:relative;z-index:1;">Add proposal photo here</div>
-          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-light);opacity:0.5;position:relative;z-index:1;">Image placeholder</div>
-        </div>
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div style="background:var(--ivory);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+        <div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(201,169,110,0.15);line-height:1;position:absolute;">01</div>
+        <span style="font-family:var(--serif);font-size:13px;color:var(--gray-light);font-style:italic;position:relative;">Add proposal photo</span>
       </div>
       <div>
-        <div style="display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:0.5px solid var(--border);">Service 01</div>
+        <div style="font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:0.5px solid var(--border);">Service 01</div>
         <h2 class="section-title" style="font-size:clamp(32px,3.5vw,52px);">Proposal<br><em>Photography</em></h2>
-        <p class="section-body" style="margin-bottom:24px;">Our signature service — and the one we're most known for. We've captured 50+ surprise proposals across Orlando and nationwide, each one completely discreet and breathtakingly documented.</p>
-        <p class="section-body" style="margin-bottom:32px;">We arrive early, scout angles, dress like tourists, and shoot with telephoto lenses from 50–100 feet away. Your partner will have no idea — until you drop to one knee.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:36px;">
-          <div style="padding:16px;background:var(--cream);border-left:2px solid var(--gold);">
-            <div style="font-family:var(--serif);font-size:13px;font-weight:500;color:var(--charcoal);margin-bottom:4px;">Starting at</div>
-            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gold-dark);">$375</div>
-            <div style="font-size:11px;color:var(--gray-light);letter-spacing:0.06em;">1 hour · 50+ photos</div>
-          </div>
-          <div style="padding:16px;background:var(--cream);border-left:2px solid var(--gold);">
-            <div style="font-family:var(--serif);font-size:13px;font-weight:500;color:var(--charcoal);margin-bottom:4px;">Most popular</div>
-            <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gold-dark);">$650</div>
-            <div style="font-size:11px;color:var(--gray-light);letter-spacing:0.06em;">2 hours · 100+ photos</div>
-          </div>
+        <p class="section-body" style="margin-bottom:20px;">Our signature service — and the one we're most known for. Fully discreet, emotionally driven proposal photography in Orlando and nationwide. We've captured surprise proposals at Magic Kingdom, the Orlando Science Center, Kraft Azalea Gardens, Cocoa Beach, and everywhere in between.</p>
+        <p class="section-body" style="margin-bottom:28px;">We arrive early, scout the best angles, dress like tourists, and use telephoto lenses from 50–100 feet away. Your partner will have no idea — until you drop to one knee.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Fully discreet — 100% stealth guarantee</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Photography + cinematic video available</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Full romantic setup coordination available</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> 24–48hr sneak peek · Gallery in 48–72hrs</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Available Orlando · Nationwide · International</div>
         </div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:36px;">
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> 100% discreet — we blend in completely</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Location scouting & timing coordination included</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Telephoto lenses — no one knows we're there</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Orlando & nationwide — we travel anywhere love takes you</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Gallery delivered within 48–72 hours</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> 50% deposit holds your date</li>
-        </ul>
         <div style="display:flex;gap:16px;flex-wrap:wrap;">
-          <a class="btn-primary" onclick="goPage('contact-page')">Book This Service</a>
-          <a class="btn-ghost" onclick="goPage('packages-page')">See Pricing</a>
+          <a class="btn-primary" onclick="goPage('packages-page')">View Packages →</a>
+          <a class="btn-ghost" onclick="goPage('contact-page')">Plan Your Proposal</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Service 02 — Engagement Sessions -->
+  <!-- Service 02: Engagement -->
   <section style="padding:100px 80px;background:var(--cream);border-bottom:0.5px solid var(--border);">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
       <div>
-        <div style="display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:0.5px solid var(--border);">Service 02</div>
+        <div style="font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:0.5px solid var(--border);">Service 02</div>
         <h2 class="section-title" style="font-size:clamp(32px,3.5vw,52px);">Engagement<br><em>Sessions</em></h2>
-        <p class="section-body" style="margin-bottom:24px;">Relaxed, romantic, and real. Engagement sessions are our chance to document your relationship as it naturally is — laughing, wandering, and completely in love.</p>
-        <p class="section-body" style="margin-bottom:32px;">We shoot at golden hour at your favorite Central Florida spots — Kraft Azalea Gardens, Lake Eola, Disney Springs, Harry P. Leu Gardens — or wherever you feel most yourselves. Destination sessions available too.</p>
-        <div style="padding:20px 24px;background:var(--warm-white);border:0.5px solid var(--border);margin-bottom:32px;">
-          <div style="font-family:var(--serif);font-size:13px;color:var(--gray);margin-bottom:8px;">Starting at <strong style="color:var(--gold-dark);font-size:22px;">$375</strong></div>
-          <div style="font-size:13px;color:var(--gray);">1 hour · 50+ edited photos · Private gallery delivery</div>
+        <p class="section-body" style="margin-bottom:20px;">Relaxed, romantic, and completely real. Engagement sessions are a chance to get comfortable in front of the camera before your wedding day — and to get beautiful photos of your story as a couple right now.</p>
+        <p class="section-body" style="margin-bottom:28px;">Golden hour at Kraft Azalea Gardens, Lake Eola fountain at night, Disney Springs, Harry P. Leu Gardens, Cocoa Beach at sunrise — or wherever feels most like you. We travel anywhere.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> On-location throughout Central Florida</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Couples, newly engaged, pre-wedding</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Location guidance + outfit tips provided</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Included free with wedding packages</div>
         </div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:36px;">
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Kraft Azalea, Lake Eola, Cocoa Beach, Disney area & more</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Sunset & golden hour sessions preferred</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Candid direction — no stiff posing, just real moments</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Perfect for save-the-dates and social media</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Nationwide & destination sessions available</li>
-        </ul>
-        <a class="btn-primary" onclick="goPage('contact-page')">Book This Service</a>
+        <a class="btn-primary" onclick="goPage('packages-page')">See Session Options →</a>
       </div>
-      <div>
-        <div style="background:var(--ivory);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;position:relative;overflow:hidden;">
-          <div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(201,169,110,0.15);line-height:1;position:absolute;">02</div>
-          <div style="font-family:var(--serif);font-size:16px;color:var(--gray-light);font-style:italic;position:relative;z-index:1;">Add engagement photo here</div>
-          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-light);opacity:0.5;position:relative;z-index:1;">Image placeholder</div>
-        </div>
+      <div style="background:var(--ivory);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+        <div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(201,169,110,0.15);line-height:1;position:absolute;">02</div>
+        <span style="font-family:var(--serif);font-size:13px;color:var(--gray-light);font-style:italic;position:relative;">Add engagement photo</span>
       </div>
     </div>
   </section>
 
-  <!-- Service 03 — Wedding Photography -->
+  <!-- Service 03: Weddings -->
   <section style="padding:100px 80px;background:var(--warm-white);border-bottom:0.5px solid var(--border);">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;">
-      <div>
-        <div style="background:var(--cream);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;position:relative;overflow:hidden;">
-          <div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(201,169,110,0.15);line-height:1;position:absolute;">03</div>
-          <div style="font-family:var(--serif);font-size:16px;color:var(--gray-light);font-style:italic;position:relative;z-index:1;">Add wedding photo here</div>
-        </div>
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div style="background:var(--ivory);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+        <div style="font-family:var(--serif);font-size:80px;font-weight:300;color:rgba(201,169,110,0.15);line-height:1;position:absolute;">03</div>
+        <span style="font-family:var(--serif);font-size:13px;color:var(--gray-light);font-style:italic;position:relative;">Add wedding photo</span>
       </div>
       <div>
-        <div style="display:inline-block;font-family:var(--serif);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:0.5px solid var(--border);">Service 03</div>
+        <div style="font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:0.5px solid var(--border);">Service 03</div>
         <h2 class="section-title" style="font-size:clamp(32px,3.5vw,52px);">Wedding<br><em>Photography</em></h2>
-        <p class="section-body" style="margin-bottom:24px;">Your wedding day deserves more than snapshots. We document the entire story — from getting-ready moments to the last dance — with artful, emotional photography that you'll return to for the rest of your lives.</p>
-        <p class="section-body" style="margin-bottom:32px;">Every wedding package includes a second photographer, so nothing goes undocumented. We coordinate with your vendors, scout your venue, and deliver a gallery that genuinely moves people.</p>
-        <div style="padding:20px 24px;background:var(--cream);border:0.5px solid var(--border);margin-bottom:32px;">
-          <div style="font-family:var(--serif);font-size:13px;color:var(--gray);margin-bottom:4px;">The Forever Package — Full Day Coverage</div>
-          <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gold-dark);">Starting at $3,500</div>
-          <div style="font-size:13px;color:var(--gray);margin-top:4px;">Custom quotes available · Second photographer included</div>
+        <p class="section-body" style="margin-bottom:20px;">Your wedding day is the most important day of your life — and every moment deserves to be captured as beautifully as you imagined it. We offer half-day, full-day, and destination wedding coverage with a second photographer included in every full-day package.</p>
+        <p class="section-body" style="margin-bottom:28px;">From intimate elopements in Central Florida to multi-day destination weddings in Paris or the Amalfi Coast, we travel anywhere your love story takes us.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Half-day (4hrs) and full-day (8–10hrs) coverage</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Second photographer included</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> 4–8 min cinematic highlight film</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Engagement session included</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Venue scouting + full vendor coordination</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);"><span style="color:var(--gold);">✦</span> Available in Orlando, Florida, and worldwide</div>
         </div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:36px;">
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Full-day coverage · 400+ fully edited photos</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Second photographer included in all wedding packages</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Engagement session included</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Private gallery with custom music · Print-ready files</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Delivered in 4–6 weeks</li>
-          <li style="font-size:14px;color:var(--gray);display:flex;align-items:center;gap:10px;"><span style="color:var(--gold);font-size:16px;">✦</span> Venue scouting & vendor coordination</li>
-        </ul>
-        <a class="btn-primary" onclick="goPage('contact-page')">Inquire About Weddings</a>
+        <a class="btn-primary" onclick="goPage('packages-page')">Wedding Packages →</a>
       </div>
     </div>
   </section>
 
-  <!-- Services 04–06 Grid -->
+  <!-- Service 04: Events + Corporate + Family -->
   <section style="padding:80px 80px;background:var(--cream);">
     <div style="max-width:1200px;margin:0 auto;">
-      <span class="eyebrow reveal">More Services</span>
-      <h2 class="section-title reveal" style="font-size:clamp(32px,3.5vw,48px);margin-bottom:48px;">Additional <em>sessions</em></h2>
-      <div class="services-grid">
-        <a class="service-card reveal" onclick="goPage('contact-page')">
-          <div class="service-num">04</div>
-          <h3 class="service-name">Portrait Sessions</h3>
-          <p class="service-desc">Couples, families, individuals, milestone birthdays, anniversaries. We make ordinary moments look extraordinary. Kraft Azalea, Lake Eola, Harry P. Leu Gardens and beyond.</p>
-          <div style="margin:14px 0;font-family:var(--serif);font-size:20px;color:var(--gold-dark);font-weight:300;">Starting at $300</div>
-          <span class="service-link">Book This Service →</span>
-        </a>
-        <a class="service-card reveal reveal-d1" onclick="goPage('contact-page')">
-          <div class="service-num">05</div>
-          <h3 class="service-name">Destination Shoots</h3>
-          <p class="service-desc">New York, Miami, Nashville, Paris, Amalfi Coast — wherever love takes you, we follow. We've photographed proposals and couples on three continents. Travel fees are built into custom quotes.</p>
-          <div style="margin:14px 0;font-family:var(--serif);font-size:20px;color:var(--gold-dark);font-weight:300;">Custom Pricing</div>
-          <span class="service-link">Inquire →</span>
-        </a>
-        <a class="service-card reveal reveal-d2" onclick="goPage('contact-page')">
-          <div class="service-num">06</div>
-          <h3 class="service-name">Event Coverage</h3>
-          <p class="service-desc">Corporate events, milestone celebrations, brand activations, and private parties. Professional, unobtrusive coverage that tells the complete story of your event from start to finish.</p>
-          <div style="margin:14px 0;font-family:var(--serif);font-size:20px;color:var(--gold-dark);font-weight:300;">Starting at $400</div>
-          <span class="service-link">Book This Service →</span>
-        </a>
+      <div style="text-align:center;margin-bottom:52px;">
+        <span class="eyebrow" style="display:block;text-align:center;">More Services</span>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,44px);">Beyond <em>proposals.</em></h2>
+        <p class="section-body" style="text-align:center;margin:0 auto;max-width:560px;">We bring the same passion, precision, and professionalism to every type of photography we offer.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Locations Band -->
-  <section style="padding:72px 80px;background:var(--charcoal);">
-    <div style="max-width:1200px;margin:0 auto;">
-      <span class="eyebrow" style="color:var(--gold);">Where We Shoot</span>
-      <h2 class="section-title" style="color:var(--warm-white);font-size:clamp(28px,3vw,44px);margin-bottom:36px;">Orlando & <em>Nationwide</em></h2>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05);">
-        <div style="padding:20px 24px;background:var(--charcoal);">
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;color:var(--warm-white);margin-bottom:4px;">Kraft Azalea Gardens</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">Winter Park, FL · Most requested</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:36px 28px;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:28px;margin-bottom:16px;">🎉</div>
+          <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Events</div>
+          <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:10px;">Event Coverage</div>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:20px;">Birthdays, quinceañeras, baby showers, anniversaries, galas, and milestone celebrations. Unobtrusive, professional coverage that lets your guests enjoy the moment.</p>
+          <button class="btn-ghost" onclick="goPage('packages-page');setTimeout(()=>showPkgSection('events'),300)">See Event Packages →</button>
         </div>
-        <div style="padding:20px 24px;background:var(--charcoal);">
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;color:var(--warm-white);margin-bottom:4px;">Lake Eola Park</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">Downtown Orlando · Iconic backdrop</div>
+        <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:36px 28px;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:28px;margin-bottom:16px;">🏢</div>
+          <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Corporate</div>
+          <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:10px;">Corporate & Brand</div>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:20px;">Headshots, team photos, product launches, conferences, brand campaigns, and monthly content creation. Commercial licensing available.</p>
+          <button class="btn-ghost" onclick="goPage('packages-page');setTimeout(()=>showPkgSection('corporate'),300)">See Corporate Packages →</button>
         </div>
-        <div style="padding:20px 24px;background:var(--charcoal);">
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;color:var(--warm-white);margin-bottom:4px;">Disney Springs Area</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">Lake Buena Vista · Magical setting</div>
-        </div>
-        <div style="padding:20px 24px;background:var(--charcoal);">
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;color:var(--warm-white);margin-bottom:4px;">Harry P. Leu Gardens</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">Orlando · Garden romance</div>
-        </div>
-        <div style="padding:20px 24px;background:var(--charcoal);">
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;color:var(--warm-white);margin-bottom:4px;">Cocoa Beach</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">East Coast FL · Sunset proposals</div>
-        </div>
-        <div style="padding:20px 24px;background:var(--charcoal);">
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;color:var(--warm-white);margin-bottom:4px;">Anna Maria Island</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">Gulf Coast · Beach proposals</div>
-        </div>
-        <div style="padding:20px 24px;background:var(--charcoal);">
-          <div style="font-family:var(--serif);font-size:15px;font-weight:500;color:var(--warm-white);margin-bottom:4px;">Rollins College</div>
-          <div style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em;">Winter Park · Architectural beauty</div>
-        </div>
-        <div style="padding:20px 24px;background:var(--charcoal);display:flex;align-items:center;justify-content:center;">
-          <div style="text-align:center;">
-            <div style="font-family:var(--serif);font-size:15px;color:var(--gold);margin-bottom:4px;font-style:italic;">+ Nationwide</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.3);">We travel anywhere</div>
-          </div>
+        <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:36px 28px;transition:all 0.3s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--border)'">
+          <div style="font-size:28px;margin-bottom:16px;">👨‍👩‍👧‍👦</div>
+          <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Family</div>
+          <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:10px;">Family & Portraits</div>
+          <p style="font-size:13px;color:var(--gray);line-height:1.7;margin-bottom:20px;">Family sessions, maternity, newborns, senior portraits, and in-home lifestyle photography. We come to you for a natural, relaxed experience your whole family will love.</p>
+          <button class="btn-ghost" onclick="goPage('packages-page');setTimeout(()=>showPkgSection('family'),300)">See Family Packages →</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section style="padding:80px 80px;background:var(--warm-white);text-align:center;">
-    <span class="eyebrow" style="display:block;text-align:center;">Ready to Begin?</span>
-    <h2 class="section-title" style="font-size:clamp(32px,4vw,56px);margin-bottom:16px;">Let's plan your <em>perfect moment.</em></h2>
-    <p class="section-body" style="margin:0 auto 36px;text-align:center;">Tell us about your vision and we'll put together a custom plan — location, timing, approach — everything.</p>
+  <!-- As Seen With / Achievements (SEO) -->
+  <section style="padding:80px 80px;background:var(--charcoal);">
+    <div style="max-width:1200px;margin:0 auto;text-align:center;">
+      <span class="eyebrow" style="color:var(--gold);display:block;margin-bottom:12px;">Experience & Recognition</span>
+      <h2 class="section-title" style="color:var(--warm-white);font-size:clamp(28px,3vw,44px);margin-bottom:48px;">Trusted by couples, <em>celebrated by clients.</em></h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.05);margin-bottom:52px;">
+        <div style="background:var(--charcoal);padding:32px 20px;text-align:center;">
+          <div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.6;">"The most seamless proposal experience — John thought of everything before we did."</div>
+          <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-top:12px;">Celebrity Client · Orlando</div>
+        </div>
+        <div style="background:var(--charcoal);padding:32px 20px;text-align:center;">
+          <div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.6;">"Proposed at Magic Kingdom. John was invisible until the photos showed up — absolutely incredible."</div>
+          <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-top:12px;">Nicholas L. · Walt Disney World</div>
+        </div>
+        <div style="background:var(--charcoal);padding:32px 20px;text-align:center;">
+          <div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.6;">"From engagement to wedding — we wouldn't trust anyone else. The highlight film made us cry."</div>
+          <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-top:12px;">Danielle D. · Orlando Wedding</div>
+        </div>
+        <div style="background:var(--charcoal);padding:32px 20px;text-align:center;">
+          <div style="font-family:var(--serif);font-size:13px;font-style:italic;color:rgba(255,255,255,0.5);line-height:1.6;">"Shot our corporate rebrand campaign. The team headshots alone transformed our entire website."</div>
+          <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-top:12px;">Corporate Client · Central Florida</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;padding-top:32px;border-top:0.5px solid rgba(255,255,255,0.06);">
+        <div style="text-align:center;">
+          <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:6px;">Featured Locations</div>
+          <div style="font-family:var(--serif);font-size:14px;color:rgba(255,255,255,0.5);">Walt Disney World · Magic Kingdom · Orlando Science Center · Kraft Azalea</div>
+        </div>
+        <div style="width:1px;height:36px;background:rgba(255,255,255,0.08);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:6px;">Available In</div>
+          <div style="font-family:var(--serif);font-size:14px;color:rgba(255,255,255,0.5);">Orlando · Miami · NYC · Nashville · Cancún · Paris · Amalfi Coast</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services CTA -->
+  <section style="padding:80px 80px;background:var(--cream);text-align:center;">
+    <span class="eyebrow" style="display:block;text-align:center;margin-bottom:12px;">Ready to book?</span>
+    <h2 class="section-title" style="font-size:clamp(28px,3.5vw,48px);margin-bottom:16px;">Let's capture your <em>moment.</em></h2>
+    <p class="section-body" style="text-align:center;max-width:500px;margin:0 auto 32px;">Tell us about your vision. We'll handle every detail — from location scouting to gallery delivery — so you can focus on what matters.</p>
     <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;">
-      <a class="btn-primary" onclick="goPage('contact-page')">Start Planning</a>
-      <a class="btn-ghost" onclick="goPage('packages-page')">View Packages & Pricing</a>
+      <a class="btn-primary" onclick="goPage('contact-page')">Contact Us →</a>
+      <a class="btn-ghost" onclick="goPage('packages-page')">View Pricing</a>
     </div>
   </section>
 
 </div>
 
-<!-- ══ PAGE: GALLERY ══ -->
 <div class="page" id="page-gallery-page">
   <div style="padding:160px 80px 60px;background:var(--charcoal);position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(201,169,110,0.07) 0%,transparent 70%);"></div>
@@ -2074,7 +2066,11 @@ footer { background: #141414; padding: 72px 80px 40px; }
         </div>
 
         <!-- PROPOSAL / PORTRAIT PACKAGES -->
-        <div style="margin-bottom:16px;"><span class="eyebrow">Proposal & Portrait Sessions</span></div>
+        <!-- Category header -->
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:14px;border-bottom:0.5px solid var(--border);">
+          <span class="eyebrow" style="font-size:10px;letter-spacing:0.24em;">📸 Proposals & Portraits</span>
+          <span style="font-size:12px;color:var(--gray-light);">Surprise proposals, engagement sessions, individual portraits</span>
+        </div>
         <div class="packages-grid" style="margin-bottom:60px;">
 
           <!-- The Moment -->
@@ -2134,7 +2130,10 @@ footer { background: #141414; padding: 72px 80px 40px; }
         </div>
 
         <!-- WEDDING PACKAGES -->
-        <div style="margin-bottom:16px;"><span class="eyebrow">Wedding Packages</span></div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:14px;border-bottom:0.5px solid var(--border);margin-top:60px;">
+          <span class="eyebrow" style="font-size:10px;letter-spacing:0.24em;">💍 Weddings</span>
+          <span style="font-size:12px;color:var(--gray-light);">Half-day, full-day, and destination wedding coverage</span>
+        </div>
         <div class="packages-grid" style="margin-bottom:60px;">
 
           <!-- Half Day -->
@@ -2163,13 +2162,15 @@ footer { background: #141414; padding: 72px 80px 40px; }
             <div class="package-price">$3,500</div>
             <div class="package-note">Full-day wedding coverage</div>
             <ul class="package-features">
-              <li>8–10 hours of coverage</li>
+              <li>8–10 hours of full coverage</li>
               <li>Second photographer included</li>
               <li>Engagement session included</li>
               <li>400+ fully edited photos</li>
-              <li>Cinematic highlight film</li>
+              <li>4–8 min cinematic highlight film</li>
+              <li>Ceremony + reception full video</li>
               <li>Private gallery with custom music</li>
-              <li>Print-ready & digital files</li>
+              <li>Print-ready & web-optimized files</li>
+              <li>Venue scouting + timeline coordination</li>
               <li style="color:var(--gold)">Gallery in 2–3 weeks</li>
             </ul>
             <button class="package-cta" onclick="showAddOns('forever')">Book + Add-Ons →</button>
@@ -2195,7 +2196,10 @@ footer { background: #141414; padding: 72px 80px 40px; }
         </div>
 
         <!-- SETUP PACKAGES (existing) -->
-        <div style="margin-bottom:16px;"><span class="eyebrow">Full-Coordination Proposal Packages</span></div>
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;padding-bottom:14px;border-bottom:0.5px solid var(--border);margin-top:60px;">
+          <span class="eyebrow" style="font-size:10px;letter-spacing:0.24em;">✦ Full Setup & Coordination</span>
+          <span style="font-size:12px;color:var(--gray-light);">Photography + video + full romantic setup. 4-week advance booking required.</span>
+        </div>
         <div class="setup-grid" style="position:relative;z-index:2;margin-bottom:16px;">
           <div class="setup-card">
             <span class="setup-card-tier">The Essential</span>
@@ -3499,11 +3503,34 @@ function applySettings() {
     if (bar) { const s = bar.querySelector('strong'); if (s) s.textContent = urgencyNum + ' dates'; }
   }
 
-  // Music
+  // Music — apply after any user interaction
   const musicUrl = localStorage.getItem('cm-music-url');
-  if (musicUrl && typeof audio !== 'undefined') {
-    const src = audio.querySelector('source');
-    if (src) { src.src = musicUrl; audio.load(); }
+  if (musicUrl) {
+    const applyMusic = () => {
+      if (typeof audio !== 'undefined' && audio) {
+        const src = audio.querySelector('source');
+        if (src) { src.src = musicUrl; audio.load(); }
+      } else {
+        // Create audio element if not found
+        const aud = document.createElement('audio');
+        aud.id = 'bg-audio';
+        aud.loop = true;
+        const src = document.createElement('source');
+        src.src = musicUrl;
+        aud.appendChild(src);
+        document.body.appendChild(aud);
+      }
+    };
+    // Apply immediately
+    applyMusic();
+    // Also re-apply on first user interaction (mobile autoplay policy)
+    const onFirstInteraction = () => {
+      applyMusic();
+      document.removeEventListener('touchstart', onFirstInteraction);
+      document.removeEventListener('click', onFirstInteraction);
+    };
+    document.addEventListener('touchstart', onFirstInteraction, { once: true });
+    document.addEventListener('click', onFirstInteraction, { once: true });
   }
 
   // SEO meta title
@@ -3758,7 +3785,22 @@ function renderAdminInvoices() {
 }
 function renderAdminGalleries() {
   const galleries=DB.get('galleries',[]);
-  document.getElementById('admin-galleries-grid').innerHTML=galleries.map(g=>`<div class="gal-mgr-card"><div class="gal-mgr-thumb">${g.name}</div><div class="gal-mgr-info"><div class="gal-mgr-name">${g.name}</div><div class="gal-mgr-meta">${g.type} · ${g.date} · ${g.photoCount} photos · <span class="status-badge ${g.status==='delivered'?'status-paid':'status-pending'}" style="font-size:8px">${g.status}</span></div><div class="gal-mgr-actions"><button class="admin-action-btn" onclick="editGalleryModal('${g.id}')">Edit</button><button class="admin-action-btn danger" onclick="deleteGallery('${g.id}')">Delete</button></div></div></div>`).join('')+`<button class="add-gal-btn" onclick="openNewGalleryModal()"><div class="add-gal-icon">＋</div><div class="add-gal-label">New Gallery</div></button>`;
+  document.getElementById('admin-galleries-grid').innerHTML = galleries.map(g => `
+    <div class="gal-mgr-card">
+      <div class="gal-mgr-thumb" style="height:120px;overflow:hidden;background:var(--ivory);display:flex;align-items:center;justify-content:center;">
+        ${g.coverImage ? `<img src="${g.coverImage}" style="width:100%;height:100%;object-fit:cover;">` : `<span style="font-size:12px;color:var(--gray-light);font-style:italic;">${g.pixiesetUrl ? 'Loading cover...' : 'No cover image'}</span>`}
+      </div>
+      <div class="gal-mgr-info">
+        <div class="gal-mgr-name">${g.name}</div>
+        <div class="gal-mgr-meta">${g.type} · ${g.date} · ${g.photoCount} photos · <span class="status-badge ${g.status==='delivered'?'status-paid':'status-pending'}" style="font-size:8px">${g.status}</span></div>
+        ${g.pixiesetUrl ? `<div style="font-size:10px;color:var(--gold-dark);margin-top:4px;word-break:break-all;">${g.pixiesetUrl.replace('https://','')}</div>` : ''}
+        <div class="gal-mgr-actions" style="margin-top:10px;">
+          <button class="admin-action-btn" onclick="editGalleryModal('${g.id}')">Edit</button>
+          ${g.pixiesetUrl ? `<button class="admin-action-btn" onclick="fetchAndSaveCover('${g.id}')">Fetch Cover</button>` : ''}
+          <button class="admin-action-btn danger" onclick="deleteGallery('${g.id}')">Delete</button>
+        </div>
+      </div>
+    </div>`).join('') + `<button class="add-gal-btn" onclick="openNewGalleryModal()"><div class="add-gal-icon">＋</div><div class="add-gal-label">New Gallery</div></button>`;
 }
 const sectionMeta=[{key:'section-pain',label:'Questions / Why Us'},{key:'section-about',label:'About Section'},{key:'section-services',label:'Services Grid'},{key:'section-gallery',label:'Gallery Preview'},{key:'section-experience',label:'How It Works (Steps)'},{key:'section-packages',label:'Packages / Pricing'},{key:'section-setup',label:'Setup Packages ($1,200+)'},{key:'section-vendors',label:'Preferred Vendors'},{key:'section-testimonials',label:'Testimonials Carousel'},{key:'section-faq',label:'FAQ Section'}];
 function renderVisibilityToggles() {
@@ -4109,8 +4151,12 @@ document.addEventListener('keydown', e => {
 // ═══════════════════════════════════
 //  INIT
 seedData();
-applySettings();
-loadGalleryPhotos();
+// Defer applySettings to ensure DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => { applySettings(); loadGalleryPhotos(); });
+} else {
+  applySettings(); loadGalleryPhotos();
+}
 
 // Apply saved music on init
 (function(){
@@ -4486,8 +4532,14 @@ function savePortfolioPhoto() {
   const photos = DB.get('portfolioPhotos', []);
   photos.push({ url, category: document.getElementById('ap-cat').value, caption: document.getElementById('ap-caption').value.trim() });
   DB.set('portfolioPhotos', photos);
-  closeModal(); renderPortfolioManager();
-  showToast('Photo added to portfolio.', 'success');
+  closeModal();
+  renderPortfolioManager();
+  // Also refresh the public gallery page if it's visible
+  if (typeof filterGallery === 'function') {
+    const activeBtn = document.querySelector('.gallery-filter-btn.active');
+    if (activeBtn) filterGallery(activeBtn.onclick?.toString().match(/'([^']+)'/)?.[1] || 'all', activeBtn);
+  }
+  showToast('Photo added to portfolio — visible on Gallery page ✓', 'success');
 }
 
 function deletePortfolioPhoto(i) {
@@ -5842,6 +5894,87 @@ function loadEditorValues() {
 }
 
 
+
+// ══════════════════════════════════════
+//  CONTACT FORM AUTO-POPULATE FROM PACKAGES
+// ══════════════════════════════════════
+
+// Stored selection for contact form
+let pendingBooking = null;
+
+function bookWithSelections(pkgId, pkg, basePrice, selectedTotal) {
+  // Gather selected add-ons
+  const selected = pkg.addons.filter(a => document.getElementById('ao-chk-'+a.id)?.checked);
+  const addOnNames = selected.map(a => a.label + ' (+$' + a.price + ')');
+  const total = basePrice + selectedTotal;
+
+  pendingBooking = {
+    package: pkg.name,
+    addOns: addOnNames,
+    total: total,
+    basePrice: basePrice,
+    addOnTotal: selectedTotal
+  };
+
+  // Navigate to contact page then populate
+  goPage('contact-page');
+  setTimeout(() => populateContactFromBooking(), 300);
+}
+
+function populateContactFromBooking() {
+  if (!pendingBooking) return;
+  const b = pendingBooking;
+
+  // Find the session type dropdown and set it
+  const sessionSel = document.querySelector('.contact-form select');
+  if (sessionSel) {
+    // Find closest matching option
+    for (let opt of sessionSel.options) {
+      if (b.package.toLowerCase().includes('wedding') && opt.text.toLowerCase().includes('wedding')) {
+        sessionSel.value = opt.value; break;
+      } else if (b.package.toLowerCase().includes('proposal') || b.package.toLowerCase().includes('moment') || b.package.toLowerCase().includes('story')) {
+        if (opt.text.toLowerCase().includes('proposal')) { sessionSel.value = opt.value; break; }
+      } else if (b.package.toLowerCase().includes('event')) {
+        if (opt.text.toLowerCase().includes('event')) { sessionSel.value = opt.value; break; }
+      } else if (b.package.toLowerCase().includes('family') || b.package.toLowerCase().includes('portrait')) {
+        if (opt.text.toLowerCase().includes('portrait')) { sessionSel.value = opt.value; break; }
+      }
+    }
+  }
+
+  // Populate the vision/message textarea
+  const textarea = document.querySelector('.contact-form textarea');
+  if (textarea) {
+    let msg = '📦 Package: ' + b.package + '\n';
+    if (b.addOns.length) msg += '✦ Add-ons selected:\n' + b.addOns.map(a => '  • ' + a).join('\n') + '\n';
+    msg += '💰 Estimated Total: $' + b.total.toLocaleString() + '\n\n';
+    msg += 'Additional details about my vision:\n';
+    textarea.value = msg;
+    textarea.focus();
+    textarea.setSelectionRange(msg.length, msg.length);
+  }
+
+  // Show a toast
+  showToast('Package selection added to your inquiry ✓', 'success');
+
+  // Highlight the form briefly
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.style.transition = 'box-shadow 0.5s';
+    form.style.boxShadow = '0 0 0 2px var(--gold)';
+    setTimeout(() => form.style.boxShadow = '', 2000);
+  }
+
+  pendingBooking = null;
+}
+
+// Also allow manual call from anywhere
+function openContactWithPackage(pkgName, price) {
+  pendingBooking = { package: pkgName + ' — $' + price, addOns: [], total: price, basePrice: price, addOnTotal: 0 };
+  goPage('contact-page');
+  setTimeout(() => populateContactFromBooking(), 300);
+}
+
 // ══════════════════════════════════════
 //  PACKAGES — SECTION SWITCHER & ADD-ONS
 // ══════════════════════════════════════
@@ -6026,7 +6159,7 @@ function showAddOns(pkgId) {
           </label>`).join('')}
       </div>
       <div style="display:flex;align-items:center;gap:14px;padding-top:20px;border-top:0.5px solid rgba(255,255,255,0.08);">
-        <button onclick="goPage('contact-page')" class="btn-cin-primary"><span>Book Now — $${(basePrice + selectedTotal).toLocaleString()} →</span></button>
+        <button onclick="bookWithSelections(pkgId, pkg, basePrice, selectedTotal)" class="btn-cin-primary"><span>Book Now — $${(basePrice + selectedTotal).toLocaleString()} →</span></button>
         <span style="font-size:11px;color:rgba(255,255,255,0.3);">50% retainer to hold your date · Balance due on session day</span>
       </div>`;
   }
@@ -6034,6 +6167,45 @@ function showAddOns(pkgId) {
   renderPanel();
   panel.style.display = 'block';
   panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+
+async function fetchAndSaveCover(galleryId) {
+  const galleries = DB.get('galleries', []);
+  const g = galleries.find(x => x.id === galleryId);
+  if (!g || !g.pixiesetUrl) { showToast('No Pixieset URL set for this gallery', 'error'); return; }
+
+  showToast('Fetching cover image...', 'success');
+
+  // Try Worker proxy first
+  const workerUrl = (typeof WORKER_URL !== 'undefined' && WORKER_URL && !WORKER_URL.includes('your-worker'))
+    ? WORKER_URL : null;
+
+  if (!workerUrl) {
+    // Fallback: use Pixieset og:image pattern directly
+    // Pixieset galleries follow predictable URL patterns
+    const url = g.pixiesetUrl.trim();
+    // Try to construct a probable thumbnail from the URL
+    showToast('Worker URL not configured. Set WORKER_URL in Site Editor → Integrations to auto-fetch covers.', 'error');
+    return;
+  }
+
+  try {
+    const res = await fetch(workerUrl + '/fetch-cover?url=' + encodeURIComponent(g.pixiesetUrl));
+    const data = await res.json();
+    if (data.coverImage) {
+      const idx = galleries.findIndex(x => x.id === galleryId);
+      galleries[idx].coverImage = data.coverImage;
+      if (data.title) galleries[idx].name = galleries[idx].name || data.title;
+      DB.set('galleries', galleries);
+      renderAdminGalleries();
+      showToast('Cover image fetched and saved ✓', 'success');
+    } else {
+      showToast('Could not fetch cover — check Pixieset URL', 'error');
+    }
+  } catch(e) {
+    showToast('Cover fetch failed: ' + e.message, 'error');
+  }
 }
 
 // ── Show notification dot after 8 seconds ──
