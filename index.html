@@ -616,8 +616,8 @@ footer { background: #141414; padding: 72px 80px 40px; }
 .sticky-cta-btn { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--charcoal); background: var(--gold); padding: 12px 24px; border: none; cursor: pointer; text-decoration: none; }
 
 /* ORIGINAL ADMIN PANEL (quick settings) */
-.admin-trigger { position: fixed; bottom: 24px; left: 24px; z-index: 800; width: 40px; height: 40px; border-radius: 50%; background: var(--charcoal); border: 1px solid var(--gold); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--gold); transition: all 0.3s; opacity: 0.4; }
-.admin-trigger:hover { opacity: 1; transform: scale(1.1); }
+.admin-trigger { display: none !important; }
+
 .quick-admin-overlay { position: fixed; inset: 0; z-index: 10000; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; }
 .quick-admin-overlay.active { display: flex; }
 .admin-inner { background: var(--warm-white); width: 90vw; max-width: 900px; max-height: 85vh; overflow-y: auto; padding: 48px; position: relative; }
@@ -1592,7 +1592,7 @@ footer { background: #141414; padding: 72px 80px 40px; }
         <span class="pkg-tier">The Essential</span>
         <div class="pkg-name">The <em>Moment</em></div>
         <div class="pkg-price">$375</div>
-        <div class="pkg-price-note">Perfect for proposals · 50% retainer</div>
+        <div class="pkg-price-note">Proposals · Portraits · 50% retainer</div>
         <div class="pkg-divider"></div>
         <ul class="pkg-features">
           <li>1 hour of coverage</li>
@@ -2045,232 +2045,474 @@ footer { background: #141414; padding: 72px 80px 40px; }
 
 <div class="page" id="page-packages-page">
 
-  <!-- Packages Hero -->
+  <!-- ══ PACKAGES HERO ══ -->
   <div style="padding:160px 80px 80px;background:var(--charcoal);position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(201,169,110,0.08) 0%,transparent 65%);"></div>
-    <div style="position:relative;z-index:2;max-width:700px;">
+    <div style="position:relative;z-index:2;max-width:720px;">
       <span class="eyebrow" style="color:var(--gold);">Pricing & Packages</span>
-      <h1 class="section-title" style="font-size:clamp(42px,5vw,72px);color:var(--warm-white);">Investment in<br><em>priceless memories.</em></h1>
-      <p class="section-body" style="color:rgba(255,255,255,0.55);">Transparent pricing. No hidden fees. Every package includes a planning consultation, professional editing, and a private online gallery. Custom packages always available.</p>
+      <h1 class="section-title" style="font-size:clamp(42px,5vw,72px);color:var(--warm-white);">Transparent pricing.<br><em>No surprises.</em></h1>
+      <p class="section-body" style="color:rgba(255,255,255,0.5);">Every package includes professional editing, a private online gallery, and 48–72hr delivery. 50% retainer holds your date. Choose your session below or explore specialty services.</p>
+      <!-- Sub-nav for specialty sessions -->
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;">
+        <button onclick="showPkgSection('main')" class="pkg-subnav active" id="pnav-main">All Packages</button>
+        <button onclick="showPkgSection('events')" class="pkg-subnav" id="pnav-events">Events</button>
+        <button onclick="showPkgSection('corporate')" class="pkg-subnav" id="pnav-corporate">Corporate</button>
+        <button onclick="showPkgSection('family')" class="pkg-subnav" id="pnav-family">Family & Portraits</button>
+      </div>
     </div>
   </div>
 
-  <!-- Packages -->
-  <section style="padding:80px 80px;background:var(--cream);">
-    <div style="max-width:1200px;margin:0 auto;">
-      <div style="text-align:center;margin-bottom:56px;">
-        <span class="eyebrow" style="display:block;text-align:center;">Choose Your Package</span>
-        <h2 class="section-title" style="font-size:clamp(32px,3.5vw,48px);">Simple, transparent <em>pricing.</em></h2>
-        <p class="section-body" style="text-align:center;margin:0 auto;">50% deposit secures your date. Balance due on session day. All packages include full professional editing.</p>
-      </div>
-      <div class="packages-grid">
-        <div class="package-card reveal">
-          <span class="package-tag">Proposal Starter</span>
-          <h3 class="package-name">The Moment</h3>
-          <div class="package-price">$375</div>
-          <div class="package-note">Perfect for proposals</div>
-          <ul class="package-features">
-            <li>1 hour of coverage</li>
-            <li>50+ fully edited photos</li>
-            <li>Planning consultation</li>
-            <li>Location coordination</li>
-            <li>Private online gallery</li>
-            <li>Full-resolution downloads</li>
-            <li>Gallery delivered in 48–72 hours</li>
-            <li>50% deposit to book</li>
-          </ul>
-          <button class="package-cta" onclick="goPage('contact-page')">Book This Package</button>
-          <div style="margin-top:12px;text-align:center;font-size:12px;color:var(--gray-light);">Or book online at our <a href="https://canonmomentphotographyllc.pixieset.com/booking/" target="_blank" style="color:var(--gold);">booking page →</a></div>
+  <!-- ══ MAIN PACKAGES SECTION ══ -->
+  <div id="pkg-section-main">
+
+    <!-- CORE PACKAGES -->
+    <section style="padding:80px 80px;background:var(--cream);">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div style="text-align:center;margin-bottom:56px;">
+          <span class="eyebrow" style="display:block;text-align:center;">Photography Sessions</span>
+          <h2 class="section-title" style="font-size:clamp(28px,3.5vw,44px);">Choose your <em>session.</em></h2>
         </div>
 
-        <div class="package-card featured reveal reveal-d1">
-          <span class="package-tag">Most Popular</span>
-          <h3 class="package-name">The Story</h3>
-          <div class="package-price">$650</div>
-          <div class="package-note">Proposals & engagements</div>
-          <ul class="package-features">
-            <li>2 hours of coverage</li>
-            <li>100+ fully edited photos</li>
-            <li>Planning consultation</li>
-            <li>Location scouting</li>
-            <li>Private gallery with music</li>
-            <li>Full-resolution downloads</li>
-            <li>Gallery delivered in 48–72 hours</li>
-            <li>24–48hr sneak peek guaranteed</li>
-            <li>50% deposit to book</li>
-          </ul>
-          <button class="package-cta" onclick="goPage('contact-page')">Book This Package</button>
-          <div style="margin-top:12px;text-align:center;font-size:12px;color:rgba(255,255,255,0.4);">Or book at our <a href="https://canonmomentphotographyllc.pixieset.com/booking/" target="_blank" style="color:var(--gold-light);">booking page →</a></div>
-        </div>
+        <!-- PROPOSAL / PORTRAIT PACKAGES -->
+        <div style="margin-bottom:16px;"><span class="eyebrow">Proposal & Portrait Sessions</span></div>
+        <div class="packages-grid" style="margin-bottom:60px;">
 
-        <div class="package-card reveal reveal-d2">
-          <span class="package-tag">Premium Wedding</span>
-          <h3 class="package-name">The Forever</h3>
-          <div class="package-price">$3,500</div>
-          <div class="package-note">Full wedding coverage</div>
-          <ul class="package-features">
-            <li>Full day coverage (8–10hrs)</li>
-            <li>Second photographer included</li>
-            <li>Engagement session included</li>
-            <li>400+ fully edited photos</li>
-            <li>Private gallery with music</li>
-            <li>Print-ready & web files</li>
-            <li>4–6 week delivery</li>
-            <li>Vendor coordination</li>
-            <li>50% deposit to book</li>
-          </ul>
-          <button class="package-cta" onclick="goPage('contact-page')">Inquire About Weddings</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Additional Packages -->
-  <section style="padding:0 80px 80px;background:var(--cream);">
-    <div style="max-width:1200px;margin:0 auto;border-top:0.5px solid var(--border);padding-top:60px;">
-      <h3 class="section-title" style="font-size:clamp(24px,2.5vw,36px);margin-bottom:36px;">Other sessions &amp; <em>add-ons</em></h3>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-        <div style="padding:28px;background:var(--warm-white);border:0.5px solid var(--border);">
-          <div style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--charcoal);margin-bottom:8px;">Portrait Session</div>
-          <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gold-dark);margin-bottom:8px;">$300+</div>
-          <div style="font-size:13px;color:var(--gray);line-height:1.6;">Couples, families, individuals, milestones. 1 hour · 50+ photos · Private gallery.</div>
-        </div>
-        <div style="padding:28px;background:var(--warm-white);border:0.5px solid var(--border);">
-          <div style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--charcoal);margin-bottom:8px;">Event Coverage</div>
-          <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gold-dark);margin-bottom:8px;">$400+</div>
-          <div style="font-size:13px;color:var(--gray);line-height:1.6;">Corporate events, parties, milestones. Hourly rates · Full editing · Gallery delivery.</div>
-        </div>
-        <div style="padding:28px;background:var(--warm-white);border:0.5px solid var(--border);">
-          <div style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--charcoal);margin-bottom:8px;">Destination Shoots</div>
-          <div style="font-family:var(--serif);font-size:28px;font-weight:300;color:var(--gold-dark);margin-bottom:8px;">Custom</div>
-          <div style="font-size:13px;color:var(--gray);line-height:1.6;">NYC, Miami, Nashville, Paris & beyond. Travel fees built into a custom quote.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ FULL EXPERIENCE / SETUP PACKAGES on Packages Page ══ -->
-  <section style="padding:80px 80px;background:var(--charcoal);position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(201,169,110,0.06) 0%,transparent 70%);"></div>
-    <div style="text-align:center;margin-bottom:56px;position:relative;z-index:2;">
-      <span class="eyebrow" style="color:var(--gold);display:block;">The Full Experience</span>
-      <h2 class="section-title" style="color:var(--warm-white);font-size:clamp(28px,3.5vw,48px);">Photography + Setup +<br><em>Everything.</em></h2>
-      <p class="section-body" style="color:rgba(255,255,255,0.45);text-align:center;margin:0 auto;">Fully coordinated proposal experiences — photography, video, romantic setup, and more. Must book 4 weeks in advance.</p>
-    </div>
-    <div class="setup-grid" style="position:relative;z-index:2;">
-      <div class="setup-card">
-        <span class="setup-card-tier">The Essential Experience</span>
-        <div class="setup-card-name">The Proposal<br>Package</div>
-        <div class="setup-card-sub">Photography + Setup + Video</div>
-        <div class="setup-card-price">$1,200</div>
-        <div class="setup-card-price-note">Starting price · Custom quote provided</div>
-        <ul class="setup-includes">
-          <li>2 hours of photography coverage</li>
-          <li>100+ fully edited photos</li>
-          <li>Cinematic proposal video / reel</li>
-          <li>Rose petal arrangement</li>
-          <li>Candle setup with lanterns</li>
-          <li>Custom name / message sign</li>
-          <li>Location coordination & scouting</li>
-          <li>24–48hr sneak peek · Gallery in 48–72hrs</li>
-        </ul>
-        <button class="setup-card-cta" onclick="goPage('contact-page')">Request This Package</button>
-      </div>
-      <div class="setup-card featured">
-        <div class="setup-featured-badge">Most Requested</div>
-        <span class="setup-card-tier">The Premium Experience</span>
-        <div class="setup-card-name">The Luxury<br>Proposal</div>
-        <div class="setup-card-sub">Photography + Full Setup + Video + 2nd Shooter</div>
-        <div class="setup-card-price">$1,500</div>
-        <div class="setup-card-price-note">Starting price · Custom quote provided</div>
-        <ul class="setup-includes">
-          <li>2 hours · 2nd photographer included</li>
-          <li>Cinematic video + social reel</li>
-          <li>Full floral arrangement with stands</li>
-          <li>Rose petal pathway or pattern</li>
-          <li>Tall pillar candles + lanterns</li>
-          <li>Flower arch or backdrop</li>
-          <li>Bluetooth speaker for your song</li>
-          <li>Custom name sign + letter props</li>
-          <li>Picnic setup available (add-on from $150)</li>
-          <li>24–48hr sneak peek · Gallery in 48–72hrs</li>
-        </ul>
-        <button class="setup-card-cta" onclick="goPage('contact-page')">Request This Package</button>
-      </div>
-      <div class="setup-card">
-        <span class="setup-card-tier">The Ultimate Experience</span>
-        <div class="setup-card-name">The Grand<br>Proposal</div>
-        <div class="setup-card-sub">Everything + Live Violinist + Same-Day Sneak Peek</div>
-        <div class="setup-card-price">$2,000</div>
-        <div class="setup-card-price-note">Starting price · Custom quote provided</div>
-        <ul class="setup-includes">
-          <li>2 photographers on location</li>
-          <li>Full cinematic video + social reel</li>
-          <li>Live violinist during the proposal</li>
-          <li>Grand floral arch + full petal setup</li>
-          <li>Premium candle arrangement</li>
-          <li>Bluetooth speaker + custom signage</li>
-          <li>Picnic setup available (add-on from $150)</li>
-          <li><strong style="color:var(--gold)">Same-day sneak peek guaranteed</strong></li>
-          <li>Full gallery delivered in 48–72hrs</li>
-        </ul>
-        <button class="setup-card-cta" onclick="goPage('contact-page')">Request This Package</button>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:36px;padding-top:28px;border-top:0.5px solid rgba(255,255,255,0.06);position:relative;z-index:2;">
-      <p style="font-size:13px;color:rgba(255,255,255,0.35);max-width:640px;margin:0 auto 20px;line-height:1.7;"><strong style="color:rgba(255,255,255,0.6);">Picnic Add-on ($150+):</strong> Charcuterie board, champagne, juice, fruit & styled table. · <strong style="color:rgba(255,255,255,0.6);">Custom from $2,500:</strong> Fully coordinated experience — photography, video, setup, and full vendor management.</p>
-      <button class="btn-gold" onclick="goPage('contact-page')" style="display:inline-block;border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:0.22em;text-transform:uppercase;color:var(--charcoal);background:var(--gold);padding:18px 44px;">Request a Custom Experience →</button>
-    </div>
-  </section>
-
-
-  <!-- Booking Info + FAQ -->
-  <section style="padding:80px 80px;background:var(--warm-white);">
-    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;">
-      <div>
-        <span class="eyebrow">How to Book</span>
-        <h2 class="section-title" style="font-size:clamp(28px,3vw,40px);margin-bottom:28px;">Simple as <em>one, two, three.</em></h2>
-        <div style="display:flex;flex-direction:column;gap:0;">
-          <div style="display:flex;gap:24px;padding:24px 0;border-bottom:0.5px solid var(--border);">
-            <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);opacity:0.5;line-height:1;flex-shrink:0;width:44px;">1</div>
-            <div>
-              <div style="font-family:var(--serif);font-size:17px;font-weight:500;color:var(--charcoal);margin-bottom:6px;">Tell Us About Your Moment</div>
-              <div style="font-size:14px;color:var(--gray);line-height:1.7;">Fill out our contact form or book directly at our <a href="https://canonmomentphotographyllc.pixieset.com/booking/" target="_blank" style="color:var(--gold);">Pixieset booking page</a>. Tell us the date, location, and what you're planning.</div>
-            </div>
+          <!-- The Moment -->
+          <div class="package-card reveal" id="pkg-moment">
+            <span class="package-tag">Essential</span>
+            <h3 class="package-name">The Moment</h3>
+            <div class="package-price">$375</div>
+            <div class="package-note">Proposals · Portraits · Engagements</div>
+            <ul class="package-features">
+              <li>1 hour of coverage</li>
+              <li>50+ fully edited photos</li>
+              <li>Planning consultation</li>
+              <li>Location coordination</li>
+              <li>Private gallery with music</li>
+              <li>Full-resolution downloads</li>
+              <li>Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('moment')">Book + Add-Ons →</button>
           </div>
-          <div style="display:flex;gap:24px;padding:24px 0;border-bottom:0.5px solid var(--border);">
-            <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);opacity:0.5;line-height:1;flex-shrink:0;width:44px;">2</div>
-            <div>
-              <div style="font-family:var(--serif);font-size:17px;font-weight:500;color:var(--charcoal);margin-bottom:6px;">50% Deposit Holds Your Date</div>
-              <div style="font-size:14px;color:var(--gray);line-height:1.7;">We'll send a contract and invoice. A 50% deposit locks in your date exclusively. Balance is due on or before your session.</div>
-            </div>
+
+          <!-- The Story -->
+          <div class="package-card featured reveal reveal-d1" id="pkg-story">
+            <span class="package-tag">Most Popular</span>
+            <h3 class="package-name">The Story</h3>
+            <div class="package-price">$650</div>
+            <div class="package-note">Photo + Video · 1 hour</div>
+            <ul class="package-features">
+              <li>1 hour of coverage</li>
+              <li>50+ fully edited photos</li>
+              <li>Cinematic video / reel included</li>
+              <li>Planning consultation</li>
+              <li>Private gallery with custom music</li>
+              <li>Full-resolution downloads</li>
+              <li style="color:var(--gold)">24–48hr sneak peek guaranteed</li>
+              <li style="color:var(--gold)">Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('story')">Book + Add-Ons →</button>
           </div>
-          <div style="display:flex;gap:24px;padding:24px 0;">
-            <div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--gold);opacity:0.5;line-height:1;flex-shrink:0;width:44px;">3</div>
-            <div>
-              <div style="font-family:var(--serif);font-size:17px;font-weight:500;color:var(--charcoal);margin-bottom:6px;">We Plan Everything Together</div>
-              <div style="font-size:14px;color:var(--gray);line-height:1.7;">We coordinate timing, location, approach, and all logistics. You just show up — we handle everything else.</div>
-            </div>
+
+          <!-- The Forever -->
+          <div class="package-card reveal reveal-d2" id="pkg-forever">
+            <span class="package-tag">Full Wedding</span>
+            <h3 class="package-name">The Forever</h3>
+            <div class="package-price">$3,500</div>
+            <div class="package-note">Full-day wedding coverage</div>
+            <ul class="package-features">
+              <li>Full day (8–10 hrs)</li>
+              <li>Second photographer included</li>
+              <li>Engagement session included</li>
+              <li>400+ fully edited photos</li>
+              <li>Private gallery with custom music</li>
+              <li>Print-ready files included</li>
+              <li style="color:var(--gold)">Gallery in 2–3 weeks</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('forever')">Book + Add-Ons →</button>
           </div>
         </div>
-        <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
-          <a class="btn-primary" onclick="goPage('contact-page')">Start Here</a>
-          <a href="https://canonmomentphotographyllc.pixieset.com/booking/" target="_blank" class="btn-ghost">Book Online →</a>
+
+        <!-- WEDDING PACKAGES -->
+        <div style="margin-bottom:16px;"><span class="eyebrow">Wedding Packages</span></div>
+        <div class="packages-grid" style="margin-bottom:60px;">
+
+          <!-- Half Day -->
+          <div class="package-card reveal">
+            <span class="package-tag">New</span>
+            <h3 class="package-name">Half Day</h3>
+            <div class="package-price">$1,800</div>
+            <div class="package-note">4-hour wedding coverage</div>
+            <ul class="package-features">
+              <li>4 hours of coverage</li>
+              <li>2 photographers on site</li>
+              <li>2–5 min cinematic highlight film</li>
+              <li>200+ fully edited photos</li>
+              <li>Private gallery with custom music</li>
+              <li>Full-resolution + print-ready files</li>
+              <li>Getting ready through first dance</li>
+              <li style="color:var(--gold)">Gallery in 2–3 weeks</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('halfday')">Book + Add-Ons →</button>
+          </div>
+
+          <!-- The Forever -->
+          <div class="package-card featured reveal reveal-d1">
+            <span class="package-tag">Most Complete</span>
+            <h3 class="package-name">The Forever</h3>
+            <div class="package-price">$3,500</div>
+            <div class="package-note">Full-day wedding coverage</div>
+            <ul class="package-features">
+              <li>8–10 hours of coverage</li>
+              <li>Second photographer included</li>
+              <li>Engagement session included</li>
+              <li>400+ fully edited photos</li>
+              <li>Cinematic highlight film</li>
+              <li>Private gallery with custom music</li>
+              <li>Print-ready & digital files</li>
+              <li style="color:var(--gold)">Gallery in 2–3 weeks</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('forever')">Book + Add-Ons →</button>
+          </div>
+
+          <!-- Destination Wedding -->
+          <div class="package-card reveal reveal-d2">
+            <span class="package-tag">Destination</span>
+            <h3 class="package-name">Away Wedding</h3>
+            <div class="package-price">Custom</div>
+            <div class="package-note">Elopements · Destination · Intimate</div>
+            <ul class="package-features">
+              <li>Flexible hours (4–10 hrs)</li>
+              <li>Second photographer available</li>
+              <li>Cinematic highlight film</li>
+              <li>Full edited gallery</li>
+              <li>Travel + accommodations quoted</li>
+              <li>Available worldwide</li>
+              <li style="color:var(--gold)">Personalized planning call</li>
+            </ul>
+            <button class="package-cta" onclick="goPage('contact-page')">Get a Custom Quote →</button>
+          </div>
         </div>
+
+        <!-- SETUP PACKAGES (existing) -->
+        <div style="margin-bottom:16px;"><span class="eyebrow">Full-Coordination Proposal Packages</span></div>
+        <div class="setup-grid" style="position:relative;z-index:2;margin-bottom:16px;">
+          <div class="setup-card">
+            <span class="setup-card-tier">The Essential</span>
+            <div class="setup-card-name">The Proposal<br>Package</div>
+            <div class="setup-card-price">$1,200</div>
+            <div class="setup-card-price-note">Photo + Setup + Video · Starting price</div>
+            <ul class="setup-includes">
+              <li>2 hrs photography + video reel</li>
+              <li>Rose petal arrangement</li>
+              <li>Candle setup with lanterns</li>
+              <li>Custom name/message sign</li>
+              <li>Location coordination & scouting</li>
+              <li>24–48hr sneak peek · 48–72hr gallery</li>
+            </ul>
+            <button class="setup-card-cta" onclick="goPage('contact-page')">Request →</button>
+          </div>
+          <div class="setup-card featured">
+            <div class="setup-featured-badge">Most Requested</div>
+            <span class="setup-card-tier">The Premium</span>
+            <div class="setup-card-name">The Luxury<br>Proposal</div>
+            <div class="setup-card-price">$1,500</div>
+            <div class="setup-card-price-note">Full setup + 2nd photographer · Starting price</div>
+            <ul class="setup-includes">
+              <li>2 hrs · 2nd photographer</li>
+              <li>Full floral + stands + arch</li>
+              <li>Rose petal pathway</li>
+              <li>Tall candles + Bluetooth speaker</li>
+              <li>Picnic available (+$150)</li>
+              <li>24–48hr sneak peek · 48–72hr gallery</li>
+            </ul>
+            <button class="setup-card-cta" onclick="goPage('contact-page')">Request →</button>
+          </div>
+          <div class="setup-card">
+            <span class="setup-card-tier">The Ultimate</span>
+            <div class="setup-card-name">The Grand<br>Proposal</div>
+            <div class="setup-card-price">$2,000</div>
+            <div class="setup-card-price-note">Live violinist + same-day sneak peek</div>
+            <ul class="setup-includes">
+              <li>2 photographers + videographer</li>
+              <li>Live violinist during proposal</li>
+              <li>Grand floral arch + full petal setup</li>
+              <li>Picnic available (+$150)</li>
+              <li style="color:var(--gold)">Same-day sneak peek guaranteed</li>
+              <li>48–72hr full gallery</li>
+            </ul>
+            <button class="setup-card-cta" onclick="goPage('contact-page')">Request →</button>
+          </div>
+        </div>
+        <div style="text-align:center;padding:20px 0 40px;font-size:13px;color:var(--gray);">Fully custom experience from $2,500 · <a onclick="goPage('contact-page')" style="color:var(--gold);cursor:pointer;">Request a custom proposal →</a></div>
+
+        <!-- ADD-ONS MODAL TRIGGER AREA -->
+        <div id="addon-panel" style="display:none;background:var(--charcoal);padding:48px;margin-bottom:40px;position:relative;">
+          <button onclick="document.getElementById('addon-panel').style.display='none'" style="position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(255,255,255,0.4);font-size:20px;cursor:pointer;">✕</button>
+          <div id="addon-panel-content"></div>
+        </div>
+
+        <!-- FAQ -->
+        <div style="max-width:780px;margin:0 auto;padding-top:40px;border-top:0.5px solid var(--border);">
+          <span class="eyebrow" style="display:block;margin-bottom:8px;">FAQ</span>
+          <h2 class="section-title" style="font-size:clamp(24px,3vw,36px);margin-bottom:32px;">Common <em>questions.</em></h2>
+          <div class="faq-list">
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How do deposits work? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>A 50% non-refundable retainer is due at booking to hold your date exclusively. The remaining 50% is due on or before your session day. Payment via Zelle (321-368-2171), card, or cash.</p></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">When will I receive my photos? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>Proposals and portraits: sneak peek within 24–48 hours, full gallery within 48–72 hours. Weddings: 2–3 weeks. Grand Proposal package receives a same-day sneak peek.</p></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How far in advance should I book? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>Proposals and portraits: 2–4 weeks minimum. Setup packages require 4 weeks. Weddings: 6–12 months. Popular dates (holidays, weekends) fill quickly.</p></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What if it rains? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>We communicate 24–48 hours before if weather looks severe. Light overcast is actually ideal for portraits. Free reschedule for heavy rain with 72-hour notice.</p></div></div>
+            <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you travel outside Orlando? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>Yes — nationwide and internationally. Travel fees apply outside Central Florida. See our Hidden Locations Guide for destination pricing estimates.</p></div></div>
+          </div>
+        </div>
+
       </div>
-      <div>
-        <span class="eyebrow">Common Questions</span>
-        <h2 class="section-title" style="font-size:clamp(28px,3vw,40px);margin-bottom:28px;">Pricing <em>FAQ</em></h2>
-        <div class="faq-list">
-          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What's included in every package? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>Every package includes a planning consultation, professional editing, a private online gallery with download access, and full-resolution files. Higher-tier packages add music to the gallery, sneak peeks, second photographers, and more.</p></div></div>
-          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you require a deposit? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>Yes — a 50% non-refundable deposit is required to hold your date. This ensures your date is exclusively reserved. The remaining balance is due on or before your session day.</p></div></div>
-          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">How far in advance should I book? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>We recommend 2–4 weeks for proposals and engagement sessions. Popular locations like Kraft Azalea and Disney-area spots on weekends book out fast. For weddings, 6–12 months in advance is ideal.</p></div></div>
-          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">Do you travel outside Orlando? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>Absolutely — we're available nationwide and internationally. We've shot proposals and engagements across Florida, and coast to coast. Travel fees apply outside Central Florida and are included in a custom quote.</p></div></div>
-          <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">What if it rains? <span class="faq-arrow">+</span></button><div class="faq-answer"><p>We watch the forecast closely and communicate with you 24–48 hours before. Light overcast is actually beautiful for portraits. For heavy rain, we'll coordinate a reschedule at no additional charge.</p></div></div>
-        </div>
+    </section>
+  </div>
+
+  <!-- ══ EVENTS SECTION ══ -->
+  <div id="pkg-section-events" style="display:none;">
+    <div style="padding:80px 80px 40px;background:var(--charcoal);position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(201,169,110,0.07) 0%,transparent 70%);"></div>
+      <div style="position:relative;z-index:2;max-width:680px;">
+        <span class="eyebrow" style="color:var(--gold);">Event Coverage</span>
+        <h2 class="section-title" style="color:var(--warm-white);font-size:clamp(32px,4vw,56px);">Your event.<br><em>Beautifully documented.</em></h2>
+        <p class="section-body" style="color:rgba(255,255,255,0.45);">Birthdays, quinceañeras, baby showers, graduation parties, anniversaries, galas, and any milestone worth remembering. Unobtrusive, professional, and delivered fast.</p>
       </div>
     </div>
-  </section>
+    <section style="padding:72px 80px;background:var(--cream);">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="packages-grid" style="margin-bottom:48px;">
+          <div class="package-card reveal">
+            <span class="package-tag">2 Hours</span>
+            <h3 class="package-name">The Highlight</h3>
+            <div class="package-price">$500</div>
+            <div class="package-note">Perfect for intimate events</div>
+            <ul class="package-features">
+              <li>2 hours of coverage</li>
+              <li>100+ fully edited photos</li>
+              <li>Key moments coverage</li>
+              <li>Private gallery with music</li>
+              <li>Full-resolution downloads</li>
+              <li>Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('event-2hr')">Book + Add-Ons →</button>
+          </div>
+          <div class="package-card featured reveal reveal-d1">
+            <span class="package-tag">Most Popular</span>
+            <h3 class="package-name">The Full Event</h3>
+            <div class="package-price">$900</div>
+            <div class="package-note">4 hours · Photo + Video</div>
+            <ul class="package-features">
+              <li>4 hours of coverage</li>
+              <li>200+ fully edited photos</li>
+              <li>Cinematic event highlight reel</li>
+              <li>Private gallery with music</li>
+              <li>Full-resolution downloads</li>
+              <li style="color:var(--gold)">24–48hr sneak peek</li>
+              <li style="color:var(--gold)">Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('event-4hr')">Book + Add-Ons →</button>
+          </div>
+          <div class="package-card reveal reveal-d2">
+            <span class="package-tag">All Day</span>
+            <h3 class="package-name">The Grand Event</h3>
+            <div class="package-price">$1,500</div>
+            <div class="package-note">6–8 hours · Full coverage</div>
+            <ul class="package-features">
+              <li>6–8 hours of coverage</li>
+              <li>2 photographers on site</li>
+              <li>300+ fully edited photos</li>
+              <li>Cinematic highlight film</li>
+              <li>Private gallery with music</li>
+              <li style="color:var(--gold)">Same-day sneak peek</li>
+              <li style="color:var(--gold)">Priority 48hr delivery</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('event-6hr')">Book + Add-Ons →</button>
+          </div>
+        </div>
+        <div style="background:rgba(201,169,110,0.06);border:0.5px solid rgba(201,169,110,0.2);padding:32px;text-align:center;">
+          <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:8px;">Planning something bigger?</div>
+          <p style="font-size:13px;color:var(--gray);margin-bottom:20px;">Multi-day events, festivals, and large-scale productions quoted individually. We accommodate any scale.</p>
+          <button class="btn-primary" onclick="goPage('contact-page')">Get a Custom Quote</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══ CORPORATE SECTION ══ -->
+  <div id="pkg-section-corporate" style="display:none;">
+    <div style="padding:80px 80px 40px;background:var(--charcoal);position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(201,169,110,0.07) 0%,transparent 70%);"></div>
+      <div style="position:relative;z-index:2;max-width:680px;">
+        <span class="eyebrow" style="color:var(--gold);">Corporate Services</span>
+        <h2 class="section-title" style="color:var(--warm-white);font-size:clamp(32px,4vw,56px);">Professional imagery<br><em>that builds brands.</em></h2>
+        <p class="section-body" style="color:rgba(255,255,255,0.45);">Headshots, team photos, product launches, brand campaigns, conferences, award ceremonies, and corporate events. Delivered with the same quality your brand demands.</p>
+      </div>
+    </div>
+    <section style="padding:72px 80px;background:var(--cream);">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="packages-grid" style="margin-bottom:48px;">
+          <div class="package-card reveal">
+            <span class="package-tag">Headshots</span>
+            <h3 class="package-name">The Professional</h3>
+            <div class="package-price">$300</div>
+            <div class="package-note">Individual headshot session</div>
+            <ul class="package-features">
+              <li>1 hour studio or on-location</li>
+              <li>30+ fully edited images</li>
+              <li>3 wardrobe changes</li>
+              <li>LinkedIn + website ready files</li>
+              <li>White/grey/location backgrounds</li>
+              <li>Private gallery delivery</li>
+              <li>Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('corp-headshot')">Book + Add-Ons →</button>
+          </div>
+          <div class="package-card featured reveal reveal-d1">
+            <span class="package-tag">Team / Brand</span>
+            <h3 class="package-name">The Brand Session</h3>
+            <div class="package-price">$750</div>
+            <div class="package-note">Teams up to 10 · 2 hours</div>
+            <ul class="package-features">
+              <li>2 hours on-location or studio</li>
+              <li>Team + individual headshots</li>
+              <li>Brand lifestyle photography</li>
+              <li>200+ fully edited images</li>
+              <li>Commercial usage rights included</li>
+              <li>Private gallery + web-ready exports</li>
+              <li style="color:var(--gold)">48hr priority delivery</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('corp-brand')">Book + Add-Ons →</button>
+          </div>
+          <div class="package-card reveal reveal-d2">
+            <span class="package-tag">Conference / Launch</span>
+            <h3 class="package-name">The Corporate Event</h3>
+            <div class="package-price">$1,200</div>
+            <div class="package-note">Half day · Full event coverage</div>
+            <ul class="package-features">
+              <li>4–6 hours of coverage</li>
+              <li>Keynotes, panels, networking</li>
+              <li>Headshots on-site during event</li>
+              <li>300+ fully edited photos</li>
+              <li>Commercial usage rights</li>
+              <li>Branded gallery with your logo</li>
+              <li style="color:var(--gold)">Same-day preview set (20 images)</li>
+              <li style="color:var(--gold)">48hr full delivery</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('corp-event')">Book + Add-Ons →</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:28px;">
+            <div style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Monthly Retainer</div>
+            <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:6px;">Ongoing Brand Partner</div>
+            <div style="font-size:13px;color:var(--gray);margin-bottom:16px;">Monthly content creation for social media, website, and marketing. 4–8 hours per month, edited and delivered weekly.</div>
+            <div style="font-family:var(--serif);font-size:28px;color:var(--charcoal);margin-bottom:16px;">From $800<span style="font-size:14px;color:var(--gray)">/mo</span></div>
+            <button class="btn-ghost" onclick="goPage('contact-page')">Discuss a Retainer →</button>
+          </div>
+          <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:28px;">
+            <div style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Product Photography</div>
+            <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:6px;">Product & E-Commerce</div>
+            <div style="font-size:13px;color:var(--gray);margin-bottom:16px;">Studio product photography for e-commerce, social ads, and brand campaigns. White background, lifestyle, and editorial styles.</div>
+            <div style="font-family:var(--serif);font-size:28px;color:var(--charcoal);margin-bottom:16px;">From $400<span style="font-size:14px;color:var(--gray)">/session</span></div>
+            <button class="btn-ghost" onclick="goPage('contact-page')">Get a Quote →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ══ FAMILY & PORTRAITS SECTION ══ -->
+  <div id="pkg-section-family" style="display:none;">
+    <div style="padding:80px 80px 40px;background:var(--charcoal);position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(201,169,110,0.07) 0%,transparent 70%);"></div>
+      <div style="position:relative;z-index:2;max-width:680px;">
+        <span class="eyebrow" style="color:var(--gold);">Family & Portraits</span>
+        <h2 class="section-title" style="color:var(--warm-white);font-size:clamp(32px,4vw,56px);">Real families.<br><em>Real moments.</em></h2>
+        <p class="section-body" style="color:rgba(255,255,255,0.45);">Studio or in-home sessions for families, couples, maternity, newborns, seniors, and individuals. We come to you — or choose your favorite location.</p>
+      </div>
+    </div>
+    <section style="padding:72px 80px;background:var(--cream);">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="packages-grid" style="margin-bottom:48px;">
+          <div class="package-card reveal">
+            <span class="package-tag">Mini Session</span>
+            <h3 class="package-name">The Mini</h3>
+            <div class="package-price">$200</div>
+            <div class="package-note">30 min · Perfect for small families</div>
+            <ul class="package-features">
+              <li>30 minutes of coverage</li>
+              <li>25+ fully edited photos</li>
+              <li>1 location, 1 outfit</li>
+              <li>Private gallery delivery</li>
+              <li>Full-resolution downloads</li>
+              <li>Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('family-mini')">Book + Add-Ons →</button>
+          </div>
+          <div class="package-card featured reveal reveal-d1">
+            <span class="package-tag">Most Popular</span>
+            <h3 class="package-name">The Family</h3>
+            <div class="package-price">$375</div>
+            <div class="package-note">1 hour · On-location or in-home</div>
+            <ul class="package-features">
+              <li>1 hour of coverage</li>
+              <li>60+ fully edited photos</li>
+              <li>Up to 6 family members</li>
+              <li>2 outfit changes allowed</li>
+              <li>In-home or on-location</li>
+              <li>Private gallery with music</li>
+              <li style="color:var(--gold)">Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('family-full')">Book + Add-Ons →</button>
+          </div>
+          <div class="package-card reveal reveal-d2">
+            <span class="package-tag">Extended · House Call</span>
+            <h3 class="package-name">The House Call</h3>
+            <div class="package-price">$600</div>
+            <div class="package-note">2 hours · In-home lifestyle session</div>
+            <ul class="package-features">
+              <li>2 hours at your home</li>
+              <li>Candid lifestyle storytelling</li>
+              <li>100+ fully edited photos</li>
+              <li>Unlimited family members</li>
+              <li>Morning routine, meals, play — real life</li>
+              <li>Private gallery with music</li>
+              <li style="color:var(--gold)">24–48hr sneak peek</li>
+              <li style="color:var(--gold)">Gallery in 48–72 hours</li>
+            </ul>
+            <button class="package-cta" onclick="showAddOns('family-house')">Book + Add-Ons →</button>
+          </div>
+        </div>
+        <!-- Specialty sessions -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;">
+          <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:24px;">
+            <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Maternity</div>
+            <div style="font-family:var(--serif);font-size:18px;color:var(--charcoal);margin-bottom:6px;">Maternity Session</div>
+            <div style="font-family:var(--serif);font-size:26px;color:var(--charcoal);margin-bottom:8px;">$375</div>
+            <div style="font-size:12px;color:var(--gray);">1 hour · Partner included · 50+ photos · Golden hour preferred</div>
+          </div>
+          <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:24px;">
+            <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Newborn</div>
+            <div style="font-family:var(--serif);font-size:18px;color:var(--charcoal);margin-bottom:6px;">Newborn Session</div>
+            <div style="font-family:var(--serif);font-size:26px;color:var(--charcoal);margin-bottom:8px;">$450</div>
+            <div style="font-size:12px;color:var(--gray);">In-home · 2 hours · Baby + family · 80+ photos</div>
+          </div>
+          <div style="background:var(--warm-white);border:0.5px solid var(--border);padding:24px;">
+            <div style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Seniors</div>
+            <div style="font-family:var(--serif);font-size:18px;color:var(--charcoal);margin-bottom:6px;">Senior Portraits</div>
+            <div style="font-family:var(--serif);font-size:26px;color:var(--charcoal);margin-bottom:8px;">$375</div>
+            <div style="font-size:12px;color:var(--gray);">1 hour · 2 outfits · 50+ photos · Multiple locations</div>
+          </div>
+        </div>
+        <div style="background:rgba(201,169,110,0.06);border:0.5px solid rgba(201,169,110,0.2);padding:32px;text-align:center;">
+          <div style="font-family:var(--serif);font-size:20px;color:var(--charcoal);margin-bottom:8px;">Large family or extended group?</div>
+          <p style="font-size:13px;color:var(--gray);margin-bottom:20px;">Groups of 7+ members, multi-family sessions, and reunion photography quoted individually. Add a video reel for any session from $150.</p>
+          <button class="btn-primary" onclick="goPage('contact-page')">Get a Custom Quote</button>
+        </div>
+      </div>
+    </section>
+  </div>
 
 </div>
 
@@ -2531,7 +2773,7 @@ footer { background: #141414; padding: 72px 80px 40px; }
 <div class="sticky-cta"><div class="sticky-cta-text"><strong>3 dates left</strong> this month</div><a class="sticky-cta-btn" onclick="goPage('contact-page')">Book Now</a></div>
 
 <!-- ══ QUICK ADMIN TRIGGER ══ -->
-<button class="admin-trigger" onclick="openQuickAdmin()" title="Quick Settings">⚙</button>
+
 
 <!-- ══ QUICK ADMIN PANEL (original) ══ -->
 <div class="quick-admin-overlay" id="quick-admin-panel">
@@ -2601,9 +2843,9 @@ footer { background: #141414; padding: 72px 80px 40px; }
       <div class="auth-form-wrap">
         <div class="auth-form-title">Admin Login</div>
         <div class="auth-form-sub">Restricted access. Authorized personnel only.</div>
-        <div class="auth-field"><label class="auth-label">Admin Username</label><input class="auth-input" id="admin-uname" type="text" placeholder="admin"></div>
-        <div class="auth-field"><label class="auth-label">Admin Password</label><input class="auth-input" id="admin-pword" type="password" placeholder="••••••••"><div class="auth-error" id="admin-login-error">Incorrect credentials.</div></div>
-        <button class="auth-btn" onclick="doAdminLogin()" style="background:var(--gold-dark)">Access Dashboard</button>
+        <div class="auth-field"><label class="auth-label">Admin Username</label><input class="auth-input" id="admin-uname" type="text" placeholder="admin" onkeydown="if(event.key==='Enter')document.getElementById('admin-pword').focus()"></div>
+        <div class="auth-field"><label class="auth-label">Admin Password</label><input class="auth-input" id="admin-pword" type="password" placeholder="••••••••" onkeydown="if(event.key==='Enter')doAdminLogin()"><div class="auth-error" id="admin-login-error">Incorrect credentials.</div></div>
+        <button class="auth-btn" onclick="doAdminLogin()" style="background:var(--gold-dark)" id="admin-login-btn">Access Dashboard</button>
         <div class="auth-switch"><a onclick="showPortalView('portal-login')">← Back to client login</a></div>
       </div>
     </div>
@@ -3374,24 +3616,31 @@ function doAdminLogin() {
   const uEl = document.getElementById('admin-uname');
   const pEl = document.getElementById('admin-pword');
   if (!uEl || !pEl) return;
-  const u = uEl.value.trim();
+  const u = uEl.value.trim().toLowerCase();
   const p = pEl.value;
-  // Always read fresh from storage, fallback to defaults
-  const admin = DB.get('admin', {username:'admin', pass:'admin123'});
-  // Also accept hardcoded defaults in case DB wasn't seeded
-  const validUser = u === admin.username || u === 'admin';
-  const validPass = p === admin.pass || p === 'admin123';
   const errEl = document.getElementById('admin-login-error');
-  if (!validUser || !validPass) {
-    if (errEl) errEl.classList.add('show');
-    pEl.value = '';
-    pEl.focus();
+
+  // Get stored creds, always fallback to defaults
+  let stored = { username: 'admin', pass: 'admin123' };
+  try { const v = localStorage.getItem('cm_admin'); if (v) stored = JSON.parse(v); } catch(e) {}
+
+  // Accept stored OR hardcoded defaults (covers all edge cases)
+  const ok = (u === (stored.username || 'admin').toLowerCase() && p === stored.pass) ||
+             (u === 'admin' && p === 'admin123');
+
+  if (!ok) {
+    if (errEl) { errEl.style.display = 'block'; errEl.classList.add('show'); }
+    pEl.value = ''; pEl.focus();
     return;
   }
-  if (errEl) errEl.classList.remove('show');
-  // Ensure admin is seeded
-  if (!DB.get('admin', null)) DB.set('admin', {username:'admin', pass:'admin123'});
+
+  if (errEl) { errEl.style.display = 'none'; errEl.classList.remove('show'); }
+  // Ensure admin record exists
+  if (!localStorage.getItem('cm_admin')) {
+    localStorage.setItem('cm_admin', JSON.stringify({username:'admin', pass:'admin123'}));
+  }
   portalRole = 'admin';
+  localStorage.setItem('cm_session', JSON.stringify({role:'admin'}));
   DB.set('session', {role:'admin'});
   loadAdminDash();
   showPortalView('portal-admin');
@@ -3859,7 +4108,7 @@ document.addEventListener('keydown', e => {
 
 // ═══════════════════════════════════
 //  INIT
-// ═════════════════════════════════seedData();
+seedData();
 applySettings();
 loadGalleryPhotos();
 
@@ -5590,6 +5839,201 @@ function loadEditorValues() {
     const subInput = document.getElementById('ed-hero-sub');
     if (subInput && !subInput.value) subInput.value = heroSub.textContent.trim();
   }
+}
+
+
+// ══════════════════════════════════════
+//  PACKAGES — SECTION SWITCHER & ADD-ONS
+// ══════════════════════════════════════
+
+function showPkgSection(name) {
+  // Hide all sections
+  ['main','events','corporate','family'].forEach(s => {
+    const el = document.getElementById('pkg-section-' + s);
+    if (el) el.style.display = 'none';
+  });
+  // Remove active from all subnav buttons
+  document.querySelectorAll('.pkg-subnav').forEach(b => b.classList.remove('active'));
+  // Show selected
+  const target = document.getElementById('pkg-section-' + name);
+  if (target) target.style.display = 'block';
+  const btn = document.getElementById('pnav-' + name);
+  if (btn) btn.classList.add('active');
+  // Scroll to content
+  target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Add-on definitions per package type
+const ADD_ONS = {
+  moment: {
+    name: 'The Moment — $375',
+    addons: [
+      { id: 'ao-video',    label: 'Cinematic Highlight Reel',    price: 200, desc: '60–90 sec social-ready video of your session' },
+      { id: 'ao-rush',     label: 'Rush Delivery (24hr)',        price: 75,  desc: 'Full gallery guaranteed within 24 hours' },
+      { id: 'ao-extra30',  label: 'Extra 30 Minutes',           price: 100, desc: 'Extend your session by 30 minutes' },
+      { id: 'ao-prints',   label: 'Print Package (10 prints)',   price: 150, desc: '10 professional 4×6 or 5×7 prints mailed to you' },
+      { id: 'ao-album',    label: 'Custom Photo Book',           price: 250, desc: '20-page premium lay-flat photo book' },
+    ]
+  },
+  story: {
+    name: 'The Story — $650',
+    addons: [
+      { id: 'ao-rush',     label: 'Rush Delivery (24hr)',        price: 75,  desc: 'Full gallery guaranteed within 24 hours' },
+      { id: 'ao-extra60',  label: 'Extra 1 Hour',               price: 175, desc: 'Extend your session by a full hour' },
+      { id: 'ao-prints',   label: 'Print Package (10 prints)',   price: 150, desc: '10 professional 4×6 or 5×7 prints mailed to you' },
+      { id: 'ao-album',    label: 'Custom Photo Book',           price: 250, desc: '20-page premium lay-flat photo book' },
+      { id: 'ao-drone',    label: 'Drone Aerial Footage',        price: 200, desc: 'Aerial shots of your location added to video' },
+    ]
+  },
+  forever: {
+    name: 'The Forever — $3,500',
+    addons: [
+      { id: 'ao-engagement', label: 'Additional Engagement Location', price: 200, desc: 'Second location added to engagement session' },
+      { id: 'ao-album',    label: 'Premium Wedding Album',      price: 450, desc: '30-page lay-flat luxury wedding album' },
+      { id: 'ao-parents',  label: 'Parent Album Set (2)',       price: 300, desc: 'Two 15-page parent albums' },
+      { id: 'ao-drone',    label: 'Drone Aerial Coverage',      price: 300, desc: 'Aerial footage of ceremony + venue' },
+      { id: 'ao-sameday',  label: 'Same-Day Preview Set',       price: 200, desc: '20 edited images delivered same evening' },
+      { id: 'ao-rehearsal',label: 'Rehearsal Dinner Coverage',  price: 500, desc: '2 hours coverage of rehearsal dinner' },
+    ]
+  },
+  halfday: {
+    name: 'Half Day Wedding — $1,800',
+    addons: [
+      { id: 'ao-album',    label: 'Custom Wedding Album',       price: 350, desc: '20-page premium lay-flat album' },
+      { id: 'ao-drone',    label: 'Drone Aerial Coverage',      price: 300, desc: 'Aerial shots of venue and ceremony' },
+      { id: 'ao-extra2hr', label: 'Add 2 More Hours',          price: 600, desc: 'Extend coverage by 2 additional hours' },
+      { id: 'ao-sameday',  label: 'Same-Day Preview Set',       price: 200, desc: '20 edited images delivered same evening' },
+      { id: 'ao-parents',  label: 'Parent Album',               price: 200, desc: 'One 15-page parent album' },
+    ]
+  },
+  'event-2hr': {
+    name: 'The Highlight Event — $500',
+    addons: [
+      { id: 'ao-video',    label: 'Highlight Reel (90 sec)',    price: 200, desc: 'Cinematic recap of your event' },
+      { id: 'ao-extra60',  label: 'Extra 1 Hour',              price: 175, desc: 'Extend coverage by 1 hour' },
+      { id: 'ao-rush',     label: 'Rush Delivery (24hr)',       price: 75,  desc: 'Full gallery within 24 hours' },
+      { id: 'ao-prints',   label: 'Print Package (10 prints)',  price: 150, desc: '10 professional prints' },
+    ]
+  },
+  'event-4hr': {
+    name: 'The Full Event — $900',
+    addons: [
+      { id: 'ao-second',   label: 'Second Photographer',        price: 250, desc: 'Additional shooter for full coverage' },
+      { id: 'ao-rush',     label: 'Rush Delivery (24hr)',       price: 75,  desc: 'Full gallery within 24 hours' },
+      { id: 'ao-drone',    label: 'Drone Aerial Shot',          price: 200, desc: 'Aerial footage of venue/crowd' },
+      { id: 'ao-album',    label: 'Event Photo Book',           price: 250, desc: '20-page lay-flat photo book' },
+    ]
+  },
+  'event-6hr': {
+    name: 'The Grand Event — $1,500',
+    addons: [
+      { id: 'ao-drone',    label: 'Drone Aerial Coverage',      price: 200, desc: 'Full aerial footage package' },
+      { id: 'ao-rush',     label: 'Rush Delivery (24hr)',       price: 75,  desc: 'Full gallery within 24 hours' },
+      { id: 'ao-album',    label: 'Event Photo Book',           price: 250, desc: '30-page luxury event photo book' },
+      { id: 'ao-streaming',label: 'Live Stream Setup',          price: 400, desc: 'Professional live stream assistance' },
+    ]
+  },
+  'corp-headshot': {
+    name: 'Professional Headshots — $300',
+    addons: [
+      { id: 'ao-extra',    label: 'Additional Person',          price: 100, desc: 'Add another person to the session' },
+      { id: 'ao-rush',     label: 'Rush Delivery (24hr)',       price: 50,  desc: 'Files ready within 24 hours' },
+      { id: 'ao-retouching', label: 'Premium Retouching',       price: 75,  desc: 'Advanced skin and background retouching' },
+      { id: 'ao-linkedin', label: 'LinkedIn Banner Design',     price: 100, desc: 'Custom LinkedIn banner created from your photos' },
+    ]
+  },
+  'corp-brand': {
+    name: 'Brand Session — $750',
+    addons: [
+      { id: 'ao-extra5',   label: 'Add 5 More Team Members',   price: 200, desc: 'Expand session for larger team' },
+      { id: 'ao-video',    label: 'Brand Video (60 sec)',       price: 300, desc: 'Cinematic brand story video' },
+      { id: 'ao-rush',     label: 'Rush Delivery (24hr)',       price: 100, desc: 'Full gallery within 24 hours' },
+      { id: 'ao-usage',    label: 'Extended Commercial License', price: 200, desc: 'Unlimited commercial use including paid ads' },
+    ]
+  },
+  'corp-event': {
+    name: 'Corporate Event — $1,200',
+    addons: [
+      { id: 'ao-second',   label: 'Second Photographer',        price: 300, desc: 'Full second shooter for complete coverage' },
+      { id: 'ao-drone',    label: 'Drone Aerial',               price: 250, desc: 'Aerial shots of venue and attendees' },
+      { id: 'ao-video',    label: 'Full Event Video (3–5 min)', price: 500, desc: 'Complete cinematic event film' },
+      { id: 'ao-rush',     label: 'Same-Day Preview (20 images)', price: 150, desc: 'Pre-edited set for social media same day' },
+    ]
+  },
+  'family-mini': {
+    name: 'Mini Session — $200',
+    addons: [
+      { id: 'ao-extra30',  label: 'Extra 30 Minutes',           price: 100, desc: 'Extend to a full hour' },
+      { id: 'ao-prints',   label: 'Print Package (10 prints)',   price: 120, desc: '10 professional prints mailed to you' },
+      { id: 'ao-holiday',  label: 'Holiday Card Design',         price: 75,  desc: 'Custom holiday card designed from your photos' },
+    ]
+  },
+  'family-full': {
+    name: 'The Family — $375',
+    addons: [
+      { id: 'ao-video',    label: 'Family Highlight Reel',       price: 175, desc: '60-sec cinematic family reel' },
+      { id: 'ao-extra60',  label: 'Extra 1 Hour',                price: 150, desc: 'More time, more memories' },
+      { id: 'ao-album',    label: 'Family Photo Book',            price: 200, desc: '15-page lay-flat family album' },
+      { id: 'ao-prints',   label: 'Print Package (10 prints)',    price: 120, desc: '10 professional prints' },
+      { id: 'ao-holiday',  label: 'Holiday Card Design',          price: 75,  desc: 'Custom holiday card from your photos' },
+    ]
+  },
+  'family-house': {
+    name: 'The House Call — $600',
+    addons: [
+      { id: 'ao-video',    label: 'Lifestyle Film (2–3 min)',    price: 200, desc: 'Beautiful documentary-style family film' },
+      { id: 'ao-album',    label: 'Premium Family Album',        price: 250, desc: '20-page luxury lay-flat album' },
+      { id: 'ao-prints',   label: 'Large Print (16×20)',         price: 150, desc: 'One stunning gallery-quality wall print' },
+      { id: 'ao-extra60',  label: 'Extra 1 Hour',               price: 150, desc: 'More coverage of your family story' },
+    ]
+  },
+};
+
+function showAddOns(pkgId) {
+  const pkg = ADD_ONS[pkgId];
+  const panel = document.getElementById('addon-panel');
+  const panelContent = document.getElementById('addon-panel-content');
+  if (!pkg || !panel || !panelContent) {
+    goPage('contact-page'); return;
+  }
+
+  let selectedTotal = 0;
+  const basePrice = parseInt((pkg.name.match(/\$([\d,]+)/) || ['0','0'])[1].replace(',','')) || 0;
+
+  function renderPanel() {
+    const selected = pkg.addons.filter(a => document.getElementById('ao-chk-'+a.id)?.checked);
+    selectedTotal = selected.reduce((s, a) => s + a.price, 0);
+    panelContent.innerHTML = `
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+        <div>
+          <div style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:4px;">Customize Your Package</div>
+          <div style="font-family:var(--serif);font-size:22px;font-weight:300;color:var(--warm-white);">${pkg.name}</div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Package Total</div>
+          <div style="font-family:var(--serif);font-size:32px;color:var(--gold);">$${(basePrice + selectedTotal).toLocaleString()}</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:24px;">
+        ${pkg.addons.map(a => `
+          <label style="display:flex;align-items:flex-start;gap:12px;padding:16px;background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);cursor:pointer;transition:all 0.2s;" id="ao-label-${a.id}" onclick="setTimeout(()=>showAddOns('${pkgId}'),10)">
+            <input type="checkbox" id="ao-chk-${a.id}" style="margin-top:3px;accent-color:var(--gold);flex-shrink:0;">
+            <div>
+              <div style="font-size:13px;color:var(--warm-white);margin-bottom:2px;">${a.label}</div>
+              <div style="font-size:11px;color:rgba(255,255,255,0.35);margin-bottom:4px;">${a.desc}</div>
+              <div style="font-size:12px;color:var(--gold);">+$${a.price}</div>
+            </div>
+          </label>`).join('')}
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding-top:20px;border-top:0.5px solid rgba(255,255,255,0.08);">
+        <button onclick="goPage('contact-page')" class="btn-cin-primary"><span>Book Now — $${(basePrice + selectedTotal).toLocaleString()} →</span></button>
+        <span style="font-size:11px;color:rgba(255,255,255,0.3);">50% retainer to hold your date · Balance due on session day</span>
+      </div>`;
+  }
+
+  renderPanel();
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 // ── Show notification dot after 8 seconds ──
