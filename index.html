@@ -6698,7 +6698,7 @@ function bookWithSelections(pkgId, pkg, basePrice, selectedTotal) {
       addOnTotal: selectedTotal
     };
     goPage('contact-page');
-    setTimeout(() => populateContactFromBooking(), 300);
+    setTimeout(() => populateContactFromBooking(), 500);
     showToast('Add-ons selected — complete your inquiry below and we\'ll send a custom payment link!', 'success');
   } else {
     // No add-ons — go directly to Pixieset payment link
@@ -6715,7 +6715,7 @@ function bookWithSelections(pkgId, pkg, basePrice, selectedTotal) {
         addOnTotal: 0
       };
       goPage('contact-page');
-      setTimeout(() => populateContactFromBooking(), 300);
+      setTimeout(() => populateContactFromBooking(), 500);
     }
   }
 }
@@ -6724,8 +6724,8 @@ function populateContactFromBooking() {
   if (!pendingBooking) return;
   const b = pendingBooking;
 
-  // Find the session type dropdown and set it
-  const sessionSel = document.querySelector('.contact-form select');
+  // Find the session type dropdown and set it — scoped to contact page to avoid hitting the packages-page inline form
+  const sessionSel = document.querySelector('#page-contact-page .contact-form select');
   if (sessionSel) {
     // Find closest matching option
     for (let opt of sessionSel.options) {
@@ -6742,26 +6742,30 @@ function populateContactFromBooking() {
   }
 
   // Populate the vision/message textarea
-  const textarea = document.querySelector('.contact-form textarea');
+  const textarea = document.querySelector('#page-contact-page .contact-form textarea');
   if (textarea) {
     let msg = '📦 Package: ' + b.package + '\n';
     if (b.addOns.length) msg += '✦ Add-ons selected:\n' + b.addOns.map(a => '  • ' + a).join('\n') + '\n';
     msg += '💰 Estimated Total: $' + b.total.toLocaleString() + '\n\n';
     msg += 'Additional details about my vision:\n';
     textarea.value = msg;
-    textarea.focus();
-    textarea.setSelectionRange(msg.length, msg.length);
+    // Skip focus on touch devices — keyboard popup fights the scroll animation
+    if (!('ontouchstart' in window)) {
+      textarea.focus();
+      textarea.setSelectionRange(msg.length, msg.length);
+    }
   }
 
   // Show a toast
   showToast('Package selection added to your inquiry ✓', 'success');
 
-  // Highlight the form briefly
-  const form = document.querySelector('.contact-form');
+  // Highlight the form and scroll into view — block:center avoids the fixed nav clipping the top on mobile
+  const form = document.querySelector('#page-contact-page .contact-form');
   if (form) {
     form.style.transition = 'box-shadow 0.5s';
     form.style.boxShadow = '0 0 0 2px var(--gold)';
     setTimeout(() => form.style.boxShadow = '', 2000);
+    setTimeout(() => form.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
   }
 
   pendingBooking = null;
@@ -6776,7 +6780,7 @@ function openSetupPayment(pkgKey) {
     const names = { 'setup-essential': 'The Proposal Package — $1,200', 'setup-premium': 'The Luxury Proposal — $1,500', 'setup-grand': 'The Grand Proposal — $2,000' };
     pendingBooking = { package: names[pkgKey] || 'Setup Package', addOns: [], total: 0, basePrice: 0, addOnTotal: 0 };
     goPage('contact-page');
-    setTimeout(() => populateContactFromBooking(), 300);
+    setTimeout(() => populateContactFromBooking(), 500);
   }
 }
 
@@ -6784,7 +6788,7 @@ function openSetupPayment(pkgKey) {
 function openContactWithPackage(pkgName, price) {
   pendingBooking = { package: pkgName + ' — $' + price, addOns: [], total: price, basePrice: price, addOnTotal: 0 };
   goPage('contact-page');
-  setTimeout(() => populateContactFromBooking(), 300);
+  setTimeout(() => populateContactFromBooking(), 500);
 }
 
 // ══════════════════════════════════════
