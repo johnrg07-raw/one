@@ -1,7 +1,40 @@
-/about      /index.html    200
-/packages   /index.html    200
-/gallery    /index.html    200
-/contact    /index.html    200
-/proposals  /index.html    200
-/weddings   /index.html    200
-/book       /index.html    200
+# Review generator page
+/review          /review.html        200
+
+# Main SPA routes
+/about          /index.html    200
+/packages       /index.html    200
+/gallery        /index.html    200
+/contact        /index.html    200
+/proposals      /index.html    200
+/weddings       /index.html    200
+/book           /index.html    200
+/services       /index.html    200
+/blog           /index.html    200
+/reviews        /index.html    200
+
+# Florida city landing pages
+/miami          /miami.html         200
+/tampa          /tampa.html         200
+/key-west       /key-west.html      200
+/st-augustine   /st-augustine.html  200
+/sarasota       /sarasota.html      200
+/fort-lauderdale /fort-lauderdale.html 200
+/palm-beach     /palm-beach.html    200
+/naples         /naples.html        200
+/clearwater     /clearwater.html    200
+/jacksonville   /jacksonville.html  200
+
+# National city landing pages
+/new-york       /new-york.html      200
+/las-vegas      /las-vegas.html     200
+/nashville      /nashville.html     200
+/chicago        /chicago.html       200
+/napa-valley    /napa-valley.html   200
+
+# International city landing pages
+/punta-cana     /punta-cana.html    200
+/paris          /paris.html         200
+/santorini      /santorini.html     200
+/cancun         /cancun.html        200
+/amalfi-coast   /amalfi-coast.html  200
