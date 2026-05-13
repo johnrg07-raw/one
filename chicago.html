@@ -422,8 +422,8 @@ function onYouTubeIframeAPIReady(){
     videoId:'SlIVRfc2Gt0',
     playerVars:{autoplay:1,mute:1,loop:1,playlist:'SlIVRfc2Gt0',controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1},
     events:{
-      onReady:function(e){e.target.mute();e.target.playVideo();setTimeout(function(){var c=document.getElementById('yt-cover');if(c)c.style.opacity='0';},600);},
-      onStateChange:function(e){if(e.data===YT.PlayerState.ENDED)e.target.playVideo();}
+      onReady:function(e){e.target.mute();e.target.playVideo();},
+      onStateChange:function(e){if(e.data===1){setTimeout(function(){var c=document.getElementById('yt-cover');if(c)c.style.opacity='0';},400);}if(e.data===0)e.target.playVideo();}
     }
   });
 }

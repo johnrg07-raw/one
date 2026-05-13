@@ -255,7 +255,7 @@ window.addEventListener('scroll', function(){
   document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
 });
 
-const WORKER_URL = "https://canon-moment-worker.johnrg07.workers.dev/review";
+const WORKER_URL = "/.netlify/functions/review";
 
 async function generateReview() {
   const name        = document.getElementById('clientName').value.trim();
@@ -307,10 +307,15 @@ async function generateReview() {
       body: JSON.stringify({ messages: [{ role: 'user', content: prompt }] })
     });
     var data = await response.json();
-    var text = (data.content && data.content[0] && data.content[0].text) ? data.content[0].text.trim() : 'Unable to generate review. Please try again.';
-    reviewText.textContent = text;
+    if (data.content && data.content[0] && data.content[0].text) {
+      reviewText.textContent = data.content[0].text.trim();
+    } else if (data.error) {
+      reviewText.textContent = 'Error: ' + (data.error.message || JSON.stringify(data.error));
+    } else {
+      reviewText.textContent = 'Unexpected response. Please try again.';
+    }
   } catch(err) {
-    reviewText.textContent = 'Something went wrong. Please check your connection and try again.';
+    reviewText.textContent = 'Connection error: ' + err.message + '. Please try again.';
   }
 
   document.getElementById('generateBtn').disabled = false;

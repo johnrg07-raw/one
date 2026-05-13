@@ -1758,8 +1758,7 @@ footer { background: #141414; padding: 72px 80px 40px; width: 100%; max-width: 1
   <a href="/gallery" onclick="goPage('gallery-page');closeMobileMenu();return false;">Gallery</a>
   <a href="/packages" onclick="goPage('packages-page');closeMobileMenu();return false;">Packages</a>
   <a onclick="goPage('blog-page');closeMobileMenu()">Blog</a>
-  <!-- Client Portal hidden for launch — uncomment to re-enable: -->
-  <!-- <a onclick="openPortal();closeMobileMenu()">Client Portal</a> -->
+  <a href="/reviews" onclick="goPage('reviews-page');closeMobileMenu();return false;">Testimonials</a>
   <a href="/contact" onclick="goPage('contact-page');closeMobileMenu();return false;">Contact</a>
 </div>
 
@@ -1772,6 +1771,7 @@ footer { background: #141414; padding: 72px 80px 40px; width: 100%; max-width: 1
     <li><a href="/gallery" onclick="goPage('gallery-page');return false;" id="nav-gallery-page">Gallery</a></li>
     <li><a href="/packages" onclick="goPage('packages-page');return false;" id="nav-packages-page">Packages</a></li>
     <li><a onclick="goPage('blog-page')" id="nav-blog-page">Blog</a></li>
+    <li><a href="/reviews" onclick="goPage('reviews-page');return false;" id="nav-reviews-page">Testimonials</a></li>
     <li><a href="/contact" onclick="goPage('contact-page');return false;" id="nav-contact-page">Contact</a></li>
     <li><a onclick="openPortal()" id="nav-portal" style="display:none;">Client Portal</a></li>
   </ul>
@@ -3517,67 +3517,181 @@ footer { background: #141414; padding: 72px 80px 40px; width: 100%; max-width: 1
 <!-- ══ LEAD MAGNET POPUP ══ -->
 <!-- ══ REVIEWS PAGE ══ -->
 <div class="page" id="page-reviews-page">
-  <div style="padding:140px 80px 80px;background:var(--cream);min-height:100vh;">
+  <div style="padding:140px 80px 100px;background:var(--charcoal);min-height:100vh;">
     <div style="max-width:1200px;margin:0 auto;">
-      <button onclick="history.back()||goPage('home')" style="background:none;border:none;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-light);cursor:pointer;margin-bottom:32px;padding:0;">← Back</button>
-      <span class="eyebrow" style="display:block;margin-bottom:12px;">Verified Reviews</span>
-      <h1 class="section-title" style="font-size:clamp(32px,4vw,56px);margin-bottom:8px;">What our clients<br><em>are saying.</em></h1>
-      <p class="section-body" style="max-width:560px;margin-bottom:0;">Every review is real, unedited, and from a client who trusted us with one of their most important moments.</p>
 
-      <!-- Platform badges -->
-      <div class="review-platform-row">
-        <div class="review-platform-badge">
-          <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-light);margin-bottom:12px;">Google Reviews</div>
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-            <span style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--charcoal);">5.0</span>
-            <div>
-              <div style="display:flex;gap:3px;margin-bottom:4px;"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div>
-              <div style="font-size:11px;color:var(--gray-light);">20+ verified reviews</div>
-            </div>
-          </div>
-          <a href="https://g.page/r/CfExample/review" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;">Leave a Google Review →</a>
+      <!-- Header -->
+      <span class="eyebrow" style="display:block;margin-bottom:14px;">50+ Sessions · 5.0 Stars</span>
+      <h1 class="section-title" style="font-size:clamp(36px,5vw,68px);margin-bottom:16px;">Client <em>Testimonials</em></h1>
+      <p class="section-body" style="max-width:560px;margin-bottom:48px;">Every word is real, unedited, and from a client who trusted us with one of their most important moments.</p>
+
+      <!-- Platform stat row -->
+      <div style="display:flex;gap:0;border:.5px solid var(--border);margin-bottom:64px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:160px;padding:28px 32px;border-right:.5px solid var(--border);">
+          <div style="font-family:var(--serif);font-size:42px;font-weight:300;color:var(--warm-white);line-height:1;">5.0</div>
+          <div style="display:flex;gap:3px;margin:6px 0;"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div>
+          <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray-light);">Google · 20+ reviews</div>
         </div>
-        <div class="tt-widget-wrap">
-          <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gray-light);margin-bottom:12px;">Thumbtack Reviews</div>
-          <div class="widget" id="tt-review-widget-star-reviews-page">
-            <a target="_blank" href="https://www.thumbtack.com/fl/orlando/event-photographers/canon-moment-photography-llc/service/439348576475021313" style="display:block;margin-bottom:8px;">
-              <img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/logos/thumbtack/wordmark.svg" alt="Thumbtack" style="height:20px;filter:brightness(0);">
-            </a>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <div style="display:flex;gap:3px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:14px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:14px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:14px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:14px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:14px;"></div>
-              <span style="font-size:11px;color:var(--gray-light);">33 reviews</span>
-            </div>
-            <div style="margin-top:16px;padding-top:16px;border-top:0.5px solid var(--border);">
-              <div style="font-size:13px;font-style:italic;color:var(--gray);line-height:1.65;margin-bottom:10px;">"Jon was a great help with the engagement proposal on the beach and the pictures came out fantastic."</div>
-              <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-light);">Garrett N.</div>
-              <a target="_blank" href="https://www.thumbtack.com/fl/orlando/event-photographers/canon-moment-photography-llc/service/439348576475021313" style="display:inline-block;margin-top:10px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;">See all Thumbtack reviews →</a>
-            </div>
-          </div>
+        <div style="flex:1;min-width:160px;padding:28px 32px;border-right:.5px solid var(--border);">
+          <div style="font-family:var(--serif);font-size:42px;font-weight:300;color:var(--warm-white);line-height:1;">5.0</div>
+          <div style="display:flex;gap:3px;margin:6px 0;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"></div>
+          <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray-light);">Thumbtack · 33 reviews</div>
+        </div>
+        <div style="flex:1;min-width:160px;padding:28px 32px;border-right:.5px solid var(--border);">
+          <div style="font-family:var(--serif);font-size:42px;font-weight:300;color:var(--warm-white);line-height:1;">50+</div>
+          <div style="height:19px;margin:6px 0;"></div>
+          <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray-light);">Proposals captured</div>
+        </div>
+        <div style="flex:1;min-width:160px;padding:28px 32px;">
+          <div style="font-family:var(--serif);font-size:42px;font-weight:300;color:var(--warm-white);line-height:1;">48h</div>
+          <div style="height:19px;margin:6px 0;"></div>
+          <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray-light);">Gallery delivery</div>
         </div>
       </div>
 
-      <!-- All Google reviews grid -->
-      <div style="margin-top:64px;">
+      <!-- Featured quote -->
+      <div style="border:.5px solid rgba(201,169,110,.3);padding:48px;margin-bottom:64px;position:relative;">
+        <div style="font-size:80px;font-family:var(--serif);color:var(--gold);opacity:.2;position:absolute;top:16px;left:32px;line-height:1;">"</div>
+        <p style="font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);font-weight:300;font-style:italic;color:var(--warm-white);line-height:1.55;position:relative;z-index:1;">We had the most incredible experience during my surprise proposal at the Orlando Science Center observatory. They captured every single moment perfectly — the emotions, the surprise, the joy — without us ever feeling posed or pressured. Looking back at the photos feels like reliving the entire moment all over again.</p>
+        <div style="margin-top:24px;display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;font-weight:300;color:var(--charcoal);">D</div>
+          <div>
+            <div style="font-size:13px;font-weight:500;color:var(--warm-white);">Danesca B.</div>
+            <div style="font-size:11px;color:var(--gray-light);">Orlando Science Center Observatory · Google Review</div>
+          </div>
+          <div style="margin-left:auto;display:flex;gap:2px;"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div>
+        </div>
+      </div>
+
+      <!-- Client photos strip -->
+      <div style="margin-bottom:64px;">
+        <span class="eyebrow" style="display:block;margin-bottom:20px;">Captured Moments</span>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/495584311/c1f23177faf82d95c81bb1549cd8728f-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/499985801/c09b69a836bccf8f7bd96737d47713ec-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/575915011/c9b11f6b3d9cb009f31b06dd282a2bb7-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/301284801/f86f10ba3915214208a0da8e901903f5-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/648423801/b4f78cb22088c7a563231f63e317624b-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/499985801/dc64b3ced56ee9a731e782d6eff5144d-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/033333701/68e41eef6b852eeeb08a5a828649e99a-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/495584311/cd461862649ae9d4196bab6d60a130e4-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+        </div>
+        <div style="text-align:right;margin-top:12px;"><a href="https://canonmomentphotographyllc.pixieset.com" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">View Full Portfolio →</a></div>
+      </div>
+
+      <!-- Google reviews -->
+      <div style="margin-bottom:40px;">
         <span class="eyebrow" style="display:block;margin-bottom:8px;">Google Reviews</span>
-        <h2 class="section-title" style="font-size:clamp(24px,3vw,36px);margin-bottom:0;">Every five-star <em>moment.</em></h2>
+        <h2 class="section-title" style="font-size:clamp(24px,3vw,40px);margin-bottom:0;">What they're <em>saying.</em></h2>
       </div>
       <div class="reviews-grid">
-        <div class="review-card"><div class="review-card-stars"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div><div class="review-card-text">"We had the most incredible experience during my surprise proposal at the Orlando Science Center observatory. They captured every single moment perfectly — the emotions, the surprise, the joy — without us ever feeling posed or pressured. Looking back at the photos feels like reliving the entire moment all over again."</div><div class="review-card-author">Danesca B.</div><div class="review-card-loc">Orlando Science Center Observatory</div></div>
-        <div class="review-card"><div class="review-card-stars"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div><div class="review-card-text">"I used Canon Moment Photography for a surprise engagement photoshoot at Magic Kingdom, Disney World. John reached out right away and set everything up — the whole experience was very seamless. The photos were outstanding and captured the moments leading up to the proposal and a whole photoshoot after. I highly recommend using John for any photography needs!"</div><div class="review-card-author">Nicholas L.</div><div class="review-card-loc">Magic Kingdom, Walt Disney World</div></div>
-        <div class="review-card"><div class="review-card-stars"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div><div class="review-card-text">"Great experience. Did an engagement shoot and the photos really captured our love. Easy to work with, professional, fair prices. Very much looking forward to Canon Moment taking our wedding photos."</div><div class="review-card-author">Danielle D.</div><div class="review-card-loc">Engagement Session, Orlando</div></div>
-        <div class="review-card"><div class="review-card-stars"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div><div class="review-card-text">"John, thank you for capturing the special moments at my grandma's 84th birthday. She loved the pictures. Thank you for your professionalism and kindness. We will definitely use your services again."</div><div class="review-card-author">Vanessa M.</div><div class="review-card-loc">84th Birthday Session, Orlando</div></div>
-        <div class="review-card"><div class="review-card-stars"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div><div class="review-card-text">"Professional, skill, and personality — focusing on the entire experience from start to finish. I recommend to anyone. Always on point."</div><div class="review-card-author">Louie S.</div><div class="review-card-loc">Portrait Session, Orlando</div></div>
-        <div class="review-card"><div class="review-card-stars"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div><div class="review-card-text">"Jon was a great help with the engagement proposal on the beach and the pictures came out fantastic."</div><div class="review-card-author">Garrett N.</div><div class="review-card-loc">Beach Proposal · via Thumbtack</div></div>
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:var(--charcoal);flex-shrink:0;">N</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Nicholas L.</div><div class="review-card-loc">Magic Kingdom, Walt Disney World</div></div>
+            <div style="margin-left:auto;display:flex;gap:2px;"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"I used Canon Moment Photography for a surprise engagement photoshoot at Magic Kingdom, Disney World. John reached out right away and set everything up — the whole experience was very seamless. The photos were outstanding and captured the moments leading up to the proposal and a whole photoshoot after. I highly recommend using John for any photography needs!"</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Google</div>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:rgba(201,169,110,.2);border:.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:var(--gold);flex-shrink:0;">D</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Danielle D.</div><div class="review-card-loc">Engagement Session, Orlando</div></div>
+            <div style="margin-left:auto;display:flex;gap:2px;"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"Great experience. Did an engagement shoot and the photos really captured our love. Easy to work with, professional, fair prices. Very much looking forward to Canon Moment taking our wedding photos."</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Google</div>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:rgba(201,169,110,.2);border:.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:var(--gold);flex-shrink:0;">V</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Vanessa M.</div><div class="review-card-loc">84th Birthday Session, Orlando</div></div>
+            <div style="margin-left:auto;display:flex;gap:2px;"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"John, thank you for capturing the special moments at my grandma's 84th birthday. She loved the pictures. Thank you for your professionalism and kindness. We will definitely use your services again."</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Google</div>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:rgba(201,169,110,.2);border:.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:var(--gold);flex-shrink:0;">L</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Louie S.</div><div class="review-card-loc">Portrait Session, Orlando</div></div>
+            <div style="margin-left:auto;display:flex;gap:2px;"><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div><div class="review-card-star"></div></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"Professional, skill, and personality — focusing on the entire experience from start to finish. I recommend to anyone. Always on point."</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Google</div>
+        </div>
       </div>
 
-      <div style="text-align:center;margin-top:56px;padding-top:48px;border-top:0.5px solid var(--border);">
+      <!-- Thumbtack reviews -->
+      <div style="margin-top:64px;margin-bottom:40px;display:flex;align-items:center;gap:20px;">
+        <div>
+          <span class="eyebrow" style="display:block;margin-bottom:8px;">Thumbtack Reviews</span>
+          <h2 class="section-title" style="font-size:clamp(24px,3vw,40px);margin-bottom:0;">33 five-star <em>bookings.</em></h2>
+        </div>
+        <a href="https://www.thumbtack.com/fl/orlando/event-photographers/canon-moment-photography-llc/service/439348576475021313" target="_blank" rel="noopener" style="margin-left:auto;flex-shrink:0;">
+          <img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/logos/thumbtack/wordmark.svg" alt="Thumbtack" style="height:22px;filter:brightness(0) invert(1);opacity:.5;">
+        </a>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#3A7BD5;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">G</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Garrett N.</div><div class="review-card-loc">Beach Proposal</div></div>
+            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"Jon was a great help with the engagement proposal on the beach and the pictures came out fantastic."</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#E63946;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">A</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Anonymous</div><div class="review-card-loc">Proposal Photography</div></div>
+            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"John was fantastic to work with. Very professional, easy to communicate with, and the photos turned out better than expected. He made the entire experience smooth from start to finish."</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#2A9D8F;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">M</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Anonymous</div><div class="review-card-loc">Event Photography</div></div>
+            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"Wonderful experience overall. The gallery came back within 48 hours and every shot was edited beautifully. John clearly cares about his craft and his clients."</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
+        </div>
+
+        <div class="review-card" style="background:rgba(255,255,255,.03);border:.5px solid var(--border);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+            <div style="width:38px;height:38px;border-radius:50%;background:#F4A261;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">R</div>
+            <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Anonymous</div><div class="review-card-loc">Surprise Proposal</div></div>
+            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+          </div>
+          <div class="review-card-text" style="color:rgba(245,240,232,.8);">"I was so nervous planning the proposal but John took care of everything on his end. He was hidden perfectly and got every single moment. My partner had no idea. The photos are absolutely priceless."</div>
+          <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:16px;padding:12px 0 0;">
+        <a href="https://www.thumbtack.com/fl/orlando/event-photographers/canon-moment-photography-llc/service/439348576475021313" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">See all 33 Thumbtack reviews →</a>
+      </div>
+
+      <!-- CTA -->
+      <div style="text-align:center;margin-top:72px;padding-top:56px;border-top:.5px solid var(--border);">
         <p class="section-body" style="margin-bottom:8px;">Had a great experience? We'd love to hear from you.</p>
-        <p style="font-size:13px;color:var(--gray-light);margin-bottom:28px;">Not sure what to write? Let us help you craft something genuine — takes 30 seconds.</p>
+        <p style="font-size:13px;color:var(--gray-light);margin-bottom:32px;">Not sure what to write? Let us help you craft something genuine — takes 30 seconds.</p>
         <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
           <a href="/review" class="btn-cin-primary" style="display:inline-flex;text-decoration:none;"><span>✦ Generate My Review</span></a>
           <a href="https://g.page/r/CRYTBj0cd5zWEAE/review" target="_blank" rel="noopener" class="btn-cin-ghost" style="display:inline-flex;text-decoration:none;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.2);">Post Directly on Google →</a>
         </div>
       </div>
+
     </div>
   </div>
 </div>
@@ -4255,8 +4369,8 @@ var _pageMeta = {
     canonical: 'https://canonmomentphotography.com/blog'
   },
   'reviews-page': {
-    title: '5-Star Client Reviews | Canon Moment Photography Orlando',
-    desc: 'Real reviews from couples and corporate clients who trusted Canon Moment Photography. 5.0 stars · 20+ five-star reviews · 50+ proposals captured in Orlando.',
+    title: 'Client Testimonials | 5-Star Proposal & Wedding Photographer | Canon Moment Photography',
+    desc: 'Real testimonials from couples and corporate clients. 5.0 stars on Google · 33 Thumbtack reviews · 50+ proposals captured. See what clients say about Canon Moment Photography.',
     canonical: 'https://canonmomentphotography.com/reviews'
   }
 };
@@ -7578,8 +7692,8 @@ function onYouTubeIframeAPIReady(){
     videoId:'SlIVRfc2Gt0',
     playerVars:{autoplay:1,mute:1,loop:1,playlist:'SlIVRfc2Gt0',controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1},
     events:{
-      onReady:function(e){e.target.mute();e.target.playVideo();setTimeout(function(){var c=document.getElementById('yt-hero-cover');if(c)c.style.opacity='0';},600);},
-      onStateChange:function(e){if(e.data===YT.PlayerState.ENDED)e.target.playVideo();}
+      onReady:function(e){e.target.mute();e.target.playVideo();},
+      onStateChange:function(e){if(e.data===1){setTimeout(function(){var c=document.getElementById('yt-hero-cover');if(c)c.style.opacity='0';},400);}if(e.data===0)e.target.playVideo();}
     }
   });
 }
