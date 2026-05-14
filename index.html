@@ -227,8 +227,8 @@
 }
 </script>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231C1C1C'/><text x='50' y='66' font-family='Georgia,serif' font-size='38' fill='%23C9A96E' text-anchor='middle' dominant-baseline='middle'>CM</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231C1C1C'/><text x='50' y='66' font-family='Georgia,serif' font-size='38' fill='%23C9A96E' text-anchor='middle' dominant-baseline='middle'>CM</text></svg>">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
@@ -1758,7 +1758,7 @@ footer { background: #141414; padding: 72px 80px 40px; width: 100%; max-width: 1
   <a href="/gallery" onclick="goPage('gallery-page');closeMobileMenu();return false;">Gallery</a>
   <a href="/packages" onclick="goPage('packages-page');closeMobileMenu();return false;">Packages</a>
   <a onclick="goPage('blog-page');closeMobileMenu()">Blog</a>
-  <a href="/reviews" onclick="goPage('reviews-page');closeMobileMenu();return false;">Testimonials</a>
+  <a href="/testimonials" onclick="goPage('reviews-page');closeMobileMenu();return false;">Testimonials</a>
   <a href="/contact" onclick="goPage('contact-page');closeMobileMenu();return false;">Contact</a>
 </div>
 
@@ -1771,7 +1771,7 @@ footer { background: #141414; padding: 72px 80px 40px; width: 100%; max-width: 1
     <li><a href="/gallery" onclick="goPage('gallery-page');return false;" id="nav-gallery-page">Gallery</a></li>
     <li><a href="/packages" onclick="goPage('packages-page');return false;" id="nav-packages-page">Packages</a></li>
     <li><a onclick="goPage('blog-page')" id="nav-blog-page">Blog</a></li>
-    <li><a href="/reviews" onclick="goPage('reviews-page');return false;" id="nav-reviews-page">Testimonials</a></li>
+    <li><a href="/testimonials" onclick="goPage('reviews-page');return false;" id="nav-reviews-page">Testimonials</a></li>
     <li><a href="/contact" onclick="goPage('contact-page');return false;" id="nav-contact-page">Contact</a></li>
     <li><a onclick="openPortal()" id="nav-portal" style="display:none;">Client Portal</a></li>
   </ul>
@@ -3516,8 +3516,8 @@ footer { background: #141414; padding: 72px 80px 40px; width: 100%; max-width: 1
 
 <!-- ══ LEAD MAGNET POPUP ══ -->
 <!-- ══ REVIEWS PAGE ══ -->
-<div class="page" id="page-reviews-page">
-  <div style="padding:140px 80px 100px;background:var(--charcoal);min-height:100vh;">
+<div class="page" id="page-reviews-page" style="background:var(--charcoal);min-height:100vh;">
+  <div style="padding:140px 80px 100px;">
     <div style="max-width:1200px;margin:0 auto;">
 
       <!-- Header -->
@@ -4371,7 +4371,7 @@ var _pageMeta = {
   'reviews-page': {
     title: 'Client Testimonials | 5-Star Proposal & Wedding Photographer | Canon Moment Photography',
     desc: 'Real testimonials from couples and corporate clients. 5.0 stars on Google · 33 Thumbtack reviews · 50+ proposals captured. See what clients say about Canon Moment Photography.',
-    canonical: 'https://canonmomentphotography.com/reviews'
+    canonical: 'https://canonmomentphotography.com/testimonials'
   }
 };
 
@@ -4401,7 +4401,7 @@ function goPage(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setTimeout(initReveal, 150);
   _updateMeta(id);
-  var _m={'home':'/','gallery-page':'/gallery','packages-page':'/packages','contact-page':'/contact','reviews-page':'/reviews','services-page':'/services','blog-page':'/blog'};
+  var _m={'home':'/','gallery-page':'/gallery','packages-page':'/packages','contact-page':'/contact','reviews-page':'/testimonials','services-page':'/services','blog-page':'/blog'};
   var _p=_m[id]||null;
   if(_p&&window.location.pathname!==_p){try{history.pushState({page:id},'',_p);}catch(e){}}
 }
@@ -7666,6 +7666,7 @@ function closeBlogModal() {
       'book':      function() { goPage('contact-page'); },
       'services':  function() { goPage('services-page'); },
       'blog':      function() { goPage('blog-page'); },
+      'testimonials': function() { goPage('reviews-page'); },
       'reviews':   function() { goPage('reviews-page'); },
       'proposals': function() { goPage('packages-page'); setTimeout(function() { showPkgSection('proposals'); }, 100); },
       'weddings':  function() { goPage('packages-page'); setTimeout(function() { showPkgSection('weddings'); }, 100); }
