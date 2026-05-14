@@ -29,13 +29,16 @@ exports.handler = async function(event) {
         'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'claude-3-haiku-20240307',
+        model: 'claude-sonnet-4-5',
         max_tokens: 1000,
         messages: body.messages,
       }),
     });
 
     const data = await response.json();
+    if (!response.ok) {
+      return { statusCode: 200, headers, body: JSON.stringify({ error: { message: 'Anthropic ' + response.status + ': ' + JSON.stringify(data) } }) };
+    }
     return { statusCode: 200, headers, body: JSON.stringify(data) };
   } catch (err) {
     return { statusCode: 500, headers, body: JSON.stringify({ error: { message: err.message } }) };
