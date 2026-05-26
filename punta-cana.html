@@ -336,7 +336,7 @@ footer{background:#0a0a0a;border-top:.5px solid var(--border);padding:48px}
       <div><div class="label">Our Work</div><h2>A Glimpse of<br>What We Capture</h2></div>
       <a class="gallery-link" href="https://canonmomentphotographyllc.pixieset.com" target="_blank">View Full Gallery →</a>
     </div>
-    <div class="gallery-grid"><div class="gl-item"><img src="https://images.pixieset.com/495584311/a5c639f5521bcddd94298737b9bd3c98-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/495584311/84868bf9e1303e509f9946ea16882eb4-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/648423801/7a6d496e4dbbefaf263fbd999ef8e3d7-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/495584311/b924600dcf0480ab83bf26e1a3fbe1a1-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/648423801/7c2dbec5051e831bb458aba5d1ffe6bf-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/495584311/ac277c44cbbd189e767a63d2ad110697-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div></div><div class="gl-item"><img src="https://images.pixieset.com/499985801/dc64b3ced56ee9a731e782d6eff5144d-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/575915011/c9b11f6b3d9cb009f31b06dd282a2bb7-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/301284801/f86f10ba3915214208a0da8e901903f5-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/648423801/b4f78cb22088c7a563231f63e317624b-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/033333701/68e41eef6b852eeeb08a5a828649e99a-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div></div>
+    <div class="gallery-grid"><div class="gl-item"><img src="https://images.pixieset.com/301284801/1ab2804cb536a63fdbc695255fb12acf-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/495584311/cd461862649ae9d4196bab6d60a130e4-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/648423801/7a6d496e4dbbefaf263fbd999ef8e3d7-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/648423801/6301e2c133fc9d70fd2c1c6b3eddd00a-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/648423801/7c2dbec5051e831bb458aba5d1ffe6bf-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/575915011/add3942c542885c64b148dd50edfb510-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div></div><div class="gl-item"><img src="https://images.pixieset.com/499985801/dc64b3ced56ee9a731e782d6eff5144d-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/575915011/c9b11f6b3d9cb009f31b06dd282a2bb7-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/301284801/f86f10ba3915214208a0da8e901903f5-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/648423801/b4f78cb22088c7a563231f63e317624b-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div><div class="gl-item"><img src="https://images.pixieset.com/033333701/68e41eef6b852eeeb08a5a828649e99a-xxlarge.jpg" alt="Canon Moment Photography Punta Cana" loading="lazy"></div></div>
     <div class="gallery-cta"><a class="btn-gold" href="https://canonmomentphotographyllc.pixieset.com" target="_blank">Explore Full Portfolio →</a></div>
   </div>
 </section>
@@ -419,23 +419,27 @@ document.getElementById('city-form').addEventListener('submit',async function(e)
 </script>
 <script>
 (function(){var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s);})();
-var _ytCity;
+var _ytCity,_ytCityReady=false;
 function onYouTubeIframeAPIReady(){
+  if(_ytCityReady)return;_ytCityReady=true;
   _ytCity=new YT.Player('yt-player',{
     videoId:'SlIVRfc2Gt0',
-    playerVars:{autoplay:1,mute:1,loop:1,playlist:'SlIVRfc2Gt0',controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1},
+    host:'https://www.youtube-nocookie.com',
+    playerVars:{autoplay:1,mute:1,loop:1,playlist:'SlIVRfc2Gt0',controls:0,rel:0,modestbranding:1,playsinline:1,iv_load_policy:3,disablekb:1,enablejsapi:1},
     events:{
       onReady:function(e){e.target.mute();e.target.playVideo();},
       onStateChange:function(e){if(e.data===1){setTimeout(function(){var c=document.getElementById('yt-cover');if(c)c.style.opacity='0';},400);}if(e.data===0)e.target.playVideo();}
     }
   });
-}
   setTimeout(function(){var c=document.getElementById('yt-cover');if(c&&parseFloat(c.style.opacity)>0)c.style.opacity='0';},2500);
+}
+var _ytCityPoll=setInterval(function(){if(typeof YT!=='undefined'&&YT.Player&&!_ytCityReady){clearInterval(_ytCityPoll);onYouTubeIframeAPIReady();}},500);
+setTimeout(function(){clearInterval(_ytCityPoll);},10000);
+window.addEventListener('pageshow',function(e){if(e.persisted&&_ytCity&&_ytCity.playVideo){try{_ytCity.mute();_ytCity.playVideo();}catch(x){}}});
 document.addEventListener('touchstart',function _tryPlay(){
   if(_ytCity&&_ytCity.getPlayerState){try{_ytCity.mute();_ytCity.playVideo();}catch(e){}}
   document.removeEventListener('touchstart',_tryPlay);
 });
 </script>
-<div id="lang-toggle-bar"  style="position:fixed;id="lang-toggle-bar";bottom:24px;right:24px;z-index:9999;display:flex;background:rgba(28,28,28,.96);border:.5px solid rgba(201,169,110,0.3);backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(0,0,0,.4);"><a href="/punta-cana" style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:11px 18px;text-decoration:none;color:#C9A96E;">EN</a><a href="/punta-cana-es" style="font-family:'Jost',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:11px 18px;text-decoration:none;color:rgba(201,169,110,0.38);border-left:.5px solid rgba(201,169,110,0.3);">ES</a></div>
 </body>
 </html>
