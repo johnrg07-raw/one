@@ -33,9 +33,43 @@
 /chicago        /chicago.html       200
 /napa-valley    /napa-valley.html   200
 
+# Service-specific SEO landing pages
+/orlando-proposal-photographer    /orlando-proposal-photographer.html    200
+/orlando-wedding-photographer     /orlando-wedding-photographer.html     200
+/orlando-engagement-photographer  /orlando-engagement-photographer.html  200
+/orlando-corporate-photographer   /orlando-corporate-photographer.html   200
+/orlando-event-photographer       /orlando-event-photographer.html       200
+
 # International city landing pages
 /punta-cana     /punta-cana.html    200
 /paris          /paris.html         200
 /santorini      /santorini.html     200
 /cancun         /cancun.html        200
 /amalfi-coast   /amalfi-coast.html  200
+
+# Spanish (ES) city + service pages
+/miami-es                                /miami-es.html                           200
+/tampa-es                                /tampa-es.html                           200
+/key-west-es                             /key-west-es.html                        200
+/st-augustine-es                         /st-augustine-es.html                    200
+/sarasota-es                             /sarasota-es.html                        200
+/fort-lauderdale-es                      /fort-lauderdale-es.html                 200
+/palm-beach-es                           /palm-beach-es.html                      200
+/naples-es                               /naples-es.html                          200
+/clearwater-es                           /clearwater-es.html                      200
+/jacksonville-es                         /jacksonville-es.html                    200
+/new-york-es                             /new-york-es.html                        200
+/las-vegas-es                            /las-vegas-es.html                       200
+/nashville-es                            /nashville-es.html                       200
+/chicago-es                              /chicago-es.html                         200
+/napa-valley-es                          /napa-valley-es.html                     200
+/punta-cana-es                           /punta-cana-es.html                      200
+/paris-es                                /paris-es.html                           200
+/santorini-es                            /santorini-es.html                       200
+/cancun-es                               /cancun-es.html                          200
+/amalfi-coast-es                         /amalfi-coast-es.html                    200
+/orlando-proposal-photographer-es        /orlando-proposal-photographer-es.html   200
+/orlando-wedding-photographer-es         /orlando-wedding-photographer-es.html    200
+/orlando-engagement-photographer-es      /orlando-engagement-photographer-es.html 200
+/orlando-corporate-photographer-es       /orlando-corporate-photographer-es.html  200
+/orlando-event-photographer-es           /orlando-event-photographer-es.html      200

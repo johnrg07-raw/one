@@ -2,40 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- ── MAIN PAGES ── -->
-  <url><loc>https://canonmomentphotography.com/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://canonmomentphotography.com/services</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://canonmomentphotography.com/packages</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://canonmomentphotography.com/proposals</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/weddings</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/gallery</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/contact</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/blog</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://canonmomentphotography.com/testimonials</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://canonmomentphotography.com/</loc><lastmod>2026-05-25</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://canonmomentphotography.com/services</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://canonmomentphotography.com/packages</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://canonmomentphotography.com/proposals</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/weddings</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/gallery</loc><lastmod>2026-05-25</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/contact</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/blog</loc><lastmod>2026-05-25</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://canonmomentphotography.com/testimonials</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ── SERVICE LANDING PAGES (SEO) ── -->
+  <url><loc>https://canonmomentphotography.com/orlando-proposal-photographer</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-wedding-photographer</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-engagement-photographer</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-corporate-photographer</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-event-photographer</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <!-- ── FLORIDA CITY LANDING PAGES ── -->
-  <url><loc>https://canonmomentphotography.com/miami</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/tampa</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/key-west</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/st-augustine</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/sarasota</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/fort-lauderdale</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/palm-beach</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/naples</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/clearwater</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://canonmomentphotography.com/jacksonville</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/miami</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/tampa</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/key-west</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/st-augustine</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/sarasota</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/fort-lauderdale</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/palm-beach</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/naples</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/clearwater</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://canonmomentphotography.com/jacksonville</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- ── NATIONAL CITY LANDING PAGES ── -->
-  <url><loc>https://canonmomentphotography.com/new-york</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/las-vegas</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/nashville</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/chicago</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/napa-valley</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/new-york</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/las-vegas</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/nashville</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/chicago</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/napa-valley</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
   <!-- ── INTERNATIONAL CITY LANDING PAGES ── -->
-  <url><loc>https://canonmomentphotography.com/punta-cana</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/paris</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/santorini</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/cancun</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://canonmomentphotography.com/amalfi-coast</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/punta-cana</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/paris</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/santorini</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/cancun</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://canonmomentphotography.com/amalfi-coast</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
 
+
+  <!-- ── SPANISH (ES) PAGES ── -->
+  <url><loc>https://canonmomentphotography.com/miami-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/tampa-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/key-west-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/st-augustine-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/sarasota-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/fort-lauderdale-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/palm-beach-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/naples-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/clearwater-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/jacksonville-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/new-york-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/las-vegas-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/nashville-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/chicago-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/napa-valley-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/punta-cana-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/paris-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/santorini-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/cancun-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/amalfi-coast-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-proposal-photographer-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-wedding-photographer-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-engagement-photographer-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-corporate-photographer-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://canonmomentphotography.com/orlando-event-photographer-es</loc><lastmod>2026-05-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>
