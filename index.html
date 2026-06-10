@@ -2113,6 +2113,16 @@ nav.scrolled {
   .cm-chat-window { bottom: 144px !important; right: 10px !important; width: calc(100vw - 20px) !important; max-height: 65vh !important; }
 }
 </style>
+
+<!-- fcm-homepage-override -->
+<style>
+/* Hide the existing custom AI chatbot widget — replaced by floating contact menu */
+.cm-chat-bubble, .cm-chat-window, .cm-chat-notif { display: none !important; }
+/* Position floating contact menu where the chatbot used to sit (above BOOK NOW bar) */
+@media (max-width: 780px) {
+  .fcm { bottom: 80px !important; right: 16px !important; left: auto !important; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
