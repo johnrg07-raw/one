@@ -3,6 +3,7 @@
 
 # HTML sitemap
 /html-sitemap    /html-sitemap.html  200
+/thank-you      /thank-you.html      200
 
 # Main SPA routes
 /about          /index.html    200
