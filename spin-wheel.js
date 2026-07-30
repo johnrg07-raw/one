@@ -29,16 +29,21 @@
   var WEB3FORMS_KEY = '226c6cf8-a728-46e6-81a1-8cd4d7d286eb';
   var WORKER_URL = 'https://canon-moment-worker.johnrg07.workers.dev';
 
-  /* ---------- prizes (weights are relative, need not total 100) ---------- */
+  /* ---------- prizes ----------
+     w  = relative weight (need not total 100)
+     en / es = full name shown when they win
+     sh / shEs = SHORT label printed on the wheel face. Keep these under
+     ~10 characters: they are set radially and will overflow the rim if
+     they get long. */
   var PRIZES = [
-    { id: 'print',    w: 20, en: 'Free 8×10 Print',        es: 'Impresión 8×10 Gratis' },
-    { id: 'toast',    w: 18, en: 'Free Champagne Toast',   es: 'Brindis de Champán Gratis' },
-    { id: 'digital',  w: 16, en: 'Free Digital Image',     es: 'Imagen Digital Gratis' },
-    { id: 'time',     w: 14, en: 'Extra 15 Minutes Free',  es: '15 Minutos Extra Gratis' },
-    { id: 'ten',      w: 14, en: '10% Off Any Booking',    es: '10% de Descuento' },
-    { id: 'scouting', w: 6,  en: 'Free Location Scouting', es: 'Exploración de Lugar Gratis' },
-    { id: 'fifty',    w: 6,  en: '$50 Off a Wedding',      es: '$50 de Descuento en Boda' },
-    { id: 'guide',    w: 6,  en: 'Free Location Guide',    es: 'Guía de Lugares Gratis' }
+    { id: 'print',    w: 20, en: 'Free 8×10 Print',        es: 'Impresión 8×10 Gratis',      sh: '8×10 PRINT', shEs: 'IMPRESIÓN' },
+    { id: 'toast',    w: 18, en: 'Free Champagne Toast',   es: 'Brindis de Champán Gratis',  sh: 'CHAMPAGNE',  shEs: 'CHAMPÁN' },
+    { id: 'digital',  w: 16, en: 'Free Digital Image',     es: 'Imagen Digital Gratis',      sh: 'DIGITAL',    shEs: 'DIGITAL' },
+    { id: 'time',     w: 14, en: 'Extra 15 Minutes Free',  es: '15 Minutos Extra Gratis',    sh: '+15 MIN',    shEs: '+15 MIN' },
+    { id: 'ten',      w: 14, en: '10% Off Any Booking',    es: '10% de Descuento',           sh: '10% OFF',    shEs: '10% DESC.' },
+    { id: 'scouting', w: 6,  en: 'Free Location Scouting', es: 'Exploración de Lugar Gratis',sh: 'SCOUTING',   shEs: 'SCOUTING' },
+    { id: 'fifty',    w: 6,  en: '$50 Off a Wedding',      es: '$50 de Descuento en Boda',   sh: '$50 OFF',    shEs: '$50 DESC.' },
+    { id: 'guide',    w: 6,  en: 'Free Location Guide',    es: 'Guía de Lugares Gratis',     sh: 'GUIDE',      shEs: 'GUÍA' }
   ];
 
   var T = {
@@ -59,7 +64,8 @@
       viewGuide: 'Open your free Location Guide →',
       book: 'Book Your Session →',
       close: 'Close',
-      later: 'No thanks'
+      later: 'No thanks',
+      sound: 'Sound on / off'
     },
     es: {
       tag: 'Un giro por invitado',
@@ -78,7 +84,8 @@
       viewGuide: 'Abre tu Guía de Lugares gratis →',
       book: 'Reserva tu Sesión →',
       close: 'Cerrar',
-      later: 'No, gracias'
+      later: 'No, gracias',
+      sound: 'Sonido'
     }
   }[LANG];
 
@@ -147,7 +154,7 @@
   'text-transform:uppercase;cursor:pointer;padding:4px 0;text-align:left;transition:color .2s}.cmw-later:hover{color:#B8B8B8}' +
   '.cmw-r{position:relative;background:#161616;border-left:.5px solid rgba(201,169,110,.18);' +
   'display:flex;align-items:center;justify-content:center;padding:30px 24px;min-width:0}' +
-  '.cmw-stage{position:relative;width:min(320px,72vw);aspect-ratio:1/1}' +
+  '.cmw-stage{position:relative;width:min(320px,100%);aspect-ratio:1/1;flex:0 0 auto}' +
   '.cmw-ptr{position:absolute;top:-2px;left:50%;transform:translateX(-50%);z-index:4;width:0;height:0;' +
   'border-left:11px solid transparent;border-right:11px solid transparent;border-top:20px solid #C9A96E;' +
   'filter:drop-shadow(0 2px 4px rgba(0,0,0,.6))}' +
@@ -167,10 +174,18 @@
   '.cmw-links a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:12px;text-decoration:none;transition:all .25s}' +
   '.cmw-links a.p{background:#C9A96E;color:#1C1C1C;font-weight:500}.cmw-links a.p:hover{background:#9B7A3F}' +
   '.cmw-links a.s{border:.5px solid rgba(201,169,110,.45);color:#C9A96E}.cmw-links a.s:hover{border-color:#C9A96E;background:rgba(201,169,110,.08)}' +
-  '@media(max-width:760px){.cmw-box{grid-template-columns:1fr;max-width:420px}' +
+  '.cmw-snd{position:absolute;top:12px;left:14px;z-index:4;width:34px;height:34px;border-radius:50%;' +
+  'background:rgba(28,28,28,.72);border:.5px solid rgba(201,169,110,.45);cursor:pointer;display:flex;' +
+  'align-items:center;justify-content:center;padding:0;transition:all .25s}' +
+  '.cmw-snd:hover{background:rgba(201,169,110,.16);border-color:#C9A96E}' +
+  '.cmw-snd svg{width:16px;height:16px;stroke:#C9A96E;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}' +
+  '.cmw-snd .off{display:none}.cmw-snd.muted .on{display:none}.cmw-snd.muted .off{display:block}' +
+  '.cmw-snd.muted svg{stroke:#6B6B6B}' +
+  '@media(max-width:900px){.cmw-box{grid-template-columns:1fr;max-width:440px}' +
   '.cmw-r{order:-1;border-left:none;border-bottom:.5px solid rgba(201,169,110,.18);padding:26px 20px 18px}' +
-  '.cmw-stage{width:min(240px,62vw)}.cmw-l{padding:24px 22px 28px}.cmw-note{display:none}}' +
-  '@media(max-height:620px){.cmw-note{display:none}}' +
+  '.cmw-stage{width:min(260px,68vw)}.cmw-l{padding:24px 22px 28px}}'
+  '@media(max-width:600px){.cmw-note{display:none}.cmw-stage{width:min(230px,62vw)}.cmw-l{padding:22px 18px 26px}.cmw-ov{padding:12px}}' +
+  '@media(max-height:620px){.cmw-note{display:none}.cmw-stage{width:min(190px,42vh)}.cmw-r{padding:16px}}' +
   '@media(prefers-reduced-motion:reduce){.cmw-wheel{transition-duration:.6s}.cmw-ov,.cmw-box{transition:none}}';
 
   /* ---------- build wheel SVG ---------- */
@@ -186,17 +201,15 @@
     return 'M' + c + ',' + c + ' L' + p1[0].toFixed(2) + ',' + p1[1].toFixed(2) +
            ' A' + r + ',' + r + ' 0 0 1 ' + p2[0].toFixed(2) + ',' + p2[1].toFixed(2) + ' Z';
   }
-  function label(txt) {
-    // keep wheel legible: shorten long labels
-    return txt.replace('Free ', '').replace(' Gratis', '').replace('de Descuento', 'Desc.')
-              .replace('Any Booking', 'Booking').replace('a Wedding', 'Wedding')
-              .replace('Location Scouting', 'Scouting').replace('Exploración de Lugar', 'Scouting')
-              .replace('Location Guide', 'Guide').replace('Guía de Lugares', 'Guía')
-              .replace('Extra 15 Minutes', '+15 Min').replace('15 Minutos Extra', '+15 Min')
-              .replace('Digital Image', 'Digital').replace('Imagen Digital', 'Digital')
-              .replace('Champagne Toast', 'Champagne').replace('Brindis de Champán', 'Champán')
-              .replace('Impresión ', '');
-  }
+  function label(p) { return LANG === 'es' ? p.shEs : p.sh; }
+
+  /* Text is set RADIALLY (running from the hub out toward the rim) rather
+     than tangentially. Tangential text on a 45° segment runs out of arc and
+     spills past the rim — which is what made the old labels overflow.
+     Radially there is ~66 units of room (hub r=30 to rim r=96), so a
+     10-character label at font-size 7 sits comfortably inside. */
+  var LABEL_R = 63;       // centre of the label along the radius
+  var FONT = 7;
 
   var svg = '<svg class="cmw-wheel" id="cmw-wheel" viewBox="0 0 200 200" aria-hidden="true">';
   for (var i = 0; i < N; i++) {
@@ -205,13 +218,16 @@
   }
   for (var j = 0; j < N; j++) {
     var mid = j * SEG + SEG / 2;
-    var tp = polar(100, 100, 62, mid);
-    var rot = mid;
-    if (rot > 90 && rot < 270) rot += 180;
-    svg += '<text x="' + tp[0].toFixed(1) + '" y="' + tp[1].toFixed(1) + '" fill="#E8D5B0" font-size="8.4" ' +
-           'font-family="Jost,sans-serif" letter-spacing=".4" text-anchor="middle" dominant-baseline="middle" ' +
+    var tp = polar(100, 100, LABEL_R, mid);
+    // mid-90 makes the baseline run along the radius; flip on the left
+    // half so nothing reads upside-down.
+    var rot = mid - 90;
+    if (mid > 180) rot += 180;
+    svg += '<text x="' + tp[0].toFixed(1) + '" y="' + tp[1].toFixed(1) + '" fill="#E8D5B0" ' +
+           'font-size="' + FONT + '" font-family="Jost,sans-serif" letter-spacing=".55" ' +
+           'text-anchor="middle" dominant-baseline="central" ' +
            'transform="rotate(' + rot.toFixed(1) + ' ' + tp[0].toFixed(1) + ' ' + tp[1].toFixed(1) + ')">' +
-           label(PRIZES[j][LANG]) + '</text>';
+           label(PRIZES[j]) + '</text>';
   }
   svg += '<circle cx="100" cy="100" r="99" fill="none" stroke="#C9A96E" stroke-width="1.2"/></svg>';
 
@@ -219,7 +235,14 @@
   var HTML = '' +
   '<div class="cmw-box" role="dialog" aria-modal="true" aria-labelledby="cmw-title">' +
     '<button class="cmw-x" id="cmw-x" aria-label="' + T.close + '">&times;</button>' +
-    '<div class="cmw-r"><div class="cmw-stage"><div class="cmw-ptr"></div>' + svg +
+    '<div class="cmw-r">' +
+      '<button class="cmw-snd" id="cmw-snd" type="button" aria-label="' + T.sound + '" title="' + T.sound + '">' +
+        '<svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/>' +
+        '<path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>' +
+        '<svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/>' +
+        '<path d="m17 9 4 6"/><path d="m21 9-4 6"/></svg>' +
+      '</button>' +
+      '<div class="cmw-stage"><div class="cmw-ptr"></div>' + svg +
       '<div class="cmw-hub">CM</div></div></div>' +
     '<div class="cmw-l">' +
       '<div id="cmw-intro">' +
@@ -263,6 +286,10 @@
     ov.innerHTML = HTML;
     document.body.appendChild(ov);
 
+    var sb = document.getElementById('cmw-snd');
+    if (sb) sb.addEventListener('click', toggleSound);
+    paintSound();
+
     document.getElementById('cmw-x').addEventListener('click', close);
     document.getElementById('cmw-later').addEventListener('click', close);
     document.getElementById('cmw-form').addEventListener('submit', onSubmit);
@@ -292,6 +319,99 @@
     ov.classList.remove('vis');
     document.body.style.overflow = '';
     setTimeout(function () { ov.classList.remove('on'); }, 350);
+  }
+
+  /* ============================================================
+     Sound — everything is synthesised with the Web Audio API, so there
+     are no audio files to host and nothing to load. The context is only
+     created on the first click (browsers block audio before a gesture).
+     ============================================================ */
+  var KEY_MUTE = 'cm-spin-mute';
+  var ctx = null, muted = false;
+  try { muted = window.localStorage.getItem(KEY_MUTE) === '1'; } catch (e) {}
+
+  function audio() {
+    if (ctx) return ctx;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    try { ctx = new AC(); } catch (e) { return null; }
+    return ctx;
+  }
+
+  /* one short shaped tone */
+  function tone(freq, at, dur, peak, type) {
+    var c = audio(); if (!c || muted) return;
+    try {
+      var o = c.createOscillator(), g = c.createGain();
+      o.type = type || 'triangle';
+      o.frequency.setValueAtTime(freq, at);
+      g.gain.setValueAtTime(0.0001, at);
+      g.gain.exponentialRampToValueAtTime(peak, at + 0.008);
+      g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+      o.connect(g); g.connect(c.destination);
+      o.start(at); o.stop(at + dur + 0.02);
+    } catch (e) {}
+  }
+
+  /* the peg-click as a segment passes the pointer */
+  function tick(at, strength) {
+    tone(1100 + Math.random() * 130, at, 0.035, 0.16 * (strength || 1), 'square');
+  }
+
+  /* Match the ticks to the CSS easing so they slow down with the wheel. */
+  function bezierY(t, p1x, p1y, p2x, p2y) {
+    // sample the cubic-bezier by solving x(u)=t with a few Newton steps
+    function bx(u) { return 3 * (1 - u) * (1 - u) * u * p1x + 3 * (1 - u) * u * u * p2x + u * u * u; }
+    function by(u) { return 3 * (1 - u) * (1 - u) * u * p1y + 3 * (1 - u) * u * u * p2y + u * u * u; }
+    var u = t;
+    for (var i = 0; i < 6; i++) {
+      var x = bx(u) - t;
+      var d = (bx(u + 1e-4) - bx(u - 1e-4)) / 2e-4;
+      if (Math.abs(d) < 1e-6) break;
+      u -= x / d;
+      if (u < 0) u = 0; else if (u > 1) u = 1;
+    }
+    return by(u);
+  }
+
+  function playSpin(totalDeg, durationSec) {
+    var c = audio(); if (!c || muted) return;
+    if (c.state === 'suspended') { try { c.resume(); } catch (e) {} }
+    var now = c.currentTime;
+    var turns = totalDeg / SEG;                 // how many segments pass by
+    var last = -1;
+    // step through the animation and fire a tick on each segment boundary
+    for (var s = 0; s <= 1.0001; s += 0.004) {
+      var progressed = bezierY(s, 0.17, 0.67, 0.16, 1) * turns;
+      var idx = Math.floor(progressed);
+      if (idx !== last) {
+        last = idx;
+        var when = now + s * durationSec;
+        // quieter as it slows, so the ending feels like a settle
+        tick(when, 0.55 + 0.45 * (1 - s));
+      }
+    }
+  }
+
+  /* short celebratory flourish on the reveal */
+  function playWin() {
+    var c = audio(); if (!c || muted) return;
+    if (c.state === 'suspended') { try { c.resume(); } catch (e) {} }
+    var t0 = c.currentTime + 0.04;
+    var notes = [523.25, 659.25, 783.99, 1046.5];   // C5 E5 G5 C6
+    notes.forEach(function (f, i) { tone(f, t0 + i * 0.11, 0.42, 0.17, 'triangle'); });
+    tone(1567.98, t0 + 0.46, 0.7, 0.12, 'sine');    // G6 shimmer
+  }
+
+  function paintSound() {
+    var b = document.getElementById('cmw-snd');
+    if (b) b.className = 'cmw-snd' + (muted ? ' muted' : '');
+  }
+  function toggleSound() {
+    muted = !muted;
+    try { window.localStorage.setItem(KEY_MUTE, muted ? '1' : '0'); } catch (e) {}
+    paintSound();
+    if (!muted) { var c = audio(); if (c && c.state === 'suspended') { try { c.resume(); } catch (e) {} } tone(880, (c ? c.currentTime : 0) + 0.01, 0.12, 0.14, 'triangle'); }
   }
 
   /* ---------- prize selection ---------- */
@@ -358,6 +478,7 @@
     var deg = (360 * 6) - mid + jitter;
     var wheel = document.getElementById('cmw-wheel');
     wheel.style.transform = 'rotate(' + deg.toFixed(2) + 'deg)';
+    playSpin(deg, 5);
 
     markWon(prize.id, code);
     track('spin_wheel_win', { prize: prize.id, code: code, city: CITY });
@@ -367,6 +488,7 @@
   }
 
   function reveal(prize, code) {
+    playWin();
     document.getElementById('cmw-intro').style.display = 'none';
     document.getElementById('cmw-wname').textContent = prize[LANG];
     document.getElementById('cmw-code').textContent = code;
