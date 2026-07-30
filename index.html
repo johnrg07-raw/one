@@ -2125,6 +2125,27 @@ nav.scrolled {
 /* While the Live Support chat window is open, hide the floating menu so they don't overlap */
 body.cm-chat-open .fcm { display: none !important; }
 </style>
+<style id="cm-mobile-menu-fit">
+/* The mobile menu centres its links with no overflow rule, so anything taller
+   than the viewport is clipped AND unreachable (you cannot scroll to it).
+   With 9 items it needs ~570px, which clipped on small phones and in any
+   landscape orientation. Scale to viewport height, and switch to top-aligned
+   scrolling when short so every item stays reachable. */
+.mobile-menu { overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 72px 20px 40px; }
+@media (max-height: 760px) {
+  .mobile-menu { gap: 20px; }
+  .mobile-menu a { font-size: 26px; }
+}
+@media (max-height: 600px) {
+  .mobile-menu { gap: 13px; justify-content: flex-start; padding: 64px 20px 32px; }
+  .mobile-menu a { font-size: 22px; }
+}
+@media (max-height: 430px) {
+  .mobile-menu { gap: 7px; padding: 44px 20px 28px; }
+  .mobile-menu a { font-size: 17px; }
+  .mobile-close { top: 12px; right: 16px; font-size: 22px; }
+}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -2157,6 +2178,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a onclick="goPage('services-page');closeMobileMenu()">Services</a>
   <a href="/gallery" onclick="goPage('gallery-page');closeMobileMenu();return false;">Gallery</a>
   <a href="/packages" onclick="goPage('packages-page');closeMobileMenu();return false;">Packages</a>
+  <!-- Separate pages, not SPA routes: let the browser navigate, just close the menu. -->
+  <a href="/destinations" onclick="closeMobileMenu()">Destinations</a>
+  <a href="/photo-locations" onclick="closeMobileMenu()">Locations</a>
   <a onclick="goPage('blog-page');closeMobileMenu()">Blog</a>
   <a href="/testimonials" onclick="goPage('reviews-page');closeMobileMenu();return false;">Testimonials</a>
   <a href="/contact" onclick="goPage('contact-page');closeMobileMenu();return false;">Contact</a>

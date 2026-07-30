@@ -64,7 +64,9 @@ h1{font-family:var(--serif);font-size:clamp(30px,5vw,54px);font-weight:300;margi
 .cta a:hover{background:var(--gold-dark)}
 footer{max-width:1160px;margin:72px auto 0;padding-top:32px;border-top:.5px solid var(--border);font-size:11px;color:var(--gray-light);letter-spacing:.06em;line-height:1.7}
 footer a{color:var(--gold)}
-@media(max-width:600px){body{padding:60px 22px 40px}.cities{grid-template-columns:1fr}}
+@media(max-width:1024px){body{padding:64px 30px 50px}.cities{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px 30px}}
+@media(max-width:760px){.dest-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
+@media(max-width:600px){body{padding:60px 22px 40px}.cities{grid-template-columns:1fr}.dest-grid{grid-template-columns:1fr}.region{margin-bottom:56px}}
 </style>
 <style>.xlink{display:inline-block;margin:-44px 0 56px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border-bottom:.5px solid rgba(201,169,110,.4);padding-bottom:4px}.xlink:hover{color:var(--gold-light,#E8D5B0)}</style>
 </head>
