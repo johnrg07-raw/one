@@ -3898,4 +3898,40 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://canonmomentphotography.com/winter-park-wedding-photographer"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://canonmomentphotography.com/winter-park-wedding-photographer"/>
   </url>
+  <url>
+    <loc>https://canonmomentphotography.com/destinations</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://canonmomentphotography.com/destinations"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://canonmomentphotography.com/destinations-es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://canonmomentphotography.com/destinations"/>
+  </url>
+  <url>
+    <loc>https://canonmomentphotography.com/destinations-es</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://canonmomentphotography.com/destinations"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://canonmomentphotography.com/destinations-es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://canonmomentphotography.com/destinations"/>
+  </url>
+  <url>
+    <loc>https://canonmomentphotography.com/photo-locations</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://canonmomentphotography.com/photo-locations"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://canonmomentphotography.com/photo-locations-es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://canonmomentphotography.com/photo-locations"/>
+  </url>
+  <url>
+    <loc>https://canonmomentphotography.com/photo-locations-es</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://canonmomentphotography.com/photo-locations"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://canonmomentphotography.com/photo-locations-es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://canonmomentphotography.com/photo-locations"/>
+  </url>
 </urlset>
