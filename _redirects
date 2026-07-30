@@ -1,6 +1,9 @@
 # Review generator page
 /review          /review.html        200
 
+# Venue guide (lead magnet)
+/venue-guide     /venue-guide.html   200
+
 # HTML sitemap
 /html-sitemap    /html-sitemap.html  200
 /thank-you      /thank-you.html      200
