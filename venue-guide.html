@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Central Florida Venue Guide — Canon Moment Photography</title>
+<meta name="description" content="Curated proposal spots, wedding venues and event locations across Central Florida — from the photographers who shoot them.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9A96E;--gold-dark:#9B7A3F;--ink:#1C1C1C;--warm:#3D2E1E;--cream:#FAF8F4;--line:#E8D5B0}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:#fff;max-width:860px;margin:0 auto;-webkit-font-smoothing:antialiased}
+img{display:block}
+
+/* ── COVER ── */
+.cover{background:var(--ink);padding:80px 56px;text-align:center;position:relative;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(201,169,110,.18) 0%,transparent 70%)}
+.cover>*{position:relative}
+.cover-eyebrow{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.cover-title{font-size:clamp(30px,6vw,50px);font-weight:300;color:#fff;line-height:1.18;margin-bottom:18px}
+.cover-title em{font-style:italic;color:var(--gold)}
+.cover-sub{font-family:Helvetica,Arial,sans-serif;font-size:14px;color:rgba(255,255,255,.5);line-height:1.75;max-width:460px}
+.cover-brand{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:36px;opacity:.75}
+.cover-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.cover-badge{font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75);border:1px solid rgba(201,169,110,.45);padding:6px 14px;border-radius:99px}
+
+/* ── LAYOUT ── */
+.wrap{padding:52px 56px}
+.intro{font-size:15px;color:var(--warm);line-height:1.9;margin-bottom:44px;padding:0 0 30px;border-bottom:.5px solid var(--line)}
+.part-header{margin:56px 0 12px;text-align:center}
+.part-num{font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dark)}
+.part-title{font-size:30px;font-weight:300;margin-top:8px}
+.part-title em{font-style:italic;color:var(--gold-dark)}
+.part-sub{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#8a8a8a;line-height:1.7;max-width:520px;margin:12px auto 0}
+.divider{text-align:center;padding:34px 0}
+.divider::before{content:'— ✦ —';color:var(--gold);letter-spacing:.25em}
+
+/* ── VENUE CARDS ── */
+.venue{margin:34px 0;border:.5px solid var(--line);border-radius:6px;overflow:hidden;break-inside:avoid}
+.venue-photo{width:100%;height:250px;overflow:hidden;background:linear-gradient(135deg,#2a2118,#4d3b24)}
+.venue-photo img{width:100%;height:100%;object-fit:cover}
+.venue-body{padding:26px 30px 30px}
+.venue-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+.venue-name{font-size:23px;font-weight:400}
+.venue-city{font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9a9a9a;white-space:nowrap}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px}
+.tag{font-family:Helvetica,Arial,sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:99px;background:rgba(201,169,110,.13);color:var(--gold-dark)}
+.tag.alt{background:#f1ede4;color:#7a6a4a}
+.venue-desc{font-size:14px;color:var(--warm);line-height:1.85;margin-bottom:14px}
+.tips{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:4px}
+.tips li{font-family:Helvetica,Arial,sans-serif;font-size:12.5px;color:#6b6b6b;display:flex;gap:9px;align-items:flex-start;line-height:1.6}
+.tips li::before{content:"✦";color:var(--gold);font-size:9px;margin-top:4px;flex-shrink:0}
+.cm-tip{background:rgba(201,169,110,.09);border-left:2px solid var(--gold);padding:14px 18px;margin-top:16px;border-radius:0 4px 4px 0}
+.cm-tip-label{font-family:Helvetica,Arial,sans-serif;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:5px}
+.cm-tip p{font-size:13px;font-style:italic;color:var(--warm);line-height:1.75}
+
+/* ── QUICK LIST ── */
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.quick-card{border:.5px solid var(--line);padding:18px 20px;border-radius:6px}
+.quick-name{font-size:16px;margin-bottom:3px}
+.quick-city{font-family:Helvetica,Arial,sans-serif;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:7px}
+.quick-desc{font-family:Helvetica,Arial,sans-serif;font-size:12px;color:#7d7d7d;line-height:1.65}
+
+/* ── DESTINATIONS ── */
+.dest-band{background:var(--ink);padding:36px 40px;margin:60px -56px 40px;text-align:center}
+.dest-band .part-title{color:#fff}
+.dest-band .part-sub{color:rgba(255,255,255,.45)}
+.dest-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:26px}
+.dest-card{border:.5px solid var(--line);padding:20px;border-radius:6px}
+.dest-name{font-size:16px;margin-bottom:3px}
+.dest-region{font-family:Helvetica,Arial,sans-serif;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.dest-fee{font-size:13px;color:#6b6b6b;margin-bottom:8px}
+.dest-fee strong{color:var(--ink)}
+.dest-note{font-family:Helvetica,Arial,sans-serif;font-size:11.5px;color:#999;line-height:1.65}
+
+/* ── CTA / FOOTER ── */
+.cta{background:var(--cream);border:.5px solid var(--line);border-radius:8px;padding:34px;text-align:center;margin-top:44px}
+.cta-title{font-size:22px;margin-bottom:8px}
+.cta-title em{font-style:italic;color:var(--gold-dark)}
+.cta-sub{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#6b6b6b;line-height:1.75;max-width:440px;margin:0 auto 18px}
+.cta-btn{display:inline-block;background:var(--ink);color:var(--gold);font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:15px 34px;text-decoration:none;border-radius:3px;margin-bottom:18px}
+.cta-contact{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:var(--gold-dark);line-height:1.9}
+.cta-contact a{color:var(--gold-dark)}
+.footer-note{text-align:center;margin-top:40px;padding-top:22px;border-top:.5px solid var(--line);font-family:Helvetica,Arial,sans-serif;font-size:9.5px;color:#b8b8b8;letter-spacing:.08em;line-height:1.9}
+.footer-note a{color:#b0a080}
+
+/* ── PRINT / SAVE AS PDF ── */
+.print-bar{position:sticky;top:0;z-index:5;background:rgba(28,28,28,.96);backdrop-filter:blur(6px);display:flex;justify-content:space-between;align-items:center;padding:10px 20px}
+.print-bar span{font-family:Helvetica,Arial,sans-serif;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.08em}
+.print-bar button{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:var(--ink);border:none;padding:8px 18px;border-radius:3px;cursor:pointer}
+@media print{
+  .print-bar{display:none}
+  .cover,.dest-band{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .venue{page-break-inside:avoid}
+  .venue-photo{height:190px}
+}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  .wrap{padding:36px 22px}
+  .cover{padding:60px 26px;min-height:340px}
+  .venue-body{padding:20px 18px 24px}
+  .venue-photo{height:190px}
+  .quick-grid,.dest-grid{grid-template-columns:1fr}
+  .dest-band{margin:48px -22px 32px;padding:28px 22px}
+}
+</style>
+</head>
+<body>
+
+<div class="print-bar">
+  <span>Canon Moment Photography · Venue Guide</span>
+  <button onclick="window.print()">Save as PDF</button>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Free Guide from Canon Moment Photography</div>
+  <div class="cover-title">The Central Florida<br><em>Venue Guide</em></div>
+  <div class="cover-sub">A curated collection of the region's most breathtaking settings for proposals, engagements, weddings &amp; celebrations — handpicked by the photographers who shoot them.</div>
+  <div class="cover-badges">
+    <span class="cover-badge">Proposals</span>
+    <span class="cover-badge">Weddings</span>
+    <span class="cover-badge">Engagements</span>
+    <span class="cover-badge">Events</span>
+  </div>
+  <div class="cover-brand">Canon Moment Photography LLC · Orlando &amp; Central Florida</div>
+</div>
+
+<div class="wrap">
+
+<p class="intro">Where you ask the question — or say "I do," or throw the party of the year — shapes every frame we capture. This guide brings together the hidden proposal spots photographers love, the wedding venues we recommend to every couple, and the event spaces that photograph beautifully. Read through, pick the one that feels like <em>you</em>, and reach out — we'll handle every detail from there.</p>
+
+<!-- ═══════════ PART 1 · PROPOSALS ═══════════ -->
+<div class="part-header">
+  <div class="part-num">Part One</div>
+  <div class="part-title">The 7 Hidden <em>Proposal Spots</em></div>
+  <div class="part-sub">The insider locations where Orlando's most unforgettable proposals happen — each chosen for beauty and for the natural hiding spots that let your photographer capture the real, unposed moment.</div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/kraft-azalea.jpg" alt="Kraft Azalea Gardens, Winter Park" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Kraft Azalea Gardens</div><div class="venue-city">Winter Park, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Micro Weddings</span><span class="tag">Elopements</span><span class="tag alt">Budget-Friendly</span></div>
+    <p class="venue-desc">The undisputed king of Orlando proposal locations. Tucked along Lake Maitland, this hidden garden features "The Exedra" — a curved lakefront colonnade that frames couples perfectly against the water and Spanish moss. The golden-hour light here is genuinely breathtaking.</p>
+    <ul class="tips">
+      <li>Best time: 90 minutes before sunset, year-round</li>
+      <li>Best spot: The Exedra pavilion facing the lake</li>
+      <li>Parking: Free small lot on Kraft Ave — arrive early on weekends</li>
+      <li>Flat paved path to the pavilion — wheelchair friendly</li>
+    </ul>
+    <div class="cm-tip"><div class="cm-tip-label">Canon Moment Tip</div><p>It's a public park, so we shoot early morning or golden hour to keep the columns clear and the light soft. Weekday mornings are nearly empty — perfect for privacy.</p></div>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/lake-eola.jpg" alt="Lake Eola Park fountain at night, downtown Orlando" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Lake Eola Park — Amphitheatre Side</div><div class="venue-city">Downtown Orlando, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Engagements</span><span class="tag alt">Iconic Skyline</span></div>
+    <p class="venue-desc">Everyone proposes at the swan boats. The secret is the eastern amphitheatre side, just past the fountain — a quieter waterfront stretch with perfect sightlines, Spanish moss, and the downtown skyline behind you. The lit fountain at blue hour is spectacular for post-proposal portraits.</p>
+    <ul class="tips">
+      <li>Best time: Sunset or blue hour for the lit fountain</li>
+      <li>Best spot: The curved bench area east of the main fountain</li>
+      <li>Parking: Rosalind Ave street parking or the Central Blvd garage</li>
+    </ul>
+    <div class="cm-tip"><div class="cm-tip-label">Canon Moment Tip</div><p>The fountain cycles through colors all evening — we coordinate your timing so the "yes" lands on the best one.</p></div>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/leu-gardens.jpg" alt="Harry P. Leu Gardens blooms, Orlando" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Harry P. Leu Gardens</div><div class="venue-city">Orlando, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Engagements</span><span class="tag">Weddings</span><span class="tag alt">Botanical</span></div>
+    <p class="venue-desc">50 acres of botanical gardens just north of downtown — rose gardens, a floral clock, and lush tropical paths across 40+ plant collections. The Rose Garden in bloom is stunning, and the lakeside boardwalk feels a world away from the city. Garden ceremonies host up to 200 guests.</p>
+    <ul class="tips">
+      <li>Best time: Morning or late afternoon — avoid midday heat</li>
+      <li>Best spot: Rose Garden (peak bloom Feb–Apr) or the lakeside walk</li>
+      <li>Entry: $15/person — worth every penny</li>
+      <li>The Camellia Garden in January is stunning and almost always empty</li>
+    </ul>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/disney-springs.jpg" alt="Disney Springs waterfront at dusk" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Disney Springs Waterfront</div><div class="venue-city">Lake Buena Vista, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag alt">Magical · No Ticket Needed</span></div>
+    <p class="venue-desc">Free to access — no park ticket required. The Town Center waterfront has beautiful evening lighting, cobblestone walkways, and unmistakable Disney atmosphere without a full park day. Perfect for couples who love Disney but want the moment to feel intimate.</p>
+    <ul class="tips">
+      <li>Best time: Evenings — the lights come on around 7pm</li>
+      <li>Best spot: The waterfront near The Boathouse</li>
+      <li>Free parking after 6pm · weeknights far less crowded</li>
+    </ul>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/rollins-college.jpg" alt="Rollins College across Lake Virginia, Winter Park" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Rollins College Waterfront</div><div class="venue-city">Winter Park, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Engagements</span><span class="tag alt">Architecture</span></div>
+    <p class="venue-desc">One of the most beautiful campuses in Florida, set directly on Lake Virginia. Spanish-Mediterranean architecture creates stunning backdrops, and the lakefront dock — facing west — turns pure gold at sunset.</p>
+    <ul class="tips">
+      <li>Best time: Golden hour — the dock faces the sunset</li>
+      <li>Parking: Free street parking on Holt Ave</li>
+      <li>The Annie Russell Theatre courtyard is rarely used for proposals — and gorgeous</li>
+    </ul>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/cocoa-beach.jpg" alt="Cocoa Beach sunrise over the Atlantic" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Cocoa Beach at Sunrise</div><div class="venue-city">Cocoa Beach, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Engagements</span><span class="tag alt">Beach Romance</span></div>
+    <p class="venue-desc">An hour east of Orlando and criminally underrated. The beach is nearly empty at dawn, the light is extraordinary, and the Atlantic backdrop is dramatic and timeless. Tidal pools at low tide create beautiful reflections.</p>
+    <ul class="tips">
+      <li>Best time: Sunrise — arrive 20 minutes early for the best light</li>
+      <li>Best spot: Alan Shepard Park — wide beach, beautiful dunes</li>
+      <li>~60 minutes from Orlando via SR-528</li>
+    </ul>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/orlando-skyline.jpg" alt="Orlando skyline from the water" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Rooftop Skyline Proposals</div><div class="venue-city">Orlando, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag alt">Luxury View</span></div>
+    <p class="venue-desc">For the couple who wants something truly elevated — literally. Orlando's rooftop bars and hotel terraces offer panoramic skyline views that feel sophisticated, private, and unexpected. Ideal for the partner who loves city lights and a story nobody else has.</p>
+    <ul class="tips">
+      <li>Best time: Sunset into evening — the city lights are spectacular</li>
+      <li>Reserve ahead: we coordinate with the venue for a private corner</li>
+      <li>Pairs perfectly with a dinner reservation for a complete evening</li>
+    </ul>
+    <div class="cm-tip"><div class="cm-tip-label">Canon Moment Tip</div><p>Tell us your favorite rooftop — or let us recommend one. We scout the sightlines in advance so the skyline lands right behind the ring.</p></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ PART 2 · WEDDINGS ═══════════ -->
+<div class="part-header">
+  <div class="part-num">Part Two</div>
+  <div class="part-title">Wedding &amp; Engagement <em>Venues</em></div>
+  <div class="part-sub">From grand Tuscan estates to moody garden cathedrals — the venues we love most for ceremonies, receptions and engagement sessions across Central Florida.</div>
+</div>
+
+<div class="venue">
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">The Club at Bella Collina</div><div class="venue-city">Montverde, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Weddings</span><span class="tag">Up to 240 guests</span><span class="tag alt">Luxury / Private</span></div>
+    <p class="venue-desc">An authentic Tuscan-inspired villa on 1,900 acres of rolling hills and shimmering lakes. Stone columns, brick archways, tiered fountains and golden-hour vistas make it the ultimate "destination feel" without leaving Florida — a showstopper for both surprise proposals and full weddings.</p>
+    <div class="cm-tip"><div class="cm-tip-label">Canon Moment Tip</div><p>The Atrium columns and Reflection Pool at sunset are unreal on camera. Pair a proposal here with a drone add-on for sweeping aerials of the grounds.</p></div>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/howey-mansion.jpg" alt="The Howey Mansion, Howey-in-the-Hills" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">The Howey Mansion</div><div class="venue-city">Howey-in-the-Hills, FL</div></div>
+    <div class="tags"><span class="tag">Engagements</span><span class="tag">Weddings</span><span class="tag">Up to 300 guests</span><span class="tag alt">Historic Estate</span></div>
+    <p class="venue-desc">A restored 1920s Mediterranean Revival mansion with manicured gardens, winding staircases, a grand ballroom and multiple fireplaces. Old-world romance with dramatic architectural detail in every corner.</p>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Luxmore Grande Estate</div><div class="venue-city">Winter Springs, FL</div></div>
+    <div class="tags"><span class="tag">Engagements</span><span class="tag">Weddings</span><span class="tag alt">Luxury / Private</span></div>
+    <p class="venue-desc">A private estate pairing Southern charm with European-inspired interiors, sweeping grand lawns and lush greenery. Intimate yet opulent — ideal for couples wanting a refined, exclusive backdrop.</p>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Cypress Grove Estate House</div><div class="venue-city">Orlando, FL</div></div>
+    <div class="tags"><span class="tag">Engagements</span><span class="tag">Weddings</span><span class="tag alt">Lakeside</span></div>
+    <p class="venue-desc">An 80-acre lakeside estate on Lake Jessamine — a white colonial home, manicured lawns and Spanish moss draping the crape myrtles. Effortlessly elegant for engagements and lakeside weddings.</p>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Paradise Cove</div><div class="venue-city">Lake Buena Vista, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Weddings</span><span class="tag alt">Tropical / Beach</span></div>
+    <p class="venue-desc">A tropical hideaway on Lake Bryan with sandy beaches, swaying palms and waterfront sunsets. The closest thing to a beach proposal near the Orlando attractions corridor.</p>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/clearwater-beach.jpg" alt="Sunset at Clearwater Beach on the Gulf Coast" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Clearwater Beach &amp; St. Pete</div><div class="venue-city">Pinellas County, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Engagements</span><span class="tag">Weddings</span><span class="tag alt">Gulf Sunsets</span></div>
+    <p class="venue-desc">Sugar-white sand and some of the most celebrated sunsets on the Gulf Coast. A dream setting for surprise beach proposals that flow straight into a romantic couples session as the sky turns gold.</p>
+    <div class="cm-tip"><div class="cm-tip-label">Canon Moment Tip</div><p>Sunset slots book fast in peak months. We scout the hidden proposal pocket away from crowds, then add drone coverage for the "yes" from above.</p></div>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/hollis-garden.jpg" alt="Hollis Garden fountains, Lakeland" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Hollis Garden</div><div class="venue-city">Lakeland, FL</div></div>
+    <div class="tags"><span class="tag">Proposals</span><span class="tag">Weddings</span><span class="tag alt">Formal Garden</span></div>
+    <p class="venue-desc">A formal botanical garden with classical fountains, marble columns and lakeside views over Lake Mirror — intimate, symmetrical and tailor-made for refined proposals and elegant micro weddings.</p>
+  </div>
+</div>
+
+<div class="part-header" style="margin-top:48px">
+  <div class="part-num">Signature Shoot Locations We Love</div>
+</div>
+<div class="quick-grid">
+  <div class="quick-card">
+    <div class="quick-name">Casa Feliz</div>
+    <div class="quick-city">Winter Park</div>
+    <div class="quick-desc">Spanish farmhouse with a romantic brick courtyard — doubles beautifully for intimate ceremonies.</div>
+  </div>
+  <div class="quick-card">
+    <div class="quick-name">Bok Tower Gardens</div>
+    <div class="quick-city">Lake Wales</div>
+    <div class="quick-desc">The iconic singing tower and reflection pools — dramatic, serene, unforgettable.</div>
+  </div>
+  <div class="quick-card">
+    <div class="quick-name">Mead Botanical Garden</div>
+    <div class="quick-city">Winter Park</div>
+    <div class="quick-desc">Wild, lush 48-acre garden with vintage Florida charm.</div>
+  </div>
+  <div class="quick-card">
+    <div class="quick-name">Historic Dubsdread</div>
+    <div class="quick-city">College Park</div>
+    <div class="quick-desc">Century-old oaks and manicured greens for timeless portraits.</div>
+  </div>
+  <div class="quick-card">
+    <div class="quick-name">Dr. Phillips House</div>
+    <div class="quick-city">Lake Lucerne</div>
+    <div class="quick-desc">Historic mansion with downtown elegance.</div>
+  </div>
+  <div class="quick-card">
+    <div class="quick-name">Albin Polasek / Capen House</div>
+    <div class="quick-city">Winter Park</div>
+    <div class="quick-desc">Lakeside sculpture gardens with bamboo backdrops.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ PART 3 · EVENTS ═══════════ -->
+<div class="part-header">
+  <div class="part-num">Part Three</div>
+  <div class="part-title">Event <em>Venues</em></div>
+  <div class="part-sub">Corporate galas, quinceañeras, graduations, launches and celebrations — the Central Florida spaces that photograph beautifully when the occasion isn't a wedding.</div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/dr-phillips-center.jpg" alt="Dr. Phillips Center for the Performing Arts interior" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Dr. Phillips Center for the Performing Arts</div><div class="venue-city">Downtown Orlando, FL</div></div>
+    <div class="tags"><span class="tag">Corporate</span><span class="tag">Galas</span><span class="tag alt">Modern Luxury</span></div>
+    <p class="venue-desc">Orlando's premier arts venue — soaring glass lobbies, sculptural staircases and a rooftop terrace overlooking downtown. Corporate events and galas here photograph like magazine spreads.</p>
+    <div class="cm-tip"><div class="cm-tip-label">Canon Moment Tip</div><p>The grand staircase and the Seneff Arts Plaza at blue hour are the money shots. We arrive early to capture the space empty, then document the event as it fills.</p></div>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/occc.jpg" alt="Orange County Convention Center, Orlando" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Orange County Convention Center</div><div class="venue-city">International Drive, Orlando</div></div>
+    <div class="tags"><span class="tag">Conferences</span><span class="tag">Trade Shows</span><span class="tag">Corporate</span></div>
+    <p class="venue-desc">The second-largest convention center in America. Keynotes, booths, headshot stations, award dinners — we cover the full conference lifecycle with fast turnaround for your marketing team.</p>
+    <ul class="tips">
+      <li>Same-week highlight reels available for social media</li>
+      <li>On-site headshot booth setups for attendee engagement</li>
+      <li>Multi-day and multi-photographer coverage available</li>
+    </ul>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/church-street.jpg" alt="Historic Church Street Station railroad depot, Orlando" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Church Street Station &amp; Historic District</div><div class="venue-city">Downtown Orlando, FL</div></div>
+    <div class="tags"><span class="tag">Private Parties</span><span class="tag">Quinceañeras</span><span class="tag alt">Historic Charm</span></div>
+    <p class="venue-desc">Orlando's historic railroad district — brick streets, vintage architecture and atmospheric venues like The Ballroom at Church Street. Rich, warm textures that give evening events a timeless feel.</p>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/mead-garden.jpg" alt="The Grove at Mead Botanical Garden, Winter Park" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Mead Botanical Garden — The Grove</div><div class="venue-city">Winter Park, FL</div></div>
+    <div class="tags"><span class="tag">Birthdays</span><span class="tag">Graduations</span><span class="tag">Showers</span><span class="tag alt">Outdoor</span></div>
+    <p class="venue-desc">A lush, affordable outdoor venue under the oaks — ideal for milestone birthdays, graduation celebrations, baby showers and garden parties. Natural shade and dappled light all afternoon.</p>
+  </div>
+</div>
+
+<div class="venue">
+  <div class="venue-photo"><img src="images/venues/bok-tower.jpg" alt="The Singing Tower at Bok Tower Gardens, Lake Wales" loading="lazy"></div>
+  <div class="venue-body">
+    <div class="venue-top"><div class="venue-name">Bok Tower Gardens</div><div class="venue-city">Lake Wales, FL</div></div>
+    <div class="tags"><span class="tag">Milestone Events</span><span class="tag">Engagements</span><span class="tag alt">Iconic</span></div>
+    <p class="venue-desc">A national historic landmark — the 205-foot singing tower rises above 50 acres of Olmsted-designed gardens. Anniversaries, vow renewals and milestone family portraits feel monumental here.</p>
+  </div>
+</div>
+
+<!-- ═══════════ DESTINATIONS ═══════════ -->
+<div class="dest-band">
+  <div class="part-title">Bonus: Worldwide <em>Destinations</em></div>
+  <div class="part-sub">With honest photographer travel-fee estimates · Every destination quoted individually</div>
+</div>
+
+<div class="dest-grid">
+  <div class="dest-card"><div class="dest-name">Miami &amp; South Beach, FL</div><div class="dest-region">South Florida</div><div class="dest-fee"><strong>Travel fee: $150–250</strong></div><div class="dest-note">South Pointe Pier, Wynwood rooftops, Brickell waterfront. Often the easiest destination option.</div></div>
+  <div class="dest-card"><div class="dest-name">New York City, NY</div><div class="dest-region">East Coast USA</div><div class="dest-fee"><strong>Travel fee: $300–500</strong> + flights</div><div class="dest-note">Central Park, Brooklyn Bridge, The High Line, DUMBO waterfront.</div></div>
+  <div class="dest-card"><div class="dest-name">Savannah, GA</div><div class="dest-region">Southeast USA</div><div class="dest-fee"><strong>Travel fee: $300–450</strong> + travel</div><div class="dest-note">Forsyth Park fountain, River Street sunsets, moss-draped squares.</div></div>
+  <div class="dest-card"><div class="dest-name">Nashville, TN</div><div class="dest-region">Southeast USA</div><div class="dest-fee"><strong>Travel fee: $400–600</strong> + flights</div><div class="dest-note">Bicentennial Mall, Shelby Bottoms, Broadway rooftops.</div></div>
+  <div class="dest-card"><div class="dest-name">San Juan, Puerto Rico</div><div class="dest-region">Caribbean USA</div><div class="dest-fee"><strong>Travel fee: $600–900</strong> + flights</div><div class="dest-note">Old San Juan cobblestones, El Morro sunsets, bioluminescent bays. No passport needed for US citizens.</div></div>
+  <div class="dest-card"><div class="dest-name">Cancún &amp; Riviera Maya</div><div class="dest-region">Mexico · Caribbean</div><div class="dest-fee"><strong>Travel fee: $800–1,200</strong> + flights</div><div class="dest-note">Resort beach setups, Tulum ruins at sunrise, cenote sessions.</div></div>
+  <div class="dest-card"><div class="dest-name">Paris, France</div><div class="dest-region">Europe</div><div class="dest-fee"><strong>Travel fee: $1,800–2,800</strong> + flights</div><div class="dest-note">Eiffel Tower at blue hour, Pont Alexandre III, Montmartre steps.</div></div>
+  <div class="dest-card"><div class="dest-name">Amalfi Coast, Italy</div><div class="dest-region">Europe</div><div class="dest-fee"><strong>Travel fee: $2,000–3,000</strong> + flights</div><div class="dest-note">Positano cliffside, Ravello gardens, boat sessions on the Tyrrhenian Sea.</div></div>
+</div>
+
+<p style="font-size:12px;color:#999;line-height:1.7;margin-bottom:8px;font-style:italic;">Travel fee estimates include photographer travel time, 1–2 nights accommodation and ground transportation. All fees are agreed before booking — no surprises.</p>
+
+<!-- ═══════════ CTA ═══════════ -->
+<div class="cta">
+  <div class="cta-title">Let's capture <em>your moment.</em></div>
+  <p class="cta-sub">Found the one? Tell us your venue and your vision and we'll craft the perfect proposal, wedding or event experience — complete with optional drone coverage and a private online gallery.</p>
+  <a class="cta-btn" href="https://canonmomentphotography.com/contact">Start Planning →</a>
+  <div class="cta-contact">
+    Call / Text: <a href="tel:+13213006314">(321) 300-6314</a><br>
+    <a href="mailto:booking@canonmomentphotography.com">booking@canonmomentphotography.com</a><br>
+    canonmomentphotography.com · IG: @canonmomentllc
+  </div>
+</div>
+
+<div class="footer-note">
+  CANON MOMENT PHOTOGRAPHY LLC · ORLANDO &amp; CENTRAL FLORIDA · PROPOSALS · WEDDINGS · EVENTS<br>
+  Some location photography courtesy of <a href="https://commons.wikimedia.org">Wikimedia Commons</a> contributors (CC licenses) · Venue details subject to change — always confirm with the venue.
+</div>
+
+</div>
+</body></html>
