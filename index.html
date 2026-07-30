@@ -2170,6 +2170,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a onclick="goPage('services-page')" id="nav-services-page">Services</a></li>
     <li><a href="/gallery" onclick="goPage('gallery-page');return false;" id="nav-gallery-page">Gallery</a></li>
     <li><a href="/packages" onclick="goPage('packages-page');return false;" id="nav-packages-page">Packages</a></li>
+    <li><a href="/destinations">Destinations</a></li>
+    <li><a href="/photo-locations">Locations</a></li>
     <li><a onclick="goPage('blog-page')" id="nav-blog-page">Blog</a></li>
     <li><a href="/testimonials" onclick="goPage('reviews-page');return false;" id="nav-reviews-page">Testimonials</a></li>
     <li><a href="/contact" onclick="goPage('contact-page');return false;" id="nav-contact-page">Contact</a></li>
@@ -3659,6 +3661,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="margin-top:20px;padding:12px 18px;border:0.5px solid rgba(201,169,110,0.4);background:rgba(201,169,110,0.08);display:inline-block;">
         <span style="font-family:var(--sans);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);"><strong>50% retainer ($400 max)</strong> required to book · Balance due on session day</span>
       </div>
+      <!-- Location-aware pricing (travel fee by city) -->
+      <div id="cm-loc-mount"></div>
+
       <!-- Sub-nav for specialty sessions -->
       <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:36px;">
         <button onclick="showPkgSection('main')" class="pkg-subnav active" id="pnav-main">All</button>
@@ -4474,7 +4479,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div style="flex:1;min-width:160px;padding:28px 32px;border-right:.5px solid var(--border);">
           <div style="font-family:var(--serif);font-size:42px;font-weight:300;color:var(--warm-white);line-height:1;">5.0</div>
-          <div style="display:flex;gap:3px;margin:6px 0;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"></div>
+          <div style="display:flex;gap:3px;margin:6px 0;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:13px;"></div>
           <div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray-light);">Thumbtack · 36 reviews</div>
         </div>
         <div style="flex:1;min-width:160px;padding:28px 32px;border-right:.5px solid var(--border);">
@@ -4507,14 +4512,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="margin-bottom:64px;">
         <span class="eyebrow" style="display:block;margin-bottom:20px;">Captured Moments</span>
         <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/495584311/c1f23177faf82d95c81bb1549cd8728f-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/499985801/c09b69a836bccf8f7bd96737d47713ec-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/575915011/c9b11f6b3d9cb009f31b06dd282a2bb7-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/301284801/f86f10ba3915214208a0da8e901903f5-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/648423801/b4f78cb22088c7a563231f63e317624b-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/499985801/dc64b3ced56ee9a731e782d6eff5144d-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/033333701/68e41eef6b852eeeb08a5a828649e99a-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
-          <div style="aspect-ratio:1;overflow:hidden;"><img src="https://images.pixieset.com/495584311/cd461862649ae9d4196bab6d60a130e4-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/495584311/c1f23177faf82d95c81bb1549cd8728f-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/499985801/c09b69a836bccf8f7bd96737d47713ec-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/575915011/c9b11f6b3d9cb009f31b06dd282a2bb7-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/301284801/f86f10ba3915214208a0da8e901903f5-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/648423801/b4f78cb22088c7a563231f63e317624b-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/499985801/dc64b3ced56ee9a731e782d6eff5144d-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/033333701/68e41eef6b852eeeb08a5a828649e99a-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
+          <div style="aspect-ratio:1;overflow:hidden;"><img alt="Canon Moment Photography — Orlando photography portfolio" src="https://images.pixieset.com/495584311/cd461862649ae9d4196bab6d60a130e4-xxlarge.jpg" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"></div>
         </div>
         <div style="text-align:right;margin-top:12px;"><a href="https://canonmomentphotographyllc.pixieset.com" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-decoration:none;">View Full Portfolio →</a></div>
       </div>
@@ -4581,7 +4586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
             <div style="width:38px;height:38px;border-radius:50%;background:#3A7BD5;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">G</div>
             <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Garrett N.</div><div class="review-card-loc">Beach Proposal</div></div>
-            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+            <div style="margin-left:auto;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
           </div>
           <div class="review-card-text" style="color:rgba(245,240,232,.8);">"Jon was a great help with the engagement proposal on the beach and the pictures came out fantastic."</div>
           <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
@@ -4591,7 +4596,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
             <div style="width:38px;height:38px;border-radius:50%;background:#E63946;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">A</div>
             <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Anonymous</div><div class="review-card-loc">Proposal Photography</div></div>
-            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+            <div style="margin-left:auto;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
           </div>
           <div class="review-card-text" style="color:rgba(245,240,232,.8);">"John was fantastic to work with. Very professional, easy to communicate with, and the photos turned out better than expected. He made the entire experience smooth from start to finish."</div>
           <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
@@ -4601,7 +4606,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
             <div style="width:38px;height:38px;border-radius:50%;background:#2A9D8F;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">M</div>
             <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Anonymous</div><div class="review-card-loc">Event Photography</div></div>
-            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+            <div style="margin-left:auto;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
           </div>
           <div class="review-card-text" style="color:rgba(245,240,232,.8);">"Wonderful experience overall. The gallery came back within 48 hours and every shot was edited beautifully. John clearly cares about his craft and his clients."</div>
           <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
@@ -4611,7 +4616,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
             <div style="width:38px;height:38px;border-radius:50%;background:#F4A261;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;color:#fff;flex-shrink:0;">R</div>
             <div><div class="review-card-author" style="color:var(--warm-white);margin:0 0 4px;">Anonymous</div><div class="review-card-loc">Surprise Proposal</div></div>
-            <div style="margin-left:auto;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
+            <div style="margin-left:auto;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"><img alt="Five star review rating" src="https://cdn.thumbtackstatic.com/fe-assets-web/media/pages/profile/standard-widgets/review-widget/orange_star.svg" style="width:12px;"></div>
           </div>
           <div class="review-card-text" style="color:rgba(245,240,232,.8);">"I was so nervous planning the proposal but John took care of everything on his end. He was hidden perfectly and got every single moment. My partner had no idea. The photos are absolutely priceless."</div>
           <div style="margin-top:12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-light);">via Thumbtack</div>
@@ -4731,14 +4736,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="lm-close" onclick="closeLeadMagnet()">✕</button>
     <div class="lm-left">
       <div class="lm-left-content">
-        <span class="lm-tag">Free Guide — Instant Download</span>
-        <div class="lm-title">Orlando's 7 Most Romantic <em>Hidden Proposal Spots</em></div>
-        <p class="lm-desc">The insider locations where Orlando's most unforgettable proposals happen — written by a photographer who's captured them all. Plus: worldwide destinations with real travel fee estimates.</p>
+        <span class="lm-tag">Free Guide — Instant Access</span>
+        <div class="lm-title">The Central Florida <em>Venue Guide</em></div>
+        <p class="lm-desc">Hidden proposal spots, dream wedding venues and event spaces — curated by the photographers who shoot them, with real photos, timing tips and insider advice.</p>
         <div class="lm-includes">
-          <div class="lm-include-item">7 Orlando hidden locations with exact timing tips</div>
-          <div class="lm-include-item">Best time of day & golden hour windows</div>
-          <div class="lm-include-item">Parking, accessibility & logistics for each spot</div>
-          <div class="lm-include-item">Bonus: Worldwide destinations + travel fee guide</div>
+          <div class="lm-include-item">7 hidden proposal spots with exact timing & parking tips</div>
+          <div class="lm-include-item">Wedding & engagement venues — estates, gardens, beaches</div>
+          <div class="lm-include-item">Event venues for corporate, quinceañeras & celebrations</div>
+          <div class="lm-include-item">Bonus: Worldwide destinations + honest travel fees</div>
           <div class="lm-include-item">Real photographer advice — not a generic list</div>
         </div>
       </div>
@@ -4762,7 +4767,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="lm-success" id="lm-success">
           <div class="lm-success-icon">💍</div>
           <div class="lm-success-title">Your guide is opening now.</div>
-          <div class="lm-success-sub">Orlando's 7 Hidden Proposal Spots just opened in a new tab — save or print it anytime. While you're here, want to start planning your moment?</div>
+          <div class="lm-success-sub">The Central Florida Venue Guide just opened in a new tab — save it as a PDF anytime. While you're here, want to start planning your moment?</div>
+          <a href="/venue-guide.html" target="_blank" rel="noopener" style="display:block;margin-bottom:12px;color:var(--gold-dark,#9B7A3F);font-weight:600;font-size:13px;text-decoration:underline;">Guide didn't open? Tap here →</a>
           <a class="btn-primary" onclick="closeLeadMagnet();goPage('contact-page')" style="display:inline-block;cursor:pointer;">Start Planning →</a>
         </div>
       </div>
@@ -5903,7 +5909,7 @@ function renderAdminGalleries() {
   document.getElementById('admin-galleries-grid').innerHTML = galleries.map(g => `
     <div class="gal-mgr-card">
       <div class="gal-mgr-thumb" style="height:120px;overflow:hidden;background:var(--ivory);display:flex;align-items:center;justify-content:center;">
-        ${g.coverImage ? `<img src="${g.coverImage}" style="width:100%;height:100%;object-fit:cover;">` : `<span style="font-size:12px;color:var(--gray-light);font-style:italic;">${g.pixiesetUrl ? 'Loading cover...' : 'No cover image'}</span>`}
+        ${g.coverImage ? `<img alt="" src="${g.coverImage}" style="width:100%;height:100%;object-fit:cover;">` : `<span style="font-size:12px;color:var(--gray-light);font-style:italic;">${g.pixiesetUrl ? 'Loading cover...' : 'No cover image'}</span>`}
       </div>
       <div class="gal-mgr-info">
         <div class="gal-mgr-name">${g.name}</div>
@@ -7011,6 +7017,10 @@ async function initiateStripePayment(invoiceId) {
 let popupShown = false;
 
 function showLeadMagnet() {
+  // Retired — superseded by the Spin & Win wheel (/spin-wheel.js).
+  // Kept as a no-op so any stray reference can't throw.
+  return;
+  /* eslint-disable no-unreachable */
   if (popupShown || localStorage.getItem('cm-lm-shown')) return;
   popupShown = true;
   localStorage.setItem('cm-lm-shown', '1');
@@ -7045,11 +7055,11 @@ async function submitLeadMagnet(e) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         access_key: '226c6cf8-a728-46e6-81a1-8cd4d7d286eb',
-        subject: 'New Lead — Hidden Proposal Spots Guide Download',
+        subject: 'New Lead — Central Florida Venue Guide Download',
         from_name: 'Canon Moment Website',
         name: name || 'Not provided',
         email,
-        message: `New lead magnet submission.\n\nName: ${name || 'Not provided'}\nEmail: ${email}\nSource: Proposal Locations Guide Popup\nTime: ${new Date().toLocaleString()}`
+        message: `New lead magnet submission.\n\nName: ${name || 'Not provided'}\nEmail: ${email}\nSource: Venue Guide Popup\nTime: ${new Date().toLocaleString()}`
       })
     }).catch(() => {});
   } catch(e) { /* fail silently */ }
@@ -7064,18 +7074,15 @@ async function submitLeadMagnet(e) {
   }, 4000);
 }
 
-// Popup triggers
-// 1. Time-based: 45 seconds
-setTimeout(() => showLeadMagnet(), 45000);
-// 2. Scroll-based: 60% down page
-window.addEventListener('scroll', function onScroll() {
-  const scrollPct = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
-  if (scrollPct >= 0.6) { showLeadMagnet(); window.removeEventListener('scroll', onScroll); }
-}, { passive: true });
-// 3. Exit-intent (desktop)
-document.addEventListener('mouseleave', function onExit(e) {
-  if (e.clientY < 0) { showLeadMagnet(); document.removeEventListener('mouseleave', onExit); }
-});
+// Popup triggers — RETIRED 2026-07-30.
+// The Venue Guide popup has been replaced site-wide by the Spin & Win wheel
+// (/spin-wheel.js, loaded at the bottom of this page). Its time / scroll /
+// exit-intent triggers are removed so the two never compete for the screen.
+//
+// The popup markup, styles and showLeadMagnet()/closeLeadMagnet()/submitLeadMagnet()
+// are intentionally left in place but are now unreachable — openLocationsGuide()
+// is still used by the admin panel's "Preview Guide" button, and the wheel links
+// visitors to the same guide after they win.
 
 // ══════════════════════════════════════
 //  ADMIN — Portfolio Tab support
@@ -7094,247 +7101,21 @@ window.loadAdminDash = function loadAdminDash() {
 //  HIDDEN LOCATIONS GUIDE (Lead Magnet PDF)
 // ══════════════════════════════════════
 function openLocationsGuide() {
-  const win = window.open('', '_blank');
-  win.document.write(buildLocationsGuideHTML());
-  win.document.close();
-}
-
-function buildLocationsGuideHTML() {
-  return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Orlando's 7 Hidden Proposal Spots — Canon Moment Photography</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Georgia,serif;color:#1C1C1C;background:white;max-width:794px;margin:0 auto;}
-.cover{background:#1C1C1C;padding:72px 56px;text-align:center;position:relative;min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
-.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(201,169,110,0.18) 0%,transparent 70%);}
-.cover-eyebrow{font-family:Helvetica,sans-serif;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A96E;margin-bottom:20px;position:relative;}
-.cover-title{font-size:clamp(28px,5vw,44px);font-weight:300;color:white;line-height:1.2;margin-bottom:16px;position:relative;}
-.cover-title em{font-style:italic;color:#C9A96E;}
-.cover-sub{font-family:Helvetica,sans-serif;font-size:13px;color:rgba(255,255,255,0.45);line-height:1.7;max-width:420px;position:relative;}
-.cover-brand{font-family:Helvetica,sans-serif;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#C9A96E;margin-top:32px;position:relative;opacity:0.7;}
-.body-wrap{padding:48px 56px;}
-.intro{font-size:14px;color:#3D2E1E;line-height:1.85;margin-bottom:40px;padding-bottom:28px;border-bottom:0.5px solid #E8D5B0;}
-.location-block{margin-bottom:40px;padding-bottom:36px;border-bottom:0.5px solid rgba(201,169,110,0.2);}
-.loc-num{font-family:Helvetica,sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#C9A96E;margin-bottom:6px;}
-.loc-name{font-size:22px;font-weight:400;color:#1C1C1C;margin-bottom:10px;}
-.loc-tag{display:inline-block;font-family:Helvetica,sans-serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#9B7A3F;background:rgba(201,169,110,0.12);padding:3px 10px;margin-bottom:12px;}
-.loc-desc{font-size:13px;color:#3D2E1E;line-height:1.85;margin-bottom:12px;}
-.loc-tips{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.loc-tips li{font-family:Helvetica,sans-serif;font-size:12px;color:#6B6B6B;display:flex;gap:8px;align-items:flex-start;}
-.loc-tips li::before{content:"✦";color:#C9A96E;font-size:9px;margin-top:2px;flex-shrink:0;}
-.loc-photo{width:100%;height:180px;background:#F5F0E8;display:flex;align-items:center;justify-content:center;margin-bottom:14px;overflow:hidden;}
-.loc-photo span{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#B8B8B8;}
-.section-divider{text-align:center;padding:32px 0;margin:8px 0;}
-.section-divider::before{content:'— ✦ —';color:#C9A96E;letter-spacing:0.2em;}
-.bonus-header{background:#1C1C1C;padding:32px 40px;margin:-0px -56px 40px;text-align:center;}
-.bonus-title{font-size:24px;font-weight:300;color:white;}
-.bonus-title em{font-style:italic;color:#C9A96E;}
-.bonus-sub{font-family:Helvetica,sans-serif;font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;letter-spacing:0.06em;}
-.dest-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:32px;}
-.dest-card{border:0.5px solid #E8D5B0;padding:20px;}
-.dest-name{font-size:16px;font-weight:400;color:#1C1C1C;margin-bottom:4px;}
-.dest-region{font-family:Helvetica,sans-serif;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#C9A96E;margin-bottom:8px;}
-.dest-fee{font-size:13px;color:#6B6B6B;margin-bottom:8px;}
-.dest-fee strong{color:#1C1C1C;}
-.dest-note{font-family:Helvetica,sans-serif;font-size:11px;color:#999;line-height:1.6;}
-.cta-strip{background:#FAF8F4;border:0.5px solid #E8D5B0;padding:28px 32px;text-align:center;margin-top:32px;}
-.cta-title{font-size:18px;font-weight:400;color:#1C1C1C;margin-bottom:8px;}
-.cta-sub{font-family:Helvetica,sans-serif;font-size:12px;color:#6B6B6B;line-height:1.7;margin-bottom:16px;}
-.cta-contact{font-family:Helvetica,sans-serif;font-size:13px;color:#9B7A3F;line-height:1.8;}
-.footer-note{text-align:center;margin-top:36px;padding-top:20px;border-top:0.5px solid #E8D5B0;font-family:Helvetica,sans-serif;font-size:10px;color:#B8B8B8;letter-spacing:0.1em;}
-@media print{.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;}.bonus-header{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
-</style>
-<style>
-@media(max-width:768px){
-  .cm-chat-bubble { bottom: 80px !important; right: 16px !important; width: 50px !important; height: 50px !important; }
-  .cm-chat-window { bottom: 144px !important; right: 10px !important; width: calc(100vw - 20px) !important; max-height: 65vh !important; }
-}
-</style>
-</head><body>
-
-<div class="cover">
-  <div class="cover-eyebrow">Free Guide from Canon Moment Photography</div>
-  <div class="cover-title">Orlando's 7 Most Romantic<br><em>Hidden Proposal Spots</em></div>
-  <div class="cover-sub">The insider locations where Orlando's most unforgettable proposals happen — written by a photographer who has captured all of them.</div>
-  <div class="cover-brand">Canon Moment Photography LLC · Orlando, FL</div>
-</div>
-
-<div class="body-wrap">
-  <p class="intro">Dear future fiancé — you've made a great decision. This guide reveals the spots that photographers love and tourists don't know about. Each location has been selected not just for beauty, but for the natural hiding spots that let your photographer capture the real, unposed moment without ever being seen.<br><br>Read through, pick the one that feels most like the two of you, and then reach out — we'll handle every detail from there.</p>
-
-  <div class="location-block">
-    <div class="loc-num">Location 01</div>
-    <div class="loc-name">Kraft Azalea Gardens</div>
-    <div class="loc-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Kraft_entrance.jpg" alt="Kraft Azalea Gardens Winter Park" style="width:100%;height:100%;object-fit:cover;"></div>
-    <span class="loc-tag">Winter Park · Most Requested</span>
-    <p class="loc-desc">The undisputed king of Orlando proposal locations. Tucked along the shores of Lake Maitland in Winter Park, this hidden garden features a stunning open-air cypress pavilion called "The Exedra" — a curved colonnade that frames couples perfectly against the water and Spanish moss trees. The light here at golden hour is genuinely breathtaking.</p>
-    <ul class="loc-tips">
-      <li>Best time: 90 minutes before sunset, year-round</li>
-      <li>Best spot: The Exedra pavilion facing the lake</li>
-      <li>Parking: Free small lot on Kraft Ave — arrive early on weekends</li>
-      <li>Accessibility: Flat paved path to the pavilion, wheelchair friendly</li>
-      <li>Pro tip: Weekday mornings are nearly empty — perfect for privacy</li>
-    </ul>
-  </div>
-
-  <div class="location-block">
-    <div class="loc-num">Location 02</div>
-    <div class="loc-name">Lake Eola Park — Amphitheatre Side</div>
-    <div class="loc-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Lake_Eola_Park_at_Night.JPG" alt="Lake Eola Park at Night Orlando" style="width:100%;height:100%;object-fit:cover;"></div>
-    <span class="loc-tag">Downtown Orlando · Iconic</span>
-    <p class="loc-desc">Everyone knows Lake Eola, but most people propose at the main swan boat area. The secret is the eastern amphitheatre side, just past the fountain — a quieter stretch of waterfront with perfect sightlines, Spanish moss, and the downtown skyline in the background. The fountain itself at night is spectacular for post-proposal portraits.</p>
-    <ul class="loc-tips">
-      <li>Best time: Sunset or blue hour (after sunset) for the lit fountain</li>
-      <li>Best spot: The curved bench area east of the main fountain</li>
-      <li>Parking: Street parking on Rosalind Ave or the garage on Central Blvd</li>
-      <li>Pro tip: The fountain goes through color cycles — coordinate timing with your photographer</li>
-    </ul>
-  </div>
-
-  <div class="location-block">
-    <div class="loc-num">Location 03</div>
-    <div class="loc-name">Harry P. Leu Gardens</div>
-    <div class="loc-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Bauhinia_divaricata_at_Leu_Gardens_01.jpg" alt="Harry P. Leu Gardens Orlando" style="width:100%;height:100%;object-fit:cover;"></div>
-    <span class="loc-tag">Orlando · Botanical Romance</span>
-    <p class="loc-desc">50 acres of botanical gardens just north of downtown Orlando, and one of the most underutilized proposal spots in the city. The Rose Garden in bloom is absolutely stunning. The lakeside boardwalk offers a quiet, shaded path that feels a world away from the city. This is the spot for couples who want something lush, intimate, and genuinely beautiful.</p>
-    <ul class="loc-tips">
-      <li>Best time: Morning or late afternoon — avoid midday heat</li>
-      <li>Best spot: The Rose Garden (peak bloom Feb–Apr) or the lakeside walk</li>
-      <li>Entry fee: $15/person — worth every penny</li>
-      <li>Pro tip: The Camellia Garden in January is stunning and almost always empty</li>
-    </ul>
-  </div>
-
-  <div class="location-block">
-    <div class="loc-num">Location 04</div>
-    <div class="loc-name">Disney Springs Waterfront</div>
-    <div class="loc-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Disney_Springs_%2823169700192%29.jpg" alt="Disney Springs Waterfront" style="width:100%;height:100%;object-fit:cover;"></div>
-    <span class="loc-tag">Lake Buena Vista · Magical</span>
-    <p class="loc-desc">Free to access (no park ticket needed), the Disney Springs waterfront offers a genuinely magical backdrop without the crowds of the parks. The Town Center section near the water has beautiful evening lighting, cobblestone walkways, and the unmistakable Disney atmosphere. Perfect for couples who love Disney but don't want to navigate a full park day.</p>
-    <ul class="loc-tips">
-      <li>Best time: Evenings — the lights come on around 7pm and it's stunning</li>
-      <li>Best spot: The waterfront near the Boathouse restaurant</li>
-      <li>No park ticket required — free parking after 6pm</li>
-      <li>Pro tip: Weeknight evenings are significantly less crowded than weekends</li>
-    </ul>
-  </div>
-
-  <div class="location-block">
-    <div class="loc-num">Location 05</div>
-    <div class="loc-name">Rollins College Waterfront</div>
-    <div class="loc-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Rollins_college_viewfromlake.jpg" alt="Rollins College Lake Virginia Winter Park" style="width:100%;height:100%;object-fit:cover;"></div>
-    <span class="loc-tag">Winter Park · Architectural Beauty</span>
-    <p class="loc-desc">One of the most beautiful campuses in Florida, Rollins College in Winter Park sits directly on the shore of Lake Virginia. The Spanish Mediterranean architecture creates stunning backdrops, and the lakefront dock is one of the most romantic spots in Central Florida — especially at golden hour when the water turns gold.</p>
-    <ul class="loc-tips">
-      <li>Best time: Golden hour — the dock faces west for perfect sunset light</li>
-      <li>Best spot: The lakefront dock at the edge of campus</li>
-      <li>Parking: Street parking on Holt Ave — completely free</li>
-      <li>Pro tip: The Annie Russell Theatre courtyard is also beautiful and rarely used for proposals</li>
-    </ul>
-  </div>
-
-  <div class="location-block">
-    <div class="loc-num">Location 06</div>
-    <div class="loc-name">Cocoa Beach at Sunrise</div>
-    <div class="loc-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/Cocoa_Beach_Florida_sunrise.jpg" alt="Cocoa Beach Florida Sunrise" style="width:100%;height:100%;object-fit:cover;"></div>
-    <span class="loc-tag">East Coast FL · Beach Romance</span>
-    <p class="loc-desc">About an hour east of Orlando, Cocoa Beach at sunrise is one of the most underrated proposal settings in Florida. The beach is nearly empty in the early morning, the light is extraordinary, and the Atlantic Ocean backdrop is dramatic and timeless. It also pairs perfectly with a morning after the SpaceX launch if your partner is into that.</p>
-    <ul class="loc-tips">
-      <li>Best time: Sunrise — arrive 20 minutes before for the best light</li>
-      <li>Best spot: Alan Shepard Park — wide beach, beautiful dunes</li>
-      <li>Travel from Orlando: About 60 minutes on SR-528 (Beachline)</li>
-      <li>Pro tip: Tidal pools at low tide create beautiful reflections</li>
-    </ul>
-  </div>
-
-  <div class="location-block" style="border-bottom:none;margin-bottom:0;padding-bottom:0;">
-    <div class="loc-num">Location 07</div>
-    <div class="loc-name">UNICO Hotel Rooftop</div>
-    <div class="loc-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Skyline_of_Orlando%2C_FL%2C_USA%2C_2012-03-28.JPG" alt="Orlando Skyline from Lake Ivanhoe" style="width:100%;height:100%;object-fit:cover;"></div>
-    <span class="loc-tag">Orlando · Luxury View</span>
-    <p class="loc-desc">For the couple who wants something truly elevated — literally. The rooftop bar at UNICO Hotel offers panoramic views of the Orlando skyline and resort district. It's sophisticated, private, and genuinely unexpected. This is the spot for the partner who loves luxury, city life, and a proposal story that nobody else has.</p>
-    <ul class="loc-tips">
-      <li>Best time: Sunset or evening — the city lights are spectacular</li>
-      <li>Best spot: The far corner of the rooftop with unobstructed skyline views</li>
-      <li>Reservation: Contact the hotel in advance to coordinate a private moment</li>
-      <li>Pro tip: Pair with a private dinner reservation for a complete evening experience</li>
-    </ul>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <div class="bonus-header">
-    <div class="bonus-title">Bonus: Worldwide Destination <em>Proposal Spots</em></div>
-    <div class="bonus-sub">With approximate photographer travel fees · Contact us for a custom quote</div>
-  </div>
-
-  <p style="font-size:13px;color:#3D2E1E;line-height:1.85;margin-bottom:24px;">Love doesn't stop at the Florida state line — and neither do we. Below are some of the most requested destination proposal locations we travel to, along with honest travel fee estimates. These are ranges, not quotes. Every destination is priced individually based on flight costs, travel time, and logistics.</p>
-
-  <div class="dest-grid">
-    <div class="dest-card">
-      <div class="dest-name">New York City, NY</div>
-      <div class="dest-region">East Coast USA</div>
-      <div class="dest-fee"><strong>Travel fee: $300–500</strong> + flights</div>
-      <div class="dest-note">Central Park, Brooklyn Bridge, The High Line, DUMBO waterfront. The city that never sleeps makes proposals unforgettable.</div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-name">Miami & South Beach, FL</div>
-      <div class="dest-region">South Florida</div>
-      <div class="dest-fee"><strong>Travel fee: $150–250</strong></div>
-      <div class="dest-note">South Pointe Pier, Wynwood rooftops, Brickell waterfront. Within driving distance — often the easiest destination option.</div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-name">Nashville, TN</div>
-      <div class="dest-region">Southeast USA</div>
-      <div class="dest-fee"><strong>Travel fee: $400–600</strong> + flights</div>
-      <div class="dest-note">Bicentennial Capitol Mall, Shelby Bottoms Greenway, rooftop bars on Broadway. A rising star for destination proposals.</div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-name">Savannah, GA</div>
-      <div class="dest-region">Southeast USA</div>
-      <div class="dest-fee"><strong>Travel fee: $300–450</strong> + flights/drive</div>
-      <div class="dest-note">Forsyth Park fountain, River Street at sunset, Spanish moss-draped squares. The most romantic city in the South.</div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-name">Cancún & Riviera Maya, Mexico</div>
-      <div class="dest-region">Caribbean</div>
-      <div class="dest-fee"><strong>Travel fee: $800–1,200</strong> + flights</div>
-      <div class="dest-note">Resort beach setups, Tulum ruins at sunrise, cenote sessions. Paradise proposals at a surprisingly accessible price.</div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-name">Paris, France</div>
-      <div class="dest-region">Europe</div>
-      <div class="dest-fee"><strong>Travel fee: $1,800–2,800</strong> + flights</div>
-      <div class="dest-note">Eiffel Tower at blue hour, Pont Alexandre III, Montmartre steps. The classic for a reason — utterly timeless.</div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-name">Amalfi Coast, Italy</div>
-      <div class="dest-region">Europe</div>
-      <div class="dest-fee"><strong>Travel fee: $2,000–3,000</strong> + flights</div>
-      <div class="dest-note">Positano cliffside, Ravello gardens, boat proposals on the Tyrrhenian Sea. The most dramatic backdrop on earth.</div>
-    </div>
-    <div class="dest-card">
-      <div class="dest-name">San Juan, Puerto Rico</div>
-      <div class="dest-region">Caribbean USA</div>
-      <div class="dest-fee"><strong>Travel fee: $600–900</strong> + flights</div>
-      <div class="dest-note">Old San Juan cobblestones, El Morro at sunset, bioluminescent bay proposals. No passport required for US citizens.</div>
-    </div>
-  </div>
-
-  <p style="font-size:12px;color:#999;line-height:1.7;margin-bottom:24px;font-style:italic;">Travel fee estimates include photographer travel time, accommodations (1–2 nights), and ground transportation. International fees cover economy airfare. All fees are discussed and agreed upon before booking — no surprises.</p>
-
-  <div class="cta-strip">
-    <div class="cta-title">Ready to plan your moment?</div>
-    <div class="cta-sub">We'd love to be there when you ask the most important question of your life — wherever in the world that might be.</div>
-    <div class="cta-contact">
-      (321) 300-6314 · booking@canonmomentphotography.com<br>
-      canonmomentphotography.com (Packages & Pricing tab)<br>
-      Instagram: @canonmomentphotography
-    </div>
-  </div>
-
-  <div class="footer-note">CANON MOMENT PHOTOGRAPHY LLC · ORLANDO, FLORIDA · ALL RIGHTS RESERVED · canonmomentphotography.com</div>
-</div>
-</body></html>`;
+  // Robust: dedicated page instead of document.write popup (popup-blocker safe, images self-hosted)
+  const win = window.open('/venue-guide.html', '_blank');
+  if (!win) {
+    // Popup blocked — show inline fallback link in the success panel
+    const s = document.getElementById('lm-success');
+    if (s && !document.getElementById('lm-guide-fallback')) {
+      const a = document.createElement('a');
+      a.id = 'lm-guide-fallback';
+      a.href = '/venue-guide.html';
+      a.target = '_blank';
+      a.textContent = 'Tap here to open your Venue Guide →';
+      a.style.cssText = 'display:block;margin-top:12px;color:var(--gold-dark,#9B7A3F);font-weight:600;text-decoration:underline;';
+      s.appendChild(a);
+    }
+  }
 }
 
 
@@ -8986,5 +8767,7 @@ function cmOpenSMS(){
 })();
 </script>
 <!-- /Floating contact menu -->
+<script src="/spin-wheel.js" defer data-lang="en"></script>
+<script src="/location-pricing.js" defer></script>
 </body>
 </html>
